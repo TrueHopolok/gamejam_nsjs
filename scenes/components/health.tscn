@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=3 uid="uid://cqm6yrv1c5lcm"]
+
+[ext_resource type="Script" path="res://scripts/components/health.gd" id="1_r1ht2"]
+
+[node name="HealthComponent" type="Node2D"]
+script = ExtResource("1_r1ht2")
+
+[node name="HitboxArea2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitboxArea2D"]
+
+[node name="InvincibilityTimer" type="Timer" parent="."]
+one_shot = true
