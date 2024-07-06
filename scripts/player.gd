@@ -1,4 +1,4 @@
-extends CharacterBody2D
+class_name Player extends CharacterBody2D
 
 const SPEED : float = 200
 const STOP_FRAMES : float = 5
@@ -9,11 +9,12 @@ const COYOTE_TIME : float = 0.1
 @onready var agro_area : Area2D = $AgroArea
 @onready var coyote_timer : Timer = $CoyoteTimer
 @onready var health_component : HealthComponent = $HealthComponent
-@onready var player_sprite_2d = $PlayerSprite2D
+@onready var shooting_component : ShootingComponent = $ShootingComponent
+@onready var animated_sprite = $PlayerSprite2D
 
 var gravity : float = ProjectSettings.get_setting("physics/2d/default_gravity")
 
-var look_direction : Vector2 = Vector2(0, 0)
+var look_direction : Vector2 = Vector2(1, 0)
 
 func activate_enemy(area : Area2D, activate : bool):
 	var parent_node = area.get_parent() 
@@ -29,9 +30,12 @@ func agro_enemy(area : Area2D):
 		parent_node.attack_player()
 
 func get_look_direction() -> Vector2:
-	var new_direction : Vector2 = Input.get_vector("left", "right", "down", "up")
+	var new_direction : Vector2 = Input.get_vector("left", "right", "up", "down")
 	if new_direction.length_squared() == 0: 
-		return Vector2(look_direction.x, 0)
+		if animated_sprite.flip_h:
+			return Vector2(-1, 0)
+		else:
+			return Vector2(1, 0)
 	return new_direction.normalized()
 
 func _ready():
@@ -42,7 +46,8 @@ func _ready():
 func _process(_delta):
 	_gravity()
 	_move()
-	look_direction = get_look_direction()
+	if Input.is_action_pressed("shot"):
+		shooting_component.shoot(get_look_direction())
 
 func _gravity():
 	## Apply gravity

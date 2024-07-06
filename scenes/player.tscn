@@ -1,7 +1,8 @@
-[gd_scene load_steps=30 format=3 uid="uid://ij7m6pmoy6el"]
+[gd_scene load_steps=31 format=3 uid="uid://ij7m6pmoy6el"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_0h3a2"]
 [ext_resource type="PackedScene" uid="uid://cqm6yrv1c5lcm" path="res://scenes/components/health.tscn" id="2_byd1l"]
+[ext_resource type="PackedScene" uid="uid://dyjsv7l73o6nt" path="res://scenes/components/shooting.tscn" id="3_3ivw5"]
 [ext_resource type="Texture2D" uid="uid://cmyiqy11qcv16" path="res://sprites/player/Player_idle.png" id="3_aah4k"]
 [ext_resource type="Texture2D" uid="uid://cv4y8x746ihvj" path="res://sprites/player/player_run_side.png" id="4_3dwe3"]
 
@@ -170,7 +171,7 @@ animations = [{
 "speed": 12.0
 }]
 
-[node name="Player" type="CharacterBody2D"]
+[node name="Player" type="CharacterBody2D" groups=["Player"]]
 script = ExtResource("1_0h3a2")
 
 [node name="HealthComponent" parent="." instance=ExtResource("2_byd1l")]
@@ -188,6 +189,12 @@ position = Vector2(0.5, 3)
 scale = Vector2(2, 2)
 shape = SubResource("RectangleShape2D_p50bg")
 debug_color = Color(0.854902, 0, 0.12549, 0.819608)
+
+[node name="ShootingComponent" parent="." instance=ExtResource("3_3ivw5")]
+position = Vector2(0, -14)
+
+[node name="SpawnMarker" parent="ShootingComponent" index="0"]
+position = Vector2(29, 0)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(1, 3)
@@ -231,3 +238,4 @@ animation = &"run_side"
 frame_progress = 0.825278
 
 [editable path="HealthComponent"]
+[editable path="ShootingComponent"]
