@@ -8,6 +8,9 @@ var pos_start : float
 var pos_finish : float
 var moving_right : bool = true
 
+func attack_player():
+	print(name, ": attack player")
+
 func _ready():
 	pos_start = global_position.x
 	pos_finish = $MarkerRight.global_position.x

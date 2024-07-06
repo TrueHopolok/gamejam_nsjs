@@ -22,11 +22,10 @@ func _ready():
 func _damaged(area : Area2D):
 	if not invincibility_timer.is_stopped():
 		return
-	var parent_node = area.get_parent()
-	if not is_instance_of(parent_node, Projectile):
+	if not is_instance_of(area, Projectile):
 		return
-	health -= parent_node.damage
-	invincibility_timer.play(invincibility_time)
+	health -= area.damage
+	invincibility_timer.start(invincibility_time)
 	if health <= 0.0:
 		died.emit()
 	else:

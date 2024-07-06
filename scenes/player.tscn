@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://ij7m6pmoy6el"]
+[gd_scene load_steps=7 format=3 uid="uid://ij7m6pmoy6el"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_0h3a2"]
 [ext_resource type="PackedScene" uid="uid://cqm6yrv1c5lcm" path="res://scenes/components/health.tscn" id="2_byd1l"]
@@ -9,17 +9,28 @@ size = Vector2(16, 32)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_m75xs"]
 size = Vector2(16, 32)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pxh5y"]
+size = Vector2(2000, 500)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_erlxg"]
+size = Vector2(3000, 1000)
+
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_0h3a2")
 
 [node name="HealthComponent" parent="." instance=ExtResource("2_byd1l")]
+invincibility_time = 1.0
+metadata/_edit_lock_ = true
 
 [node name="HitboxArea2D" parent="HealthComponent" index="0"]
 collision_layer = 8
 collision_mask = 8
+input_pickable = false
+metadata/_edit_lock_ = true
 
 [node name="CollisionShape2D" parent="HealthComponent/HitboxArea2D" index="0"]
 shape = SubResource("RectangleShape2D_p50bg")
+metadata/_edit_lock_ = true
 
 [node name="ColorRect" type="ColorRect" parent="."]
 offset_left = -8.0
@@ -27,11 +38,39 @@ offset_top = -16.0
 offset_right = 8.0
 offset_bottom = 16.0
 color = Color(1, 0, 0, 1)
+metadata/_edit_lock_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_m75xs")
+metadata/_edit_lock_ = true
 
 [node name="CoyoteTimer" type="Timer" parent="."]
 one_shot = true
+
+[node name="AgroArea" type="Area2D" parent="."]
+visible = false
+collision_layer = 0
+collision_mask = 2
+input_pickable = false
+monitorable = false
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AgroArea"]
+shape = SubResource("RectangleShape2D_pxh5y")
+debug_color = Color(1, 0, 0, 0.313726)
+metadata/_edit_lock_ = true
+
+[node name="ActivationArea" type="Area2D" parent="."]
+visible = false
+collision_layer = 0
+collision_mask = 2
+input_pickable = false
+monitorable = false
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ActivationArea"]
+shape = SubResource("RectangleShape2D_erlxg")
+debug_color = Color(0, 0, 1, 0.313726)
+metadata/_edit_lock_ = true
 
 [editable path="HealthComponent"]
