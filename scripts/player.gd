@@ -9,6 +9,7 @@ const COYOTE_TIME : float = 0.1
 @onready var agro_area : Area2D = $AgroArea
 @onready var coyote_timer : Timer = $CoyoteTimer
 @onready var health_component : HealthComponent = $HealthComponent
+@onready var player_sprite_2d = $PlayerSprite2D
 
 var gravity : float = ProjectSettings.get_setting("physics/2d/default_gravity")
 
