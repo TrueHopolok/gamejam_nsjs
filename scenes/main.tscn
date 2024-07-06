@@ -1,24 +1,26 @@
-[gd_scene load_steps=6 format=3 uid="uid://c4slt7q6nlydc"]
+[gd_scene load_steps=9 format=3 uid="uid://c4slt7q6nlydc"]
 
 [ext_resource type="PackedScene" uid="uid://dus7affod732w" path="res://scenes/platform_static.tscn" id="1_741tv"]
 [ext_resource type="Texture2D" uid="uid://bh18leqmgaq43" path="res://sprites/background/BackMain.png" id="1_e7a14"]
 [ext_resource type="PackedScene" uid="uid://ij7m6pmoy6el" path="res://scenes/player.tscn" id="2_qdpul"]
+[ext_resource type="PackedScene" uid="uid://bcdtbjlbl3168" path="res://scenes/camera_limits/main_camera.tscn" id="3_dervd"]
 [ext_resource type="PackedScene" uid="uid://r5ln5caeihs4" path="res://scenes/platform_through.tscn" id="3_ge3iy"]
 [ext_resource type="PackedScene" uid="uid://c46l28oaydnpi" path="res://scenes/enemies/enemy_base.tscn" id="4_foysw"]
+[ext_resource type="PackedScene" uid="uid://swwegbxkb8g5" path="res://scenes/camera_limits/camera_searcher.tscn" id="6_5dp2s"]
+[ext_resource type="PackedScene" uid="uid://c4y7tdhxvw2ya" path="res://scenes/camera_limits/camera_limits.tscn" id="6_k7y5s"]
 
 [node name="Main" type="Node2D"]
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="Background" type="Sprite2D" parent="."]
 position = Vector2(2690, 1891)
 scale = Vector2(1.3, 1.3)
 texture = ExtResource("1_e7a14")
+metadata/_edit_lock_ = true
 
 [node name="Player" parent="." instance=ExtResource("2_qdpul")]
-position = Vector2(420, 150)
+position = Vector2(411, 226)
 
-[node name="Camera2D" type="Camera2D" parent="Player"]
-position = Vector2(1, -11)
-zoom = Vector2(1.5, 1.5)
+[node name="MainCamera" parent="Player" instance=ExtResource("3_dervd")]
 
 [node name="Through" parent="." instance=ExtResource("3_ge3iy")]
 position = Vector2(377, 292)
@@ -44,6 +46,11 @@ scale = Vector2(96.385, 1)
 
 [node name="Static16" parent="." instance=ExtResource("1_741tv")]
 position = Vector2(2085, 624)
+rotation = 1.5708
+scale = Vector2(32.745, 1)
+
+[node name="Static31" parent="." instance=ExtResource("1_741tv")]
+position = Vector2(69, 210)
 rotation = 1.5708
 scale = Vector2(32.745, 1)
 
@@ -171,6 +178,31 @@ position = Vector2(335, 346)
 
 [node name="MarkerRight" parent="EnemyBase2" index="1"]
 position = Vector2(75, -5)
+
+[node name="CameraSearcher" parent="." node_paths=PackedStringArray("camera_limits") instance=ExtResource("6_5dp2s")]
+position = Vector2(973, 218)
+scale = Vector2(106.6, 16.08)
+camera_limits = NodePath("../CameraLimits")
+
+[node name="CameraLimits" parent="." instance=ExtResource("6_k7y5s")]
+position = Vector2(619, 220)
+limit_left = 55
+limit_top = 20
+limit_right = 2135
+limit_bottom = 416
+
+[node name="CameraLimits2" parent="." instance=ExtResource("6_k7y5s")]
+position = Vector2(2424, 416)
+zoom = Vector2(1, 1)
+limit_left = 2031
+limit_top = 20
+limit_right = 2775
+limit_bottom = 790
+
+[node name="CameraSearcher2" parent="." node_paths=PackedStringArray("camera_limits") instance=ExtResource("6_5dp2s")]
+position = Vector2(2397, 398)
+scale = Vector2(34.44, 37.28)
+camera_limits = NodePath("../CameraLimits2")
 
 [editable path="EnemyBase"]
 [editable path="EnemyBase/HealthComponent"]
