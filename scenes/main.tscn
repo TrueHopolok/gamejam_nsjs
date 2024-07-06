@@ -1,10 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://c4slt7q6nlydc"]
+[gd_scene load_steps=5 format=3 uid="uid://c4slt7q6nlydc"]
 
 [ext_resource type="PackedScene" uid="uid://dus7affod732w" path="res://scenes/platform_static.tscn" id="1_741tv"]
 [ext_resource type="PackedScene" uid="uid://ij7m6pmoy6el" path="res://scenes/player.tscn" id="2_qdpul"]
 [ext_resource type="PackedScene" uid="uid://r5ln5caeihs4" path="res://scenes/platform_through.tscn" id="3_ge3iy"]
 [ext_resource type="PackedScene" uid="uid://c46l28oaydnpi" path="res://scenes/enemies/enemy_base.tscn" id="4_foysw"]
-[ext_resource type="PackedScene" uid="uid://v1xp2jakpw3a" path="res://scenes/projectile.tscn" id="5_dh6h7"]
 
 [node name="Main" type="Node2D"]
 
@@ -32,24 +31,6 @@ position = Vector2(335, 346)
 
 [node name="MarkerRight" parent="EnemyBase2" index="1"]
 position = Vector2(75, -5)
-
-[node name="Projectile" parent="." instance=ExtResource("5_dh6h7")]
-position = Vector2(454, 337)
-collision_layer = 8
-collision_mask = 8
-
-[node name="Projectile2" parent="." instance=ExtResource("5_dh6h7")]
-position = Vector2(395, 338)
-
-[node name="Projectile3" parent="." instance=ExtResource("5_dh6h7")]
-position = Vector2(597, 333)
-collision_layer = 8
-collision_mask = 8
-
-[node name="Projectile4" parent="." instance=ExtResource("5_dh6h7")]
-position = Vector2(1045, 319)
-collision_layer = 8
-collision_mask = 8
 
 [editable path="EnemyBase"]
 [editable path="EnemyBase/HealthComponent"]
