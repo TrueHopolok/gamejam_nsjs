@@ -2,7 +2,13 @@
 
 [ext_resource type="Script" path="res://scripts/components/shooting.gd" id="1_5iyn8"]
 
-[node name="Shooting" type="Node2D"]
+[node name="ShootingComponent" type="Node2D"]
 script = ExtResource("1_5iyn8")
 
-[node name="Marker2D" type="Marker2D" parent="."]
+[node name="SpawnMarker" type="Marker2D" parent="."]
+
+[node name="ReloadTimer" type="Timer" parent="."]
+one_shot = true
+
+[node name="IntervalTimer" type="Timer" parent="."]
+one_shot = true

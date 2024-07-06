@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://c46l28oaydnpi"]
+[gd_scene load_steps=6 format=3 uid="uid://c46l28oaydnpi"]
 
 [ext_resource type="Script" path="res://scripts/enemy.gd" id="1_dejmu"]
 [ext_resource type="PackedScene" uid="uid://cqm6yrv1c5lcm" path="res://scenes/components/health.tscn" id="1_kllwe"]
+[ext_resource type="PackedScene" uid="uid://dyjsv7l73o6nt" path="res://scenes/components/shooting.tscn" id="3_gyydm"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3fbvx"]
 size = Vector2(16, 32)
@@ -24,6 +25,11 @@ metadata/_edit_lock_ = true
 [node name="CollisionShape2D" parent="HealthComponent/HitboxArea2D" index="0"]
 shape = SubResource("RectangleShape2D_3fbvx")
 metadata/_edit_lock_ = true
+
+[node name="ShootingComponent" parent="." instance=ExtResource("3_gyydm")]
+
+[node name="SpawnMarker" parent="ShootingComponent" index="0"]
+position = Vector2(24, 0)
 
 [node name="MarkerRight" type="Marker2D" parent="."]
 position = Vector2(48, 0)
@@ -49,3 +55,4 @@ shape = SubResource("RectangleShape2D_llv2q")
 metadata/_edit_lock_ = true
 
 [editable path="HealthComponent"]
+[editable path="ShootingComponent"]
