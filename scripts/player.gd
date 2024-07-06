@@ -8,6 +8,7 @@ const COYOTE_TIME : float = 0.1
 @onready var agro_area : Area2D = $AgroArea
 @onready var coyote_timer : Timer = $CoyoteTimer
 @onready var health_component : HealthComponent = $HealthComponent
+@onready var player_sprite_2d = $PlayerSprite2D
 
 var gravity : float = ProjectSettings.get_setting("physics/2d/default_gravity")
 
@@ -56,6 +57,11 @@ func _move():
 		velocity.x = direction * SPEED
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
+	if velocity.x == 0:
+		player_sprite_2d.play("idle_side")
+	else:
+		player_sprite_2d.flip_h = velocity.x < 0 
+		player_sprite_2d.play("run_side")
 	
 	## Apply velocity vector and update coyote timer
 	move_and_slide()
