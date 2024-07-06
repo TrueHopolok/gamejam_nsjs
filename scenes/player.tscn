@@ -100,6 +100,21 @@ region = Rect2(672, 0, 96, 80)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_82cq0"]
 animations = [{
+"frames": [],
+"loop": true,
+"name": &"death",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"idle_down",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"idle_down45",
+"speed": 5.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_phjkg")
@@ -141,6 +156,31 @@ animations = [{
 "name": &"idle_side",
 "speed": 12.0
 }, {
+"frames": [],
+"loop": true,
+"name": &"idle_up",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"idle_up45",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"jump",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"run_down",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"run_down45",
+"speed": 5.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_k464p")
@@ -169,6 +209,16 @@ animations = [{
 "loop": true,
 "name": &"run_side",
 "speed": 12.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"run_up",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"run_up45",
+"speed": 5.0
 }]
 
 [node name="Player" type="CharacterBody2D" groups=["Player"]]
@@ -234,8 +284,7 @@ metadata/_edit_lock_ = true
 [node name="PlayerSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -8)
 sprite_frames = SubResource("SpriteFrames_82cq0")
-animation = &"run_side"
-frame_progress = 0.825278
+animation = &"death"
 
 [editable path="HealthComponent"]
 [editable path="ShootingComponent"]

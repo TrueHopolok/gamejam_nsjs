@@ -4,6 +4,7 @@
 size = Vector2(16, 16)
 
 [node name="Static" type="StaticBody2D"]
+collision_layer = 13
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_s5ky7")

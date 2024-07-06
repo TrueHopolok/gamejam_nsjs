@@ -17,10 +17,156 @@ scale = Vector2(1.3, 1.3)
 texture = ExtResource("1_e7a14")
 metadata/_edit_lock_ = true
 
+[node name="Statics" type="Node2D" parent="Background"]
+
+[node name="Static" parent="Background/Statics" instance=ExtResource("1_741tv")]
+position = Vector2(-1246.15, -1170)
+scale = Vector2(98.3269, 0.769231)
+
+[node name="Static3" parent="Background/Statics" instance=ExtResource("1_741tv")]
+position = Vector2(615.385, -1116.15)
+scale = Vector2(74.1423, 0.769231)
+
+[node name="Static11" parent="Background/Statics" instance=ExtResource("1_741tv")]
+position = Vector2(-474.615, 1187.69)
+scale = Vector2(65.8654, 0.769231)
+
+[node name="Static4" parent="Background/Statics" instance=ExtResource("1_741tv")]
+position = Vector2(-28.4615, -881.923)
+scale = Vector2(74.1423, 0.769231)
+
+[node name="Static16" parent="Background/Statics" instance=ExtResource("1_741tv")]
+position = Vector2(-465.385, -974.615)
+rotation = 1.5708
+scale = Vector2(25.1885, 0.769231)
+
+[node name="Static31" parent="Background/Statics" instance=ExtResource("1_741tv")]
+position = Vector2(-2016.15, -1293.08)
+rotation = 1.5708
+scale = Vector2(25.1885, 0.769231)
+
+[node name="Static20" parent="Background/Statics" instance=ExtResource("1_741tv")]
+position = Vector2(-1490, -120.769)
+rotation = 1.5708
+scale = Vector2(52.7577, 0.769231)
+
+[node name="Static24" parent="Background/Statics" instance=ExtResource("1_741tv")]
+position = Vector2(-483.077, 440.769)
+rotation = 1.5708
+scale = Vector2(52.7577, 0.769231)
+
+[node name="Static25" parent="Background/Statics" instance=ExtResource("1_741tv")]
+position = Vector2(-1490, 1016.15)
+rotation = 1.5708
+scale = Vector2(52.7577, 0.769231)
+
+[node name="Static26" parent="Background/Statics" instance=ExtResource("1_741tv")]
+position = Vector2(46.1538, 828.462)
+rotation = 1.5708
+scale = Vector2(45.3731, 0.769231)
+
+[node name="Static27" parent="Background/Statics" instance=ExtResource("1_741tv")]
+position = Vector2(540.769, 1203.08)
+rotation = 1.5708
+scale = Vector2(45.3731, 0.769231)
+
+[node name="Static28" parent="Background/Statics" instance=ExtResource("1_741tv")]
+position = Vector2(1052.31, 626.923)
+rotation = 1.5708
+scale = Vector2(45.3731, 0.769231)
+
+[node name="Static29" parent="Background/Statics" instance=ExtResource("1_741tv")]
+position = Vector2(558.462, 248.462)
+rotation = 1.5708
+scale = Vector2(45.3731, 0.769231)
+
+[node name="Static30" parent="Background/Statics" instance=ExtResource("1_741tv")]
+position = Vector2(1051.54, -720)
+rotation = 1.5708
+scale = Vector2(51.1577, 0.769231)
+
+[node name="Static17" parent="Background/Statics" instance=ExtResource("1_741tv")]
+position = Vector2(28.4617, -1311.54)
+rotation = 1.5708
+scale = Vector2(25.1885, 0.769231)
+
+[node name="Static18" parent="Background/Statics" instance=ExtResource("1_741tv")]
+position = Vector2(558.462, -708.462)
+rotation = 1.5708
+scale = Vector2(21.9269, 0.769231)
+
+[node name="Static21" parent="Background/Statics" instance=ExtResource("1_741tv")]
+position = Vector2(-996.154, -137.692)
+rotation = 1.5708
+scale = Vector2(21.9269, 0.769231)
+
+[node name="Static22" parent="Background/Statics" instance=ExtResource("1_741tv")]
+position = Vector2(-977.692, 438.462)
+rotation = 1.5708
+scale = Vector2(21.9269, 0.769231)
+
+[node name="Static23" parent="Background/Statics" instance=ExtResource("1_741tv")]
+position = Vector2(-996.154, 1015.38)
+rotation = 1.5708
+scale = Vector2(21.9269, 0.769231)
+
+[node name="Static14" parent="Background/Statics" instance=ExtResource("1_741tv")]
+position = Vector2(1639.23, 270)
+scale = Vector2(74.1423, 0.769231)
+
+[node name="Static15" parent="Background/Statics" instance=ExtResource("1_741tv")]
+position = Vector2(1323.85, 36.1539)
+scale = Vector2(98.8192, 0.769231)
+
+[node name="Static6" parent="Background/Statics" instance=ExtResource("1_741tv")]
+position = Vector2(-1259.23, 269.231)
+scale = Vector2(35.8654, 0.769231)
+
+[node name="Static7" parent="Background/Statics" instance=ExtResource("1_741tv")]
+position = Vector2(-1258.46, 611.539)
+scale = Vector2(35.8654, 0.769231)
+
+[node name="Static12" parent="Background/Statics" instance=ExtResource("1_741tv")]
+position = Vector2(821.539, 846.154)
+scale = Vector2(35.8654, 0.769231)
+
+[node name="Static13" parent="Background/Statics" instance=ExtResource("1_741tv")]
+position = Vector2(277.692, 612.308)
+scale = Vector2(35.8654, 0.769231)
+
+[node name="Static8" parent="Background/Statics" instance=ExtResource("1_741tv")]
+position = Vector2(-714.615, 36.1539)
+scale = Vector2(35.8654, 0.769231)
+
+[node name="Static9" parent="Background/Statics" instance=ExtResource("1_741tv")]
+position = Vector2(-714.615, 846.154)
+scale = Vector2(35.8654, 0.769231)
+
+[node name="Static2" parent="Background/Statics" instance=ExtResource("1_741tv")]
+position = Vector2(-1004.62, -1404.62)
+scale = Vector2(130.419, 0.769231)
+
+[node name="Static5" parent="Background/Statics" instance=ExtResource("1_741tv")]
+position = Vector2(42.3076, -306.923)
+scale = Vector2(130.419, 0.769231)
+
+[node name="Static19" parent="Background/Statics" instance=ExtResource("1_741tv")]
+position = Vector2(-490.769, -539.231)
+scale = Vector2(130.419, 0.769231)
+
+[node name="Static10" parent="Background/Statics" instance=ExtResource("1_741tv")]
+position = Vector2(-460, 1422.31)
+scale = Vector2(130.419, 0.769231)
+
+[node name="Throughs" type="Node2D" parent="Background"]
+
+[node name="CameraLimits" type="Node2D" parent="Background"]
+
 [node name="Player" parent="." instance=ExtResource("2_qdpul")]
-position = Vector2(411, 226)
+position = Vector2(95, 330)
 
 [node name="MainCamera" parent="Player" instance=ExtResource("3_dervd")]
+visible = false
 
 [node name="Through" parent="." instance=ExtResource("3_ge3iy")]
 position = Vector2(377, 292)
@@ -28,170 +174,34 @@ position = Vector2(377, 292)
 [node name="Through2" parent="." instance=ExtResource("3_ge3iy")]
 position = Vector2(510, 258)
 
-[node name="Static" parent="." instance=ExtResource("1_741tv")]
-position = Vector2(1070, 370)
-scale = Vector2(127.825, 1)
-
-[node name="Static3" parent="." instance=ExtResource("1_741tv")]
-position = Vector2(3490, 440)
-scale = Vector2(96.385, 1)
-
-[node name="Static11" parent="." instance=ExtResource("1_741tv")]
-position = Vector2(2073, 3435)
-scale = Vector2(85.625, 1)
-
-[node name="Static4" parent="." instance=ExtResource("1_741tv")]
-position = Vector2(2653, 744.5)
-scale = Vector2(96.385, 1)
-
-[node name="Static16" parent="." instance=ExtResource("1_741tv")]
-position = Vector2(2085, 624)
-rotation = 1.5708
-scale = Vector2(32.745, 1)
-
-[node name="Static31" parent="." instance=ExtResource("1_741tv")]
-position = Vector2(69, 210)
-rotation = 1.5708
-scale = Vector2(32.745, 1)
-
-[node name="Static20" parent="." instance=ExtResource("1_741tv")]
-position = Vector2(753, 1734)
-rotation = 1.5708
-scale = Vector2(68.585, 1)
-
-[node name="Static24" parent="." instance=ExtResource("1_741tv")]
-position = Vector2(2062, 2464)
-rotation = 1.5708
-scale = Vector2(68.585, 1)
-
-[node name="Static25" parent="." instance=ExtResource("1_741tv")]
-position = Vector2(753, 3212)
-rotation = 1.5708
-scale = Vector2(68.585, 1)
-
-[node name="Static26" parent="." instance=ExtResource("1_741tv")]
-position = Vector2(2750, 2968)
-rotation = 1.5708
-scale = Vector2(58.985, 1)
-
-[node name="Static27" parent="." instance=ExtResource("1_741tv")]
-position = Vector2(3393, 3455)
-rotation = 1.5708
-scale = Vector2(58.985, 1)
-
-[node name="Static28" parent="." instance=ExtResource("1_741tv")]
-position = Vector2(4058, 2706)
-rotation = 1.5708
-scale = Vector2(58.985, 1)
-
-[node name="Static29" parent="." instance=ExtResource("1_741tv")]
-position = Vector2(3416, 2214)
-rotation = 1.5708
-scale = Vector2(58.985, 1)
-
-[node name="Static30" parent="." instance=ExtResource("1_741tv")]
-position = Vector2(4057, 955)
-rotation = 1.5708
-scale = Vector2(66.505, 1)
-
-[node name="Static17" parent="." instance=ExtResource("1_741tv")]
-position = Vector2(2727, 186)
-rotation = 1.5708
-scale = Vector2(32.745, 1)
-
-[node name="Static18" parent="." instance=ExtResource("1_741tv")]
-position = Vector2(3416, 970)
-rotation = 1.5708
-scale = Vector2(28.505, 1)
-
-[node name="Static21" parent="." instance=ExtResource("1_741tv")]
-position = Vector2(1395, 1712)
-rotation = 1.5708
-scale = Vector2(28.505, 1)
-
-[node name="Static22" parent="." instance=ExtResource("1_741tv")]
-position = Vector2(1419, 2461)
-rotation = 1.5708
-scale = Vector2(28.505, 1)
-
-[node name="Static23" parent="." instance=ExtResource("1_741tv")]
-position = Vector2(1395, 3211)
-rotation = 1.5708
-scale = Vector2(28.505, 1)
-
-[node name="Static14" parent="." instance=ExtResource("1_741tv")]
-position = Vector2(4821, 2242)
-scale = Vector2(96.385, 1)
-
-[node name="Static15" parent="." instance=ExtResource("1_741tv")]
-position = Vector2(4411, 1938)
-scale = Vector2(128.465, 1)
-
-[node name="Static6" parent="." instance=ExtResource("1_741tv")]
-position = Vector2(1053, 2241)
-scale = Vector2(46.625, 1)
-
-[node name="Static7" parent="." instance=ExtResource("1_741tv")]
-position = Vector2(1054, 2686)
-scale = Vector2(46.625, 1)
-
-[node name="Static12" parent="." instance=ExtResource("1_741tv")]
-position = Vector2(3758, 2991)
-scale = Vector2(46.625, 1)
-
-[node name="Static13" parent="." instance=ExtResource("1_741tv")]
-position = Vector2(3051, 2687)
-scale = Vector2(46.625, 1)
-
-[node name="Static8" parent="." instance=ExtResource("1_741tv")]
-position = Vector2(1761, 1938)
-scale = Vector2(46.625, 1)
-
-[node name="Static9" parent="." instance=ExtResource("1_741tv")]
-position = Vector2(1761, 2991)
-scale = Vector2(46.625, 1)
-
-[node name="Static2" parent="." instance=ExtResource("1_741tv")]
-position = Vector2(1384, 65)
-scale = Vector2(169.545, 1)
-
-[node name="Static5" parent="." instance=ExtResource("1_741tv")]
-position = Vector2(2745, 1492)
-scale = Vector2(169.545, 1)
-
-[node name="Static19" parent="." instance=ExtResource("1_741tv")]
-position = Vector2(2052, 1190)
-scale = Vector2(169.545, 1)
-
-[node name="Static10" parent="." instance=ExtResource("1_741tv")]
-position = Vector2(2092, 3740)
-scale = Vector2(169.545, 1)
-
 [node name="EnemyBase" parent="." instance=ExtResource("4_foysw")]
 position = Vector2(520, 346)
 
-[node name="MarkerRight" parent="EnemyBase" index="1"]
+[node name="MarkerRight" parent="EnemyBase" index="2"]
 position = Vector2(109, 0)
 
 [node name="EnemyBase2" parent="." instance=ExtResource("4_foysw")]
-position = Vector2(335, 346)
+position = Vector2(436, 338)
 
-[node name="MarkerRight" parent="EnemyBase2" index="1"]
+[node name="MarkerRight" parent="EnemyBase2" index="2"]
 position = Vector2(75, -5)
 
-[node name="CameraSearcher" parent="." node_paths=PackedStringArray("camera_limits") instance=ExtResource("6_5dp2s")]
-position = Vector2(973, 218)
-scale = Vector2(106.6, 16.08)
-camera_limits = NodePath("../CameraLimits")
-
 [node name="CameraLimits" parent="." instance=ExtResource("6_k7y5s")]
+visible = false
 position = Vector2(619, 220)
 limit_left = 55
 limit_top = 20
 limit_right = 2135
 limit_bottom = 416
 
+[node name="CameraSearcher" parent="." node_paths=PackedStringArray("camera_limits") instance=ExtResource("6_5dp2s")]
+visible = false
+position = Vector2(973, 218)
+scale = Vector2(106.6, 16.08)
+camera_limits = NodePath("../CameraLimits")
+
 [node name="CameraLimits2" parent="." instance=ExtResource("6_k7y5s")]
+visible = false
 position = Vector2(2424, 416)
 zoom = Vector2(1, 1)
 limit_left = 2031
@@ -200,11 +210,14 @@ limit_right = 2775
 limit_bottom = 790
 
 [node name="CameraSearcher2" parent="." node_paths=PackedStringArray("camera_limits") instance=ExtResource("6_5dp2s")]
+visible = false
 position = Vector2(2397, 398)
 scale = Vector2(34.44, 37.28)
 camera_limits = NodePath("../CameraLimits2")
 
 [editable path="EnemyBase"]
 [editable path="EnemyBase/HealthComponent"]
+[editable path="EnemyBase/ShootingComponent"]
 [editable path="EnemyBase2"]
 [editable path="EnemyBase2/HealthComponent"]
+[editable path="EnemyBase2/ShootingComponent"]

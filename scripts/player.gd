@@ -42,12 +42,45 @@ func _ready():
 	activation_area.area_entered.connect(func(area : Area2D): activate_enemy(area, true))
 	activation_area.area_exited.connect(func(area : Area2D): activate_enemy(area, false))
 	agro_area.area_entered.connect(agro_enemy)
+	health_component.died.connect(_die)
 
 func _process(_delta):
 	_gravity()
+	if health_component.is_death:
+		move_and_slide()
+		return
 	_move()
+	var direction : Vector2 = get_look_direction()
 	if Input.is_action_pressed("shot"):
-		shooting_component.shoot(get_look_direction())
+		shooting_component.shoot(direction)
+	_animate(direction)
+
+func _die():
+	velocity.x = 0
+	animated_sprite.play("death")
+
+func _animate(direction : Vector2):
+	if velocity.x: 
+		animated_sprite.flip_h = velocity.x < 0
+	if not is_on_floor() and coyote_timer.is_stopped():
+		animated_sprite.play("jump")
+		return
+	var animation_name : String = "idle_"
+	if velocity.x:
+		animation_name = "run_"
+	if direction.y > 0:
+		if direction.y == 1:
+			animation_name += "down"
+		else:
+			animation_name += "down45" 
+	elif direction.y < 0:
+		if direction.y == -1:
+			animation_name += "up"
+		else:
+			animation_name += "up45"
+	else:
+		animation_name += "side"
+	animated_sprite.play(animation_name)
 
 func _gravity():
 	## Apply gravity

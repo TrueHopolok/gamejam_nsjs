@@ -9,9 +9,12 @@ signal died
 @onready var hitbox : Area2D = $HitboxArea2D
 @onready var invincibility_timer : Timer = $InvincibilityTimer
 
+var is_death : bool = false
 var health : float = max_health
 
 func health_reset(new_max_health : float = max_health):
+	hitbox.set_deferred("process_mode", Node.PROCESS_MODE_INHERIT)
+	is_death = false
 	max_health = new_max_health
 	health = max_health
 
@@ -25,8 +28,10 @@ func _damaged(area : Area2D):
 	if not is_instance_of(area, Projectile):
 		return
 	health -= area.damage
+	is_death = health <= 0.0
 	invincibility_timer.start(invincibility_time)
-	if health <= 0.0:
+	if is_death:
 		died.emit()
+		hitbox.set_deferred("process_mode", Node.PROCESS_MODE_DISABLED)
 	else:
 		injured.emit()

@@ -25,12 +25,6 @@ func _ready():
 func shoot(target_direction : Vector2, damage : float = 1.0):
 	if not reload_timer.is_stopped() or not interval_timer.is_stopped():
 		return
-	shot.emit()
-	interval_timer.start(shot_interval_time)
-	ammo_left -= 1
-	if ammo_left <= 0:
-		reload_started.emit()
-		reload_timer.start(reload_time)
 	spawn_marker.position = target_direction * spawn_marker.position.length()
 	var projectile_node : Projectile
 	if is_enemy:
@@ -41,4 +35,10 @@ func shoot(target_direction : Vector2, damage : float = 1.0):
 	projectile_node.global_position = spawn_marker.global_position
 	projectile_node.direction = target_direction
 	projectile_node.damage = damage
+	shot.emit()
+	interval_timer.start(shot_interval_time)
+	ammo_left -= 1
+	if ammo_left <= 0:
+		reload_started.emit()
+		reload_timer.start(reload_time)
 	
