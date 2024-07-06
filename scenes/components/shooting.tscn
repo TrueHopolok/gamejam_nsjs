@@ -1,9 +1,9 @@
 [gd_scene load_steps=2 format=3 uid="uid://dyjsv7l73o6nt"]
 
-[ext_resource type="Script" path="res://scripts/components/shooting.gd" id="1_5iyn8"]
+[ext_resource type="Script" path="res://scripts/in_game_objects/shooting_component.gd" id="1_we68h"]
 
 [node name="ShootingComponent" type="Node2D"]
-script = ExtResource("1_5iyn8")
+script = ExtResource("1_we68h")
 
 [node name="SpawnMarker" type="Marker2D" parent="."]
 

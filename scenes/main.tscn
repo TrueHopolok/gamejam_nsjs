@@ -1,10 +1,10 @@
 [gd_scene load_steps=9 format=3 uid="uid://c4slt7q6nlydc"]
 
-[ext_resource type="PackedScene" uid="uid://dus7affod732w" path="res://scenes/platform_static.tscn" id="1_741tv"]
+[ext_resource type="PackedScene" uid="uid://dus7affod732w" path="res://scenes/platforms/platform_static.tscn" id="1_741tv"]
 [ext_resource type="Texture2D" uid="uid://bh18leqmgaq43" path="res://sprites/background/BackMain.png" id="1_e7a14"]
 [ext_resource type="PackedScene" uid="uid://ij7m6pmoy6el" path="res://scenes/player.tscn" id="2_qdpul"]
 [ext_resource type="PackedScene" uid="uid://bcdtbjlbl3168" path="res://scenes/camera_limits/main_camera.tscn" id="3_dervd"]
-[ext_resource type="PackedScene" uid="uid://r5ln5caeihs4" path="res://scenes/platform_through.tscn" id="3_ge3iy"]
+[ext_resource type="PackedScene" uid="uid://r5ln5caeihs4" path="res://scenes/platforms/platform_through.tscn" id="3_ge3iy"]
 [ext_resource type="PackedScene" uid="uid://c46l28oaydnpi" path="res://scenes/enemies/enemy_base.tscn" id="4_foysw"]
 [ext_resource type="PackedScene" uid="uid://swwegbxkb8g5" path="res://scenes/camera_limits/camera_searcher.tscn" id="6_5dp2s"]
 [ext_resource type="PackedScene" uid="uid://c4y7tdhxvw2ya" path="res://scenes/camera_limits/camera_limits.tscn" id="6_k7y5s"]

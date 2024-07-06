@@ -1,9 +1,9 @@
 [gd_scene load_steps=2 format=3 uid="uid://cqm6yrv1c5lcm"]
 
-[ext_resource type="Script" path="res://scripts/components/health.gd" id="1_r1ht2"]
+[ext_resource type="Script" path="res://scripts/in_game_objects/health_component.gd" id="1_offis"]
 
 [node name="HealthComponent" type="Node2D"]
-script = ExtResource("1_r1ht2")
+script = ExtResource("1_offis")
 
 [node name="HitboxArea2D" type="Area2D" parent="."]
 

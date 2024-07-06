@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://v1xp2jakpw3a"]
 
-[ext_resource type="Script" path="res://scripts/projectile.gd" id="1_w5vdw"]
+[ext_resource type="Script" path="res://scripts/in_game_objects/projectile.gd" id="1_rtmy0"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_spfh7"]
 radius = 5.65685
@@ -8,7 +8,7 @@ radius = 5.65685
 [node name="ProjectilePlayer" type="Area2D"]
 collision_layer = 4
 collision_mask = 4
-script = ExtResource("1_w5vdw")
+script = ExtResource("1_rtmy0")
 speed = 6.0
 
 [node name="ColorRect" type="ColorRect" parent="."]

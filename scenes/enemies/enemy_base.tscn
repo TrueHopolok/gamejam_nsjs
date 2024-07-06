@@ -1,6 +1,6 @@
 [gd_scene load_steps=20 format=3 uid="uid://c46l28oaydnpi"]
 
-[ext_resource type="Script" path="res://scripts/enemy.gd" id="1_dejmu"]
+[ext_resource type="Script" path="res://scripts/in_game_objects/enemy.gd" id="1_1x7ml"]
 [ext_resource type="PackedScene" uid="uid://cqm6yrv1c5lcm" path="res://scenes/components/health.tscn" id="1_kllwe"]
 [ext_resource type="PackedScene" uid="uid://dyjsv7l73o6nt" path="res://scenes/components/shooting.tscn" id="3_gyydm"]
 [ext_resource type="Texture2D" uid="uid://cmyiqy11qcv16" path="res://sprites/player/Player_idle.png" id="4_0y8ar"]
@@ -130,7 +130,7 @@ animations = [{
 
 [node name="EnemyBase" type="Node2D"]
 process_mode = 4
-script = ExtResource("1_dejmu")
+script = ExtResource("1_1x7ml")
 
 [node name="HealthComponent" parent="." instance=ExtResource("1_kllwe")]
 metadata/_edit_lock_ = true
@@ -168,7 +168,7 @@ metadata/_edit_lock_ = true
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -8)
 sprite_frames = SubResource("SpriteFrames_vde5t")
-animation = &"idle_side"
+animation = &"idle_down45"
 
 [editable path="HealthComponent"]
 [editable path="ShootingComponent"]

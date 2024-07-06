@@ -1,6 +1,6 @@
 [gd_scene load_steps=31 format=3 uid="uid://ij7m6pmoy6el"]
 
-[ext_resource type="Script" path="res://scripts/player.gd" id="1_0h3a2"]
+[ext_resource type="Script" path="res://scripts/in_game_objects/player.gd" id="1_yayqq"]
 [ext_resource type="PackedScene" uid="uid://cqm6yrv1c5lcm" path="res://scenes/components/health.tscn" id="2_byd1l"]
 [ext_resource type="PackedScene" uid="uid://dyjsv7l73o6nt" path="res://scenes/components/shooting.tscn" id="3_3ivw5"]
 [ext_resource type="Texture2D" uid="uid://cmyiqy11qcv16" path="res://sprites/player/Player_idle.png" id="3_aah4k"]
@@ -222,7 +222,7 @@ animations = [{
 }]
 
 [node name="Player" type="CharacterBody2D" groups=["Player"]]
-script = ExtResource("1_0h3a2")
+script = ExtResource("1_yayqq")
 
 [node name="HealthComponent" parent="." instance=ExtResource("2_byd1l")]
 invincibility_time = 1.0
@@ -285,7 +285,7 @@ metadata/_edit_lock_ = true
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -8)
 sprite_frames = SubResource("SpriteFrames_82cq0")
-animation = &"death"
+animation = &"idle_side"
 
 [editable path="HealthComponent"]
 [editable path="ShootingComponent"]
