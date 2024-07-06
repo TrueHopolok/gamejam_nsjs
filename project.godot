@@ -63,6 +63,7 @@ shot={
 2d_physics/layer_2="Activation"
 2d_physics/layer_3="EnemyHitboxes"
 2d_physics/layer_4="PlayerHitboxes"
+2d_physics/layer_6="CameraArea"
 
 [physics]
 
