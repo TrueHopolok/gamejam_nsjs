@@ -2,6 +2,8 @@ class_name Enemy extends Node2D
 
 const SPEED : float = 1
 
+@export var reward_on_death : int = 1
+
 @onready var health_component : HealthComponent = $HealthComponent
 @onready var shooting_component : ShootingComponent = $ShootingComponent
 @onready var animated_sprite : AnimatedSprite2D = $AnimatedSprite2D
@@ -52,7 +54,7 @@ func _animate(direction : Vector2):
 	animated_sprite.play(animation_name)
 
 func _die():
-	Global.stats["money"] += 1
+	Global.stats["money"] += reward_on_death
 	animated_sprite.play("death")
 
 func _move():

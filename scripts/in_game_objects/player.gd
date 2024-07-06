@@ -60,9 +60,13 @@ func _process(_delta):
 		return
 	_move()
 	var direction : Vector2 = get_look_direction()
-	if Input.is_action_pressed("shot"):
-		shooting_component.shoot(direction)
 	_animate(direction)
+	if Input.is_action_pressed("shot"):
+		if animated_sprite.flip_h:
+			shooting_component.position.x = -4
+		else:
+			shooting_component.position.x = 4
+		shooting_component.shoot(direction)
 
 func _die():
 	velocity.x = 0
