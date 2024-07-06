@@ -12,7 +12,7 @@ signal died
 var is_death : bool = false
 var health : float
 
-func health_reset(new_max_health : float = max_health):
+func reset(new_max_health : float):
 	hitbox.set_deferred("process_mode", Node.PROCESS_MODE_INHERIT)
 	is_death = false
 	max_health = new_max_health

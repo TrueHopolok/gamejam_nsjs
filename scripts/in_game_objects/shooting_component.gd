@@ -12,6 +12,7 @@ signal reload_finished
 @onready var reload_timer : Timer = $ReloadTimer
 @onready var interval_timer : Timer = $IntervalTimer
 
+var damage : float = 1.0
 var ammo_left : int = max_ammo_amount
 var is_enemy : bool
 
@@ -22,7 +23,14 @@ func _ready():
 		ammo_left = max_ammo_amount
 	)
 
-func shoot(target_direction : Vector2, damage : float = 1.0):
+func reset(new_reload_time : float, new_shot_interval_time : float, new_max_ammo_amount : int, new_damage : float):
+	reload_time = new_reload_time
+	shot_interval_time = new_shot_interval_time
+	max_ammo_amount = new_max_ammo_amount
+	ammo_left = max_ammo_amount
+	damage = new_damage
+
+func shoot(target_direction : Vector2):
 	if not reload_timer.is_stopped() or not interval_timer.is_stopped():
 		return
 	spawn_marker.position = target_direction * spawn_marker.position.length()

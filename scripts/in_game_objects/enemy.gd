@@ -52,6 +52,7 @@ func _animate(direction : Vector2):
 	animated_sprite.play(animation_name)
 
 func _die():
+	Global.stats["money"] += 1
 	animated_sprite.play("death")
 
 func _move():

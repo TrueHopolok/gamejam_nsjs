@@ -43,6 +43,15 @@ func _ready():
 	activation_area.area_exited.connect(func(area : Area2D): activate_enemy(area, false))
 	agro_area.area_entered.connect(agro_enemy)
 	health_component.died.connect(_die)
+	health_component.reset(
+		1 + Global.stats["health"]
+	)
+	shooting_component.reset(
+		5 - 0.3 * Global.stats["reload"],
+		1 - 0.1 * Global.stats["rpm"],
+		6 + Global.stats["ammo"],
+		1 + Global.stats["damage"],
+	)
 
 func _process(_delta):
 	_gravity()
@@ -72,13 +81,17 @@ func _animate(direction : Vector2):
 	if direction.y > 0:
 		if direction.y == 1:
 			animation_name += "down"
+		elif animation_name != "idle_":
+			animation_name += "down45"
 		else:
-			animation_name += "down45" 
+			animation_name += "down"
 	elif direction.y < 0:
 		if direction.y == -1:
 			animation_name += "up"
-		else:
+		elif animation_name != "idle_":
 			animation_name += "up45"
+		else:
+			animation_name += "up"
 	else:
 		animation_name += "side"
 	animated_sprite.play(animation_name)
