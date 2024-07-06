@@ -1,4 +1,13 @@
-[gd_scene format=3 uid="uid://dypu2om0rxebg"]
+[gd_scene load_steps=9 format=3 uid="uid://dypu2om0rxebg"]
+
+[ext_resource type="Script" path="res://scripts/upgrade_menu/button_mainmenu.gd" id="1_38rmm"]
+[ext_resource type="Script" path="res://scripts/upgrade_menu/label_points.gd" id="1_ig136"]
+[ext_resource type="Script" path="res://scripts/upgrade_menu/button_hp.gd" id="1_xgbsm"]
+[ext_resource type="Script" path="res://scripts/upgrade_menu/button_gamestart.gd" id="2_p7ag0"]
+[ext_resource type="Script" path="res://scripts/upgrade_menu/button_reload.gd" id="2_t65eh"]
+[ext_resource type="Script" path="res://scripts/upgrade_menu/button_ammo.gd" id="3_12e53"]
+[ext_resource type="Script" path="res://scripts/upgrade_menu/button_dmg.gd" id="4_ftiyb"]
+[ext_resource type="Script" path="res://scripts/upgrade_menu/button_rpm.gd" id="5_hdm1c"]
 
 [node name="UpgradeMenu" type="CanvasLayer"]
 
@@ -18,7 +27,7 @@ offset_right = 992.0
 offset_bottom = 255.0
 color = Color(0, 0, 0, 0.294118)
 
-[node name="Label_Info" type="RichTextLabel" parent="colorrect"]
+[node name="Label_Info" type="RichTextLabel" parent="colorrect" groups=["Info"]]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -50,6 +59,7 @@ vertical_alignment = 1
 layout_mode = 2
 size_flags_vertical = 3
 text = "hp++"
+script = ExtResource("1_xgbsm")
 
 [node name="ProgressBar" type="ProgressBar" parent="UpgradeContainer/Button_HP"]
 layout_mode = 0
@@ -64,6 +74,7 @@ show_percentage = false
 layout_mode = 2
 size_flags_vertical = 3
 text = "reload_time--"
+script = ExtResource("2_t65eh")
 
 [node name="ProgressBar" type="ProgressBar" parent="UpgradeContainer/Button_ReloadTime"]
 layout_mode = 0
@@ -78,6 +89,7 @@ show_percentage = false
 layout_mode = 2
 size_flags_vertical = 3
 text = "bullet_amount++"
+script = ExtResource("3_12e53")
 
 [node name="ProgressBar" type="ProgressBar" parent="UpgradeContainer/Button_BulletAmount"]
 layout_mode = 0
@@ -92,6 +104,7 @@ show_percentage = false
 layout_mode = 2
 size_flags_vertical = 3
 text = "dmg++"
+script = ExtResource("4_ftiyb")
 
 [node name="ProgressBar" type="ProgressBar" parent="UpgradeContainer/Button_DMG"]
 layout_mode = 0
@@ -106,6 +119,7 @@ show_percentage = false
 layout_mode = 2
 size_flags_vertical = 3
 text = "rpm++"
+script = ExtResource("5_hdm1c")
 
 [node name="ProgressBar" type="ProgressBar" parent="UpgradeContainer/Button_RPM"]
 layout_mode = 0
@@ -124,6 +138,7 @@ offset_bottom = 288.0
 text = "Your upgrade points: 999999"
 horizontal_alignment = 1
 vertical_alignment = 1
+script = ExtResource("1_ig136")
 
 [node name="Button_MainMenu" type="Button" parent="."]
 offset_left = 64.0
@@ -131,6 +146,7 @@ offset_top = 448.0
 offset_right = 256.0
 offset_bottom = 544.0
 text = "Exit to main menu"
+script = ExtResource("1_38rmm")
 
 [node name="Button_StartGame" type="Button" parent="."]
 offset_left = 352.0
@@ -138,3 +154,4 @@ offset_top = 448.0
 offset_right = 544.0
 offset_bottom = 544.0
 text = "Start run"
+script = ExtResource("2_p7ag0")

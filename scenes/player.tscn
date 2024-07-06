@@ -675,5 +675,8 @@ position = Vector2(-1, -8)
 sprite_frames = SubResource("SpriteFrames_82cq0")
 animation = &"idle_side"
 
+[node name="DeathTimer" type="Timer" parent="."]
+one_shot = true
+
 [editable path="HealthComponent"]
 [editable path="ShootingComponent"]

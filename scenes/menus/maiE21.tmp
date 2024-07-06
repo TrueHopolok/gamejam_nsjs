@@ -1,0 +1,45 @@
+[gd_scene load_steps=4 format=3 uid="uid://dpwnfyo05j2a1"]
+
+[ext_resource type="Script" path="res://scripts/main_menu/button_continue.gd" id="1_8gg12"]
+[ext_resource type="Script" path="res://scripts/main_menu/button_resetprogress.gd" id="1_g65uv"]
+[ext_resource type="Script" path="res://scripts/main_menu/confirm_menu.gd" id="2_oh1y1"]
+
+[node name="MainMenu" type="CanvasLayer"]
+
+[node name="title" type="Label" parent="."]
+offset_left = 256.0
+offset_top = 32.0
+offset_right = 768.0
+offset_bottom = 128.0
+text = "Covid Prequel"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button_Continue" type="Button" parent="."]
+offset_left = 416.0
+offset_top = 192.0
+offset_right = 608.0
+offset_bottom = 256.0
+focus_mode = 0
+text = "Continue"
+script = ExtResource("1_8gg12")
+
+[node name="Button_ResetProgress" type="Button" parent="."]
+offset_left = 416.0
+offset_top = 320.0
+offset_right = 608.0
+offset_bottom = 384.0
+focus_mode = 0
+text = "Reset progress"
+script = ExtResource("1_g65uv")
+
+[node name="ConfirmationDialog" type="ConfirmationDialog" parent="Button_ResetProgress"]
+title = "Reset progress"
+position = Vector2i(410, 228)
+size = Vector2i(200, 120)
+always_on_top = true
+ok_button_text = "YES"
+dialog_text = "Are you really want to
+reset all your progress?"
+cancel_button_text = "NO"
+script = ExtResource("2_oh1y1")

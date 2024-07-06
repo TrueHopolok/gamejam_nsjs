@@ -32,7 +32,7 @@ func _damaged(area : Area2D):
 	is_death = health <= 0.0
 	invincibility_timer.start(invincibility_time)
 	if is_death:
-		died.emit()
 		hitbox.set_deferred("process_mode", Node.PROCESS_MODE_DISABLED)
+		died.emit()
 	else:
 		injured.emit()

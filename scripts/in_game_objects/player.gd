@@ -46,6 +46,7 @@ func _ready():
 	health_component.reset(
 		1 + Global.stats["health"]
 	)
+	health_component.invincibility_timer.start(5.0)
 	shooting_component.reset(
 		5 - 0.3 * Global.stats["reload"],
 		1 - 0.1 * Global.stats["rpm"],
@@ -72,6 +73,9 @@ func _die():
 	velocity.x = 0
 	animated_sprite.play("death")
 	$MainCamera.zoom = Vector2(3, 3)
+	$DeathTimer.start(2.0)
+	await $DeathTimer.timeout
+	TransitionScreen.change_scene("res://scenes/menus/upgrade_menu.tscn")
 
 func _animate(direction : Vector2):
 	if velocity.x: 

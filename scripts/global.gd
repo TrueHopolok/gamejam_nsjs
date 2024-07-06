@@ -1,6 +1,14 @@
 extends Node
 
-const SAVE_FILE_PATH : String = "covid.json"
+const SAVE_FILE_PATH : String = "user://covid.json"
+
+var motivational_quotes : Array[String] = \
+[
+	"Don't give up!",
+	"You can do it!",
+	"Improve, evolve, win!",
+	"Say no to losing!",
+]
 
 var stats : Dictionary = \
 {
@@ -23,6 +31,18 @@ func _ready():
 	for key in packed_scenes:
 		assert(packed_scenes[key] != null, name + ": packed_scenes[" + key + "] is null")
 	load_progress()
+
+func reset_progress():
+	stats = \
+{
+	"money" = 0,
+	"health" = 0,
+	"damage" = 0,
+	"rpm" = 0,
+	"reload" = 0,
+	"ammo" = 0
+}
+	save_progress()
 
 func load_progress():
 	if not FileAccess.file_exists(SAVE_FILE_PATH):
