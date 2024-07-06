@@ -163,7 +163,7 @@ scale = Vector2(130.419, 0.769231)
 [node name="CameraLimits" type="Node2D" parent="Background"]
 
 [node name="Player" parent="." instance=ExtResource("2_qdpul")]
-position = Vector2(95, 330)
+position = Vector2(96, 319)
 
 [node name="MainCamera" parent="Player" instance=ExtResource("3_dervd")]
 visible = false
@@ -172,16 +172,16 @@ visible = false
 position = Vector2(377, 292)
 
 [node name="Through2" parent="." instance=ExtResource("3_ge3iy")]
-position = Vector2(510, 258)
+position = Vector2(508, 271)
 
 [node name="EnemyBase" parent="." instance=ExtResource("4_foysw")]
-position = Vector2(520, 346)
+position = Vector2(520, 330)
 
 [node name="MarkerRight" parent="EnemyBase" index="2"]
 position = Vector2(109, 0)
 
 [node name="EnemyBase2" parent="." instance=ExtResource("4_foysw")]
-position = Vector2(436, 338)
+position = Vector2(413, 330)
 
 [node name="MarkerRight" parent="EnemyBase2" index="2"]
 position = Vector2(75, -5)

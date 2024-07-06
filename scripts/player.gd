@@ -10,7 +10,7 @@ const COYOTE_TIME : float = 0.1
 @onready var coyote_timer : Timer = $CoyoteTimer
 @onready var health_component : HealthComponent = $HealthComponent
 @onready var shooting_component : ShootingComponent = $ShootingComponent
-@onready var animated_sprite = $PlayerSprite2D
+@onready var animated_sprite : AnimatedSprite2D = $AnimatedSprite2D
 
 var gravity : float = ProjectSettings.get_setting("physics/2d/default_gravity")
 
@@ -58,6 +58,7 @@ func _process(_delta):
 func _die():
 	velocity.x = 0
 	animated_sprite.play("death")
+	$MainCamera.zoom = Vector2(3, 3)
 
 func _animate(direction : Vector2):
 	if velocity.x: 
