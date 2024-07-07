@@ -20,6 +20,16 @@ var stats : Dictionary = \
 	"ammo" = 0
 }
 
+var shooting_streams : Array[AudioStream] = \
+[
+	preload("res://sound/shot_sound_1.wav"),
+	preload("res://sound/shot_sound_2.wav"),
+	preload("res://sound/shot_sound_3.wav"),
+	preload("res://sound/shot_sound_4.wav"),
+	preload("res://sound/shot_sound_5.wav"),
+	preload("res://sound/shot_sound_6.wav"),
+]
+
 var packed_scenes : Dictionary = \
 {
 	"projectile_player" = preload("res://scenes/projectiles/projectile_player.tscn"),

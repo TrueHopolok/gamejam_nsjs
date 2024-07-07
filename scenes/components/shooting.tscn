@@ -12,3 +12,5 @@ one_shot = true
 
 [node name="IntervalTimer" type="Timer" parent="."]
 one_shot = true
+
+[node name="ShootingAudio" type="AudioStreamPlayer2D" parent="."]

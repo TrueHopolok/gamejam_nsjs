@@ -1,4 +1,4 @@
-[gd_scene load_steps=126 format=3 uid="uid://ij7m6pmoy6el"]
+[gd_scene load_steps=130 format=3 uid="uid://ij7m6pmoy6el"]
 
 [ext_resource type="Script" path="res://scripts/in_game_objects/player.gd" id="1_yayqq"]
 [ext_resource type="PackedScene" uid="uid://cqm6yrv1c5lcm" path="res://scenes/components/health.tscn" id="2_byd1l"]
@@ -17,6 +17,10 @@
 [ext_resource type="Texture2D" uid="uid://c5heff7vecjwk" path="res://sprites/player/player_run_up.png" id="10_urk4q"]
 [ext_resource type="Texture2D" uid="uid://0uev2gmxybti" path="res://sprites/player/player_run_45_up.png" id="11_peq8m"]
 [ext_resource type="Texture2D" uid="uid://bb22u6qrt40x7" path="res://sprites/player/Player_jump_45_up.png" id="11_wy7jr"]
+[ext_resource type="AudioStream" uid="uid://cwi6rj2x2hgh4" path="res://sound/damaged.mp3" id="18_wuj6s"]
+[ext_resource type="AudioStream" uid="uid://1dt0lq770w8k" path="res://sound/death_sound.wav" id="19_08l0h"]
+[ext_resource type="AudioStream" uid="uid://dilocvf8bsggo" path="res://sound/clip-empty_sound.mp3" id="19_umfxt"]
+[ext_resource type="AudioStream" uid="uid://bfnul7mrj5d5n" path="res://sound/reload.mp3" id="21_cbvwq"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_p50bg"]
 size = Vector2(6.5, 26)
@@ -896,6 +900,21 @@ one_shot = true
 
 [node name="DamagedTimer" type="Timer" parent="."]
 one_shot = true
+
+[node name="DamagedAudio" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("18_wuj6s")
+bus = &"SFX"
+
+[node name="EmptyClipAudio" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("19_umfxt")
+bus = &"SFX"
+
+[node name="DeathAudio" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("19_08l0h")
+bus = &"SFX"
+
+[node name="ReloadAudio" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("21_cbvwq")
 
 [editable path="HealthComponent"]
 [editable path="ShootingComponent"]

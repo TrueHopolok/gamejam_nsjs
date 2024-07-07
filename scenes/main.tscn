@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://c4slt7q6nlydc"]
+[gd_scene load_steps=20 format=3 uid="uid://c4slt7q6nlydc"]
 
 [ext_resource type="PackedScene" uid="uid://dus7affod732w" path="res://scenes/platforms/platform_static.tscn" id="1_741tv"]
 [ext_resource type="Texture2D" uid="uid://bh18leqmgaq43" path="res://sprites/background/BackMain.png" id="1_e7a14"]
@@ -18,6 +18,9 @@
 [ext_resource type="PackedScene" uid="uid://bshk81afbpav7" path="res://scenes/platforms/scaffoldings/platform_through_scaffolding_2.tscn" id="12_gh43b"]
 [ext_resource type="PackedScene" uid="uid://br7mrbccmqhv4" path="res://scenes/platforms/scaffoldings/platform_through_scaffolding_3.tscn" id="13_yf6ty"]
 [ext_resource type="PackedScene" uid="uid://iqqamnl8ipm5" path="res://scenes/platforms/tiles/platform_throught_tile_3.tscn" id="14_7702b"]
+[ext_resource type="AudioStream" uid="uid://2ahnb6txhkrb" path="res://music/in_game_music_start.wav" id="14_qo51u"]
+[ext_resource type="AudioStream" uid="uid://dro863fj6ag8t" path="res://music/in_game_music_loop.wav" id="15_gpt0f"]
+[ext_resource type="Script" path="res://scripts/in_game_music.gd" id="15_he0c5"]
 
 [node name="Main" type="Node2D"]
 
@@ -556,6 +559,18 @@ position = Vector2(3645, 1259)
 
 [node name="Through24" parent="." instance=ExtResource("13_yf6ty")]
 position = Vector2(3645, 1196)
+
+[node name="BGmusic" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("14_qo51u")
+volume_db = -20.0
+autoplay = true
+bus = &"Music"
+script = ExtResource("15_he0c5")
+
+[node name="Loop" type="AudioStreamPlayer" parent="BGmusic"]
+stream = ExtResource("15_gpt0f")
+volume_db = -20.0
+bus = &"Music"
 
 [editable path="Objects/Enemies/EnemyRegular"]
 [editable path="Objects/Enemies/EnemyRegular/HealthComponent"]

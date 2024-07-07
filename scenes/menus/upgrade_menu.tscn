@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://dypu2om0rxebg"]
+[gd_scene load_steps=19 format=3 uid="uid://dypu2om0rxebg"]
 
 [ext_resource type="Texture2D" uid="uid://bbmc0a7rsi3iy" path="res://sprites/background/upgrade_menu_bg.png" id="1_1lv0e"]
 [ext_resource type="Script" path="res://scripts/upgrade_menu/button_mainmenu.gd" id="1_38rmm"]
@@ -13,6 +13,9 @@
 [ext_resource type="Script" path="res://scripts/upgrade_menu/button_dmg.gd" id="4_ftiyb"]
 [ext_resource type="FontFile" uid="uid://dj3378tphcjri" path="res://fonts/6809_Chargen.otf" id="5_c1pp2"]
 [ext_resource type="Script" path="res://scripts/upgrade_menu/button_rpm.gd" id="5_hdm1c"]
+[ext_resource type="PackedScene" uid="uid://58qlwwe0dgtb" path="res://scenes/UI_audio.tscn" id="7_pxmqi"]
+[ext_resource type="AudioStream" uid="uid://ca2l81moimekm" path="res://music/menu_music.wav" id="15_hom45"]
+[ext_resource type="Script" path="res://scripts/infinite_music.gd" id="16_6isrv"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_djkuh"]
 bg_color = Color(0.270588, 0.270588, 0.270588, 0.682353)
@@ -126,6 +129,8 @@ horizontal_alignment = 1
 vertical_alignment = 1
 metadata/_edit_lock_ = true
 
+[node name="UiAudio" parent="UpgradeContainer/Button_HP" instance=ExtResource("7_pxmqi")]
+
 [node name="Button_ReloadTime" type="TextureButton" parent="UpgradeContainer"]
 layout_mode = 2
 size_flags_vertical = 3
@@ -137,6 +142,7 @@ stretch_mode = 0
 script = ExtResource("2_t65eh")
 
 [node name="ProgressBar" type="ProgressBar" parent="UpgradeContainer/Button_ReloadTime"]
+layout_mode = 0
 offset_left = 27.0
 offset_top = 50.0
 offset_right = 517.0
@@ -163,6 +169,8 @@ horizontal_alignment = 1
 vertical_alignment = 1
 metadata/_edit_lock_ = true
 
+[node name="UiAudio" parent="UpgradeContainer/Button_ReloadTime" instance=ExtResource("7_pxmqi")]
+
 [node name="Button_BulletAmount" type="TextureButton" parent="UpgradeContainer"]
 layout_mode = 2
 size_flags_vertical = 3
@@ -174,6 +182,7 @@ stretch_mode = 0
 script = ExtResource("3_12e53")
 
 [node name="ProgressBar" type="ProgressBar" parent="UpgradeContainer/Button_BulletAmount"]
+layout_mode = 0
 offset_left = 27.0
 offset_top = 50.0
 offset_right = 517.0
@@ -200,6 +209,8 @@ horizontal_alignment = 1
 vertical_alignment = 1
 metadata/_edit_lock_ = true
 
+[node name="UiAudio" parent="UpgradeContainer/Button_BulletAmount" instance=ExtResource("7_pxmqi")]
+
 [node name="Button_DMG" type="TextureButton" parent="UpgradeContainer"]
 layout_mode = 2
 size_flags_vertical = 3
@@ -211,6 +222,7 @@ stretch_mode = 0
 script = ExtResource("4_ftiyb")
 
 [node name="ProgressBar" type="ProgressBar" parent="UpgradeContainer/Button_DMG"]
+layout_mode = 0
 offset_left = 27.0
 offset_top = 50.0
 offset_right = 517.0
@@ -237,6 +249,8 @@ horizontal_alignment = 1
 vertical_alignment = 1
 metadata/_edit_lock_ = true
 
+[node name="UiAudio" parent="UpgradeContainer/Button_DMG" instance=ExtResource("7_pxmqi")]
+
 [node name="Button_RPM" type="TextureButton" parent="UpgradeContainer"]
 layout_mode = 2
 size_flags_vertical = 3
@@ -248,6 +262,7 @@ stretch_mode = 0
 script = ExtResource("5_hdm1c")
 
 [node name="ProgressBar" type="ProgressBar" parent="UpgradeContainer/Button_RPM"]
+layout_mode = 0
 offset_left = 27.0
 offset_top = 50.0
 offset_right = 517.0
@@ -272,6 +287,8 @@ text = "Fire rate upgrade"
 horizontal_alignment = 1
 vertical_alignment = 1
 metadata/_edit_lock_ = true
+
+[node name="UiAudio" parent="UpgradeContainer/Button_RPM" instance=ExtResource("7_pxmqi")]
 
 [node name="Label_Points" type="Label" parent="."]
 offset_left = 608.0
@@ -311,6 +328,8 @@ vertical_alignment = 1
 autowrap_mode = 2
 metadata/_edit_lock_ = true
 
+[node name="UiAudio" parent="Button_MainMenu" instance=ExtResource("7_pxmqi")]
+
 [node name="Button_StartGame" type="TextureButton" parent="."]
 offset_left = 352.0
 offset_top = 448.0
@@ -337,3 +356,10 @@ horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2
 metadata/_edit_lock_ = true
+
+[node name="UiAudio" parent="Button_StartGame" instance=ExtResource("7_pxmqi")]
+
+[node name="BGmusic" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("15_hom45")
+autoplay = true
+script = ExtResource("16_6isrv")
