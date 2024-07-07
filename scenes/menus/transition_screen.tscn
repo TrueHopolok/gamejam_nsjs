@@ -1,6 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://kuy084muulw1"]
+[gd_scene load_steps=7 format=3 uid="uid://kuy084muulw1"]
 
 [ext_resource type="Script" path="res://scripts/transition_screen.gd" id="1_mo717"]
+[ext_resource type="FontFile" uid="uid://dj3378tphcjri" path="res://fonts/6809_Chargen.otf" id="2_axk3r"]
 
 [sub_resource type="Animation" id="Animation_gxhdh"]
 length = 0.001
@@ -147,19 +148,23 @@ offset_top = 512.0
 offset_right = 768.0
 offset_bottom = 576.0
 theme_override_colors/font_color = Color(0, 0, 0, 0)
+theme_override_fonts/font = ExtResource("2_axk3r")
 text = "Loading . . ."
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Label_Motivation" type="Label" parent="."]
 offset_left = 256.0
-offset_top = 224.0
+offset_top = 128.0
 offset_right = 768.0
-offset_bottom = 288.0
+offset_bottom = 416.0
 theme_override_colors/font_color = Color(0, 0, 0, 0)
-text = "Quote"
+theme_override_fonts/font = ExtResource("2_axk3r")
+text = "English or Spanish?
+Whoever moves first is gay..."
 horizontal_alignment = 1
 vertical_alignment = 1
+autowrap_mode = 2
 
 [node name="Timer" type="Timer" parent="."]
 one_shot = true

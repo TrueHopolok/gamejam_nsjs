@@ -85,6 +85,7 @@ func _process(_delta):
 		shooting_component.shoot(direction)
 
 func _die():
+	Global.stats["death"] += 1
 	$DeathAudio.play()
 	velocity.x = 0
 	animated_sprite.play("death")

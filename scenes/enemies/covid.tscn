@@ -1,0 +1,26 @@
+[gd_scene load_steps=5 format=3 uid="uid://6bdw7mw27l2l"]
+
+[ext_resource type="Script" path="res://scripts/in_game_objects/covid.gd" id="1_shrqd"]
+[ext_resource type="Texture2D" uid="uid://cxkdu8kycjmti" path="res://sprites/enemy/covid.png" id="2_lkrux"]
+[ext_resource type="PackedScene" uid="uid://cqm6yrv1c5lcm" path="res://scenes/components/health.tscn" id="3_img04"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_n2pf7"]
+size = Vector2(64, 64)
+
+[node name="Covid" type="Node2D"]
+script = ExtResource("1_shrqd")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(9.53674e-07, 9.53674e-07)
+scale = Vector2(2, 2)
+texture = ExtResource("2_lkrux")
+
+[node name="HealthComponent" parent="." instance=ExtResource("3_img04")]
+max_health = 0.1
+
+[node name="CollisionShape2D" parent="HealthComponent/HitboxArea2D" index="0"]
+shape = SubResource("RectangleShape2D_n2pf7")
+
+[node name="DeathAudio" type="AudioStreamPlayer" parent="."]
+
+[editable path="HealthComponent"]
