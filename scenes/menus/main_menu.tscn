@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://dpwnfyo05j2a1"]
+[gd_scene load_steps=15 format=3 uid="uid://dpwnfyo05j2a1"]
 
 [ext_resource type="Script" path="res://scripts/main_menu/button_continue.gd" id="1_8gg12"]
 [ext_resource type="Script" path="res://scripts/main_menu/button_resetprogress.gd" id="1_g65uv"]
@@ -6,6 +6,11 @@
 [ext_resource type="Script" path="res://scripts/main_menu/confirm_menu.gd" id="2_oh1y1"]
 [ext_resource type="Texture2D" uid="uid://daqvniqyedolm" path="res://sprites/main_menu/Menu_train.png" id="2_ybwgk"]
 [ext_resource type="Script" path="res://scripts/main_menu/menu_train.gd" id="3_yj4hg"]
+[ext_resource type="FontFile" uid="uid://c55xtvkxrgge6" path="res://fonts/1001fonts-karmatic-arcade-eula.ttf" id="4_htbc5"]
+[ext_resource type="Texture2D" uid="uid://dymh8mgykmgfn" path="res://sprites/buttons/button.png" id="5_x1lms"]
+[ext_resource type="Texture2D" uid="uid://hn78sq0mi6o0" path="res://sprites/buttons/button_pressed.png" id="6_doy3f"]
+[ext_resource type="Texture2D" uid="uid://b1tsruyfd4kxk" path="res://sprites/buttons/button_hovered.png" id="7_pbgf5"]
+[ext_resource type="FontFile" uid="uid://dj3378tphcjri" path="res://fonts/6809_Chargen.otf" id="9_gbo6c"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_rbgbj"]
 atlas = ExtResource("2_ybwgk")
@@ -35,6 +40,7 @@ animations = [{
 position = Vector2(512, 288)
 scale = Vector2(2, 2)
 texture = ExtResource("1_ixyfj")
+metadata/_edit_lock_ = true
 
 [node name="AnimatedSpriteTrain" type="AnimatedSprite2D" parent="."]
 position = Vector2(1124, 299)
@@ -42,32 +48,55 @@ scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_t31xg")
 autoplay = "default"
 script = ExtResource("3_yj4hg")
+metadata/_edit_lock_ = true
 
 [node name="title" type="Label" parent="."]
-offset_left = 256.0
-offset_top = 32.0
-offset_right = 768.0
-offset_bottom = 128.0
+offset_left = 167.0
+offset_top = 19.0
+offset_right = 931.0
+offset_bottom = 115.0
+theme_override_fonts/font = ExtResource("4_htbc5")
+theme_override_font_sizes/font_size = 66
 text = "Covid Prequel"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Button_Continue" type="Button" parent="."]
-offset_left = 416.0
-offset_top = 367.0
-offset_right = 608.0
+[node name="Button_Continue" type="TextureButton" parent="."]
+offset_left = 448.0
+offset_top = 393.0
+offset_right = 573.0
 offset_bottom = 431.0
 focus_mode = 0
-text = "Play"
+texture_normal = ExtResource("5_x1lms")
+texture_pressed = ExtResource("6_doy3f")
+texture_hover = ExtResource("7_pbgf5")
+stretch_mode = 0
 script = ExtResource("1_8gg12")
 
-[node name="Button_ResetProgress" type="Button" parent="."]
-offset_left = 416.0
-offset_top = 447.0
-offset_right = 608.0
-offset_bottom = 511.0
+[node name="Label" type="Label" parent="Button_Continue"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("9_gbo6c")
+text = "Play"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_lock_ = true
+
+[node name="Button_ResetProgress" type="TextureButton" parent="."]
+offset_left = 448.0
+offset_top = 439.0
+offset_right = 573.0
+offset_bottom = 486.0
 focus_mode = 0
-text = "Reset progress"
+texture_normal = ExtResource("5_x1lms")
+texture_pressed = ExtResource("6_doy3f")
+texture_hover = ExtResource("7_pbgf5")
+stretch_mode = 0
 script = ExtResource("1_g65uv")
 
 [node name="ConfirmationDialog" type="ConfirmationDialog" parent="Button_ResetProgress"]
@@ -80,3 +109,19 @@ dialog_text = "Are you really want to
 reset all your progress?"
 cancel_button_text = "NO"
 script = ExtResource("2_oh1y1")
+
+[node name="Label" type="Label" parent="Button_ResetProgress"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("9_gbo6c")
+theme_override_font_sizes/font_size = 0
+text = "Reset progress"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+metadata/_edit_lock_ = true

@@ -1,21 +1,52 @@
-[gd_scene load_steps=9 format=3 uid="uid://dypu2om0rxebg"]
+[gd_scene load_steps=16 format=3 uid="uid://dypu2om0rxebg"]
 
+[ext_resource type="Texture2D" uid="uid://bbmc0a7rsi3iy" path="res://sprites/background/upgrade_menu_bg.png" id="1_1lv0e"]
 [ext_resource type="Script" path="res://scripts/upgrade_menu/button_mainmenu.gd" id="1_38rmm"]
 [ext_resource type="Script" path="res://scripts/upgrade_menu/label_points.gd" id="1_ig136"]
+[ext_resource type="Texture2D" uid="uid://dymh8mgykmgfn" path="res://sprites/buttons/button.png" id="1_l7nat"]
 [ext_resource type="Script" path="res://scripts/upgrade_menu/button_hp.gd" id="1_xgbsm"]
+[ext_resource type="Texture2D" uid="uid://hn78sq0mi6o0" path="res://sprites/buttons/button_pressed.png" id="2_3ckuw"]
 [ext_resource type="Script" path="res://scripts/upgrade_menu/button_gamestart.gd" id="2_p7ag0"]
 [ext_resource type="Script" path="res://scripts/upgrade_menu/button_reload.gd" id="2_t65eh"]
+[ext_resource type="Texture2D" uid="uid://b1tsruyfd4kxk" path="res://sprites/buttons/button_hovered.png" id="3_1n4mc"]
 [ext_resource type="Script" path="res://scripts/upgrade_menu/button_ammo.gd" id="3_12e53"]
 [ext_resource type="Script" path="res://scripts/upgrade_menu/button_dmg.gd" id="4_ftiyb"]
+[ext_resource type="FontFile" uid="uid://dj3378tphcjri" path="res://fonts/6809_Chargen.otf" id="5_c1pp2"]
 [ext_resource type="Script" path="res://scripts/upgrade_menu/button_rpm.gd" id="5_hdm1c"]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_djkuh"]
+bg_color = Color(0.270588, 0.270588, 0.270588, 0.682353)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_iroqj"]
+bg_color = Color(0, 0.721569, 0.258824, 0.698039)
+
 [node name="UpgradeMenu" type="CanvasLayer"]
+
+[node name="UpgradeMenuBg" type="Sprite2D" parent="."]
+position = Vector2(512.5, 288.5)
+scale = Vector2(1.99415, 1.63818)
+texture = ExtResource("1_1lv0e")
+metadata/_edit_lock_ = true
+
+[node name="ColorRect" type="ColorRect" parent="UpgradeMenuBg"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -256.5
+offset_top = -175.5
+offset_right = -256.5
+offset_bottom = -175.5
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.705882)
+metadata/_edit_lock_ = true
 
 [node name="infotitle" type="Label" parent="."]
 offset_left = 615.0
 offset_top = 32.0
 offset_right = 967.0
 offset_bottom = 55.0
+theme_override_fonts/font = ExtResource("5_c1pp2")
 text = "Upgrade info:"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -38,6 +69,7 @@ offset_right = -8.0
 offset_bottom = -3.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_fonts/normal_font = ExtResource("5_c1pp2")
 bbcode_enabled = true
 text = "..."
 autowrap_mode = 2
@@ -51,107 +83,257 @@ offset_bottom = 416.0
 
 [node name="title" type="Label" parent="UpgradeContainer"]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("5_c1pp2")
 text = "Upgrade choice:"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Button_HP" type="Button" parent="UpgradeContainer"]
+[node name="Button_HP" type="TextureButton" parent="UpgradeContainer"]
 layout_mode = 2
 size_flags_vertical = 3
-text = "hp++"
+focus_mode = 0
+texture_normal = ExtResource("1_l7nat")
+texture_pressed = ExtResource("2_3ckuw")
+texture_hover = ExtResource("3_1n4mc")
+stretch_mode = 0
 script = ExtResource("1_xgbsm")
 
 [node name="ProgressBar" type="ProgressBar" parent="UpgradeContainer/Button_HP"]
 layout_mode = 0
+offset_left = 27.0
 offset_top = 50.0
-offset_right = 544.0
+offset_right = 517.0
 offset_bottom = 68.0
+theme_override_styles/background = SubResource("StyleBoxFlat_djkuh")
+theme_override_styles/fill = SubResource("StyleBoxFlat_iroqj")
 max_value = 9.0
 step = 1.0
+value = 9.0
 show_percentage = false
 
-[node name="Button_ReloadTime" type="Button" parent="UpgradeContainer"]
+[node name="Label" type="Label" parent="UpgradeContainer/Button_HP"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("5_c1pp2")
+theme_override_font_sizes/font_size = 32
+text = "Health upgrade"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_lock_ = true
+
+[node name="Button_ReloadTime" type="TextureButton" parent="UpgradeContainer"]
 layout_mode = 2
 size_flags_vertical = 3
-text = "reload_time--"
+focus_mode = 0
+texture_normal = ExtResource("1_l7nat")
+texture_pressed = ExtResource("2_3ckuw")
+texture_hover = ExtResource("3_1n4mc")
+stretch_mode = 0
 script = ExtResource("2_t65eh")
 
 [node name="ProgressBar" type="ProgressBar" parent="UpgradeContainer/Button_ReloadTime"]
-layout_mode = 0
+offset_left = 27.0
 offset_top = 50.0
-offset_right = 544.0
+offset_right = 517.0
 offset_bottom = 68.0
+theme_override_styles/background = SubResource("StyleBoxFlat_djkuh")
+theme_override_styles/fill = SubResource("StyleBoxFlat_iroqj")
 max_value = 9.0
 step = 1.0
+value = 6.0
 show_percentage = false
 
-[node name="Button_BulletAmount" type="Button" parent="UpgradeContainer"]
+[node name="Label" type="Label" parent="UpgradeContainer/Button_ReloadTime"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("5_c1pp2")
+theme_override_font_sizes/font_size = 32
+text = "Reload upgrade"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_lock_ = true
+
+[node name="Button_BulletAmount" type="TextureButton" parent="UpgradeContainer"]
 layout_mode = 2
 size_flags_vertical = 3
-text = "bullet_amount++"
+focus_mode = 0
+texture_normal = ExtResource("1_l7nat")
+texture_pressed = ExtResource("2_3ckuw")
+texture_hover = ExtResource("3_1n4mc")
+stretch_mode = 0
 script = ExtResource("3_12e53")
 
 [node name="ProgressBar" type="ProgressBar" parent="UpgradeContainer/Button_BulletAmount"]
-layout_mode = 0
+offset_left = 27.0
 offset_top = 50.0
-offset_right = 544.0
+offset_right = 517.0
 offset_bottom = 68.0
+theme_override_styles/background = SubResource("StyleBoxFlat_djkuh")
+theme_override_styles/fill = SubResource("StyleBoxFlat_iroqj")
 max_value = 9.0
 step = 1.0
+value = 5.0
 show_percentage = false
 
-[node name="Button_DMG" type="Button" parent="UpgradeContainer"]
+[node name="Label" type="Label" parent="UpgradeContainer/Button_BulletAmount"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("5_c1pp2")
+theme_override_font_sizes/font_size = 32
+text = "Clip capacity upgrade"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_lock_ = true
+
+[node name="Button_DMG" type="TextureButton" parent="UpgradeContainer"]
 layout_mode = 2
 size_flags_vertical = 3
-text = "dmg++"
+focus_mode = 0
+texture_normal = ExtResource("1_l7nat")
+texture_pressed = ExtResource("2_3ckuw")
+texture_hover = ExtResource("3_1n4mc")
+stretch_mode = 0
 script = ExtResource("4_ftiyb")
 
 [node name="ProgressBar" type="ProgressBar" parent="UpgradeContainer/Button_DMG"]
-layout_mode = 0
+offset_left = 27.0
 offset_top = 50.0
-offset_right = 544.0
+offset_right = 517.0
 offset_bottom = 68.0
+theme_override_styles/background = SubResource("StyleBoxFlat_djkuh")
+theme_override_styles/fill = SubResource("StyleBoxFlat_iroqj")
 max_value = 9.0
 step = 1.0
+value = 2.0
 show_percentage = false
 
-[node name="Button_RPM" type="Button" parent="UpgradeContainer"]
+[node name="Label" type="Label" parent="UpgradeContainer/Button_DMG"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("5_c1pp2")
+theme_override_font_sizes/font_size = 32
+text = "Damage upgrade"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_lock_ = true
+
+[node name="Button_RPM" type="TextureButton" parent="UpgradeContainer"]
 layout_mode = 2
 size_flags_vertical = 3
-text = "rpm++"
+focus_mode = 0
+texture_normal = ExtResource("1_l7nat")
+texture_pressed = ExtResource("2_3ckuw")
+texture_hover = ExtResource("3_1n4mc")
+stretch_mode = 0
 script = ExtResource("5_hdm1c")
 
 [node name="ProgressBar" type="ProgressBar" parent="UpgradeContainer/Button_RPM"]
-layout_mode = 0
+offset_left = 27.0
 offset_top = 50.0
-offset_right = 544.0
+offset_right = 517.0
 offset_bottom = 68.0
+theme_override_styles/background = SubResource("StyleBoxFlat_djkuh")
+theme_override_styles/fill = SubResource("StyleBoxFlat_iroqj")
 max_value = 9.0
 step = 1.0
 show_percentage = false
+
+[node name="Label" type="Label" parent="UpgradeContainer/Button_RPM"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("5_c1pp2")
+theme_override_font_sizes/font_size = 32
+text = "Fire rate upgrade"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_lock_ = true
 
 [node name="Label_Points" type="Label" parent="."]
 offset_left = 608.0
 offset_top = 256.0
 offset_right = 992.0
 offset_bottom = 288.0
+theme_override_fonts/font = ExtResource("5_c1pp2")
 text = "Your upgrade points: 999999"
 horizontal_alignment = 1
 vertical_alignment = 1
 script = ExtResource("1_ig136")
 
-[node name="Button_MainMenu" type="Button" parent="."]
+[node name="Button_MainMenu" type="TextureButton" parent="."]
 offset_left = 64.0
 offset_top = 448.0
 offset_right = 256.0
 offset_bottom = 544.0
-text = "Exit to main menu"
+focus_mode = 0
+texture_normal = ExtResource("1_l7nat")
+texture_pressed = ExtResource("2_3ckuw")
+texture_hover = ExtResource("3_1n4mc")
+stretch_mode = 0
 script = ExtResource("1_38rmm")
 
-[node name="Button_StartGame" type="Button" parent="."]
+[node name="Label" type="Label" parent="Button_MainMenu"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("5_c1pp2")
+text = "Exit to main menu"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+metadata/_edit_lock_ = true
+
+[node name="Button_StartGame" type="TextureButton" parent="."]
 offset_left = 352.0
 offset_top = 448.0
 offset_right = 544.0
 offset_bottom = 544.0
-text = "Start run"
+focus_mode = 0
+texture_normal = ExtResource("1_l7nat")
+texture_pressed = ExtResource("2_3ckuw")
+texture_hover = ExtResource("3_1n4mc")
+stretch_mode = 0
 script = ExtResource("2_p7ag0")
+
+[node name="Label" type="Label" parent="Button_StartGame"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("5_c1pp2")
+text = "Start game"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+metadata/_edit_lock_ = true

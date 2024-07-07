@@ -1,11 +1,14 @@
-[gd_scene load_steps=7 format=3 uid="uid://c4slt7q6nlydc"]
+[gd_scene load_steps=10 format=3 uid="uid://c4slt7q6nlydc"]
 
 [ext_resource type="PackedScene" uid="uid://dus7affod732w" path="res://scenes/platforms/platform_static.tscn" id="1_741tv"]
 [ext_resource type="Texture2D" uid="uid://bh18leqmgaq43" path="res://sprites/background/BackMain.png" id="1_e7a14"]
 [ext_resource type="PackedScene" uid="uid://ij7m6pmoy6el" path="res://scenes/player.tscn" id="2_qdpul"]
 [ext_resource type="PackedScene" uid="uid://bcdtbjlbl3168" path="res://scenes/camera_limits/main_camera.tscn" id="3_dervd"]
-[ext_resource type="PackedScene" uid="uid://swwegbxkb8g5" path="res://scenes/camera_limits/camera_searcher.tscn" id="6_5dp2s"]
-[ext_resource type="PackedScene" uid="uid://c4y7tdhxvw2ya" path="res://scenes/camera_limits/camera_limits.tscn" id="6_k7y5s"]
+[ext_resource type="PackedScene" uid="uid://dbg7kq0lv2tw5" path="res://scenes/platforms/tiles/platform_throught_tile_5.tscn" id="4_s33ey"]
+[ext_resource type="FontFile" uid="uid://dj3378tphcjri" path="res://fonts/6809_Chargen.otf" id="5_cla8x"]
+[ext_resource type="PackedScene" uid="uid://bleqpbyv7jq0l" path="res://scenes/platforms/scaffoldings/platform_through_scaffolding_1.tscn" id="5_hbgub"]
+[ext_resource type="FontFile" uid="uid://c55xtvkxrgge6" path="res://fonts/1001fonts-karmatic-arcade-eula.ttf" id="6_ofuhl"]
+[ext_resource type="PackedScene" uid="uid://6o1gmx22iosr" path="res://scenes/enemies/enemy_afk.tscn" id="7_s2tfx"]
 
 [node name="Main" type="Node2D"]
 
@@ -156,43 +159,95 @@ scale = Vector2(130.419, 0.769231)
 position = Vector2(-460, 1422.31)
 scale = Vector2(130.419, 0.769231)
 
+[node name="Throughs" type="Node2D" parent="Background"]
+z_index = 2
+position = Vector2(-0.769287, 0.769287)
+
+[node name="Through" parent="Background/Throughs" instance=ExtResource("5_hbgub")]
+position = Vector2(-1803.85, -1207.69)
+scale = Vector2(0.769231, 0.769231)
+
+[node name="Through2" parent="Background/Throughs" instance=ExtResource("4_s33ey")]
+position = Vector2(-1550.77, -1229.23)
+scale = Vector2(0.769231, 0.769231)
+
 [node name="CameraLimits" type="Node2D" parent="Background"]
 
+[node name="Tutorial" type="Control" parent="Background"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Label" type="RichTextLabel" parent="Background/Tutorial"]
+layout_mode = 0
+offset_left = -1956.15
+offset_top = -1349.23
+offset_right = -1878.15
+offset_bottom = -1300.23
+theme_override_fonts/normal_font = ExtResource("5_cla8x")
+theme_override_fonts/bold_font = ExtResource("6_ofuhl")
+bbcode_enabled = true
+text = "[center][color=red][b]A[/b][/color] and [color=red][b]D[/b][/color]
+to move"
+
+[node name="Label2" type="RichTextLabel" parent="Background/Tutorial"]
+layout_mode = 0
+offset_left = -1858.08
+offset_top = -1350.0
+offset_right = -1783.08
+offset_bottom = -1301.0
+theme_override_fonts/normal_font = ExtResource("5_cla8x")
+theme_override_fonts/bold_font = ExtResource("6_ofuhl")
+bbcode_enabled = true
+text = "[center][color=red][b]L[/b][/color]
+to jump"
+
+[node name="Label4" type="RichTextLabel" parent="Background/Tutorial"]
+layout_mode = 0
+offset_left = -1758.46
+offset_top = -1348.46
+offset_right = -1685.46
+offset_bottom = -1299.46
+theme_override_fonts/normal_font = ExtResource("5_cla8x")
+theme_override_fonts/bold_font = ExtResource("6_ofuhl")
+bbcode_enabled = true
+text = "[center][color=red][b]WASD[/b][/color]
+to aim"
+
+[node name="Label3" type="RichTextLabel" parent="Background/Tutorial"]
+layout_mode = 0
+offset_left = -1662.62
+offset_top = -1349.0
+offset_right = -1582.62
+offset_bottom = -1300.0
+theme_override_fonts/normal_font = ExtResource("5_cla8x")
+theme_override_fonts/bold_font = ExtResource("6_ofuhl")
+bbcode_enabled = true
+text = "[center]hold [color=red][b]K[/b][/color]
+to shoot"
+
+[node name="Label5" type="RichTextLabel" parent="Background/Tutorial"]
+layout_mode = 0
+offset_left = -1553.08
+offset_top = -1349.23
+offset_right = -1350.08
+offset_bottom = -1300.23
+theme_override_fonts/normal_font = ExtResource("5_cla8x")
+theme_override_fonts/bold_font = ExtResource("6_ofuhl")
+bbcode_enabled = true
+text = "[center]hold [color=red][b]D[/b][/color] and press [color=red][b]L[/b][/color]
+to drop from platform"
+
 [node name="Player" parent="." instance=ExtResource("2_qdpul")]
-position = Vector2(96, 319)
+z_index = 1
+position = Vector2(199, 330)
 
 [node name="MainCamera" parent="Player" instance=ExtResource("3_dervd")]
-visible = false
+metadata/_edit_lock_ = true
 
-[node name="Throughs" type="Node2D" parent="."]
-position = Vector2(2690, 1891)
-scale = Vector2(1.3, 1.3)
+[node name="EnemyAfk" parent="." instance=ExtResource("7_s2tfx")]
+position = Vector2(582, 243)
 
-[node name="CameraLimits" parent="." instance=ExtResource("6_k7y5s")]
-visible = false
-position = Vector2(619, 220)
-limit_left = 55
-limit_top = 20
-limit_right = 2135
-limit_bottom = 416
-
-[node name="CameraSearcher" parent="." node_paths=PackedStringArray("camera_limits") instance=ExtResource("6_5dp2s")]
-visible = false
-position = Vector2(973, 218)
-scale = Vector2(106.6, 16.08)
-camera_limits = NodePath("../CameraLimits")
-
-[node name="CameraLimits2" parent="." instance=ExtResource("6_k7y5s")]
-visible = false
-position = Vector2(2424, 416)
-zoom = Vector2(1, 1)
-limit_left = 2031
-limit_top = 20
-limit_right = 2775
-limit_bottom = 790
-
-[node name="CameraSearcher2" parent="." node_paths=PackedStringArray("camera_limits") instance=ExtResource("6_5dp2s")]
-visible = false
-position = Vector2(2397, 398)
-scale = Vector2(34.44, 37.28)
-camera_limits = NodePath("../CameraLimits2")
+[node name="Marker2D" type="Marker2D" parent="."]
+position = Vector2(1180, 223)
