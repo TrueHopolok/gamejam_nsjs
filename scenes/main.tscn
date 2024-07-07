@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://c4slt7q6nlydc"]
+[gd_scene load_steps=14 format=3 uid="uid://c4slt7q6nlydc"]
 
 [ext_resource type="PackedScene" uid="uid://dus7affod732w" path="res://scenes/platforms/platform_static.tscn" id="1_741tv"]
 [ext_resource type="Texture2D" uid="uid://bh18leqmgaq43" path="res://sprites/background/BackMain.png" id="1_e7a14"]
@@ -10,6 +10,9 @@
 [ext_resource type="FontFile" uid="uid://c55xtvkxrgge6" path="res://fonts/1001fonts-karmatic-arcade-eula.ttf" id="6_ofuhl"]
 [ext_resource type="PackedScene" uid="uid://6o1gmx22iosr" path="res://scenes/enemies/enemy_afk.tscn" id="7_s2tfx"]
 [ext_resource type="PackedScene" uid="uid://df7gvcnt8483j" path="res://scenes/ui.tscn" id="10_p4lq6"]
+[ext_resource type="PackedScene" uid="uid://dg5p7mrrejob7" path="res://scenes/enemies/enemy_regular.tscn" id="11_exeqb"]
+[ext_resource type="PackedScene" uid="uid://bshk81afbpav7" path="res://scenes/platforms/scaffoldings/platform_through_scaffolding_2.tscn" id="12_gh43b"]
+[ext_resource type="PackedScene" uid="uid://br7mrbccmqhv4" path="res://scenes/platforms/scaffoldings/platform_through_scaffolding_3.tscn" id="13_yf6ty"]
 
 [node name="Main" type="Node2D"]
 
@@ -160,9 +163,11 @@ scale = Vector2(130.419, 0.769231)
 position = Vector2(-460, 1422.31)
 scale = Vector2(130.419, 0.769231)
 
+[node name="CameraLimits" type="Node2D" parent="Background"]
+
 [node name="Throughs" type="Node2D" parent="Background"]
 z_index = 2
-position = Vector2(-0.769287, 0.769287)
+position = Vector2(-0.769287, 0.769409)
 
 [node name="Through" parent="Background/Throughs" instance=ExtResource("5_hbgub")]
 position = Vector2(-1803.85, -1207.69)
@@ -172,7 +177,42 @@ scale = Vector2(0.769231, 0.769231)
 position = Vector2(-1550.77, -1229.23)
 scale = Vector2(0.769231, 0.769231)
 
-[node name="CameraLimits" type="Node2D" parent="Background"]
+[node name="Through3" parent="Background/Throughs" instance=ExtResource("5_hbgub")]
+position = Vector2(-1245.38, -1207.69)
+scale = Vector2(0.769231, 0.769231)
+
+[node name="Through4" parent="Background/Throughs" instance=ExtResource("12_gh43b")]
+position = Vector2(-1136.92, -1207.69)
+scale = Vector2(0.769231, 0.769231)
+
+[node name="Through5" parent="Background/Throughs" instance=ExtResource("12_gh43b")]
+position = Vector2(-1016.15, -1207.69)
+scale = Vector2(0.769231, 0.769231)
+
+[node name="Through6" parent="Background/Throughs" instance=ExtResource("13_yf6ty")]
+position = Vector2(-1245.38, -1267.69)
+scale = Vector2(0.769231, 0.769231)
+
+[node name="Through7" parent="Background/Throughs" instance=ExtResource("13_yf6ty")]
+position = Vector2(-1136.92, -1266.15)
+scale = Vector2(0.769231, 0.769231)
+
+[node name="Enemies" type="Node2D" parent="Background"]
+
+[node name="EnemyAfk" parent="Background/Enemies" instance=ExtResource("7_s2tfx")]
+position = Vector2(-1621.54, -1267.69)
+scale = Vector2(0.769231, 0.769231)
+
+[node name="EnemyRegular" parent="Background/Enemies" instance=ExtResource("11_exeqb")]
+position = Vector2(-1093.85, -1200)
+scale = Vector2(0.769231, 0.769231)
+
+[node name="EnemyRegular2" parent="Background/Enemies" instance=ExtResource("11_exeqb")]
+position = Vector2(-1017.69, -1260.77)
+scale = Vector2(0.769231, 0.769231)
+
+[node name="MarkerRight" parent="Background/Enemies/EnemyRegular2" index="2"]
+position = Vector2(7, 0)
 
 [node name="Tutorial" type="Control" parent="Background"]
 layout_mode = 3
@@ -247,10 +287,8 @@ position = Vector2(199, 330)
 [node name="MainCamera" parent="Player" instance=ExtResource("3_dervd")]
 metadata/_edit_lock_ = true
 
-[node name="Marker2D" type="Marker2D" parent="."]
-position = Vector2(1180, 223)
-
 [node name="UI" parent="." instance=ExtResource("10_p4lq6")]
 
-[node name="EnemyAfk" parent="." instance=ExtResource("7_s2tfx")]
-position = Vector2(582, 243)
+[editable path="Background/Enemies/EnemyRegular2"]
+[editable path="Background/Enemies/EnemyRegular2/HealthComponent"]
+[editable path="Background/Enemies/EnemyRegular2/ShootingComponent"]
