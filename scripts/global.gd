@@ -27,6 +27,7 @@ var packed_scenes : Dictionary = \
 }
 
 func _ready():
+	process_mode = Node.PROCESS_MODE_ALWAYS
 	Engine.max_fps = 60
 	for key in packed_scenes:
 		assert(packed_scenes[key] != null, name + ": packed_scenes[" + key + "] is null")

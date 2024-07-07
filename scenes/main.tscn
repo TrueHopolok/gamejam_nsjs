@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://c4slt7q6nlydc"]
+[gd_scene load_steps=12 format=3 uid="uid://c4slt7q6nlydc"]
 
 [ext_resource type="PackedScene" uid="uid://dus7affod732w" path="res://scenes/platforms/platform_static.tscn" id="1_741tv"]
 [ext_resource type="Texture2D" uid="uid://bh18leqmgaq43" path="res://sprites/background/BackMain.png" id="1_e7a14"]
@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://dg5p7mrrejob7" path="res://scenes/enemies/enemy_regular.tscn" id="8_i356i"]
 [ext_resource type="PackedScene" uid="uid://w6b0pi78f5so" path="res://scenes/enemies/enemy_helmet.tscn" id="9_6b5vc"]
 [ext_resource type="PackedScene" uid="uid://jpa82ct3bpek" path="res://scenes/enemies/enemy_helmet_kevlar.tscn" id="10_tk6hc"]
+[ext_resource type="PackedScene" uid="uid://7cq7n6xu5og5" path="res://scenes/enemies/enemy_kevlar.tscn" id="11_5qpn6"]
 
 [node name="Main" type="Node2D"]
 
@@ -205,11 +206,14 @@ position = Vector2(2397, 398)
 scale = Vector2(34.44, 37.28)
 camera_limits = NodePath("../CameraLimits2")
 
-[node name="EnemyBase2" parent="." instance=ExtResource("8_i356i")]
-position = Vector2(566, 329)
+[node name="EnemyKevlar" parent="." instance=ExtResource("11_5qpn6")]
+position = Vector2(701, 330)
 
-[node name="EnemyBase" parent="." instance=ExtResource("9_6b5vc")]
-position = Vector2(380, 258)
+[node name="EnemyRegular" parent="." instance=ExtResource("8_i356i")]
+position = Vector2(505, 330)
 
-[node name="EnemyBase3" parent="." instance=ExtResource("10_tk6hc")]
-position = Vector2(507, 237)
+[node name="EnemyDouble" parent="." instance=ExtResource("10_tk6hc")]
+position = Vector2(377, 254)
+
+[node name="EnemyHelmet" parent="." instance=ExtResource("9_6b5vc")]
+position = Vector2(508, 233)
