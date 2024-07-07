@@ -587,7 +587,14 @@ animations = [{
 "speed": 12.0
 }]
 
-[node name="EnemyBase" instance=ExtResource("1_grnoj")]
+[node name="EnemyHelmet" instance=ExtResource("1_grnoj")]
+reward_on_death = 3
+
+[node name="HealthComponent" parent="." index="0"]
+max_health = 4.0
+
+[node name="ShootingComponent" parent="." index="1"]
+shot_interval_time = 0.1
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." index="4"]
 position = Vector2(0, -8)

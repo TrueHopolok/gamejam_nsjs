@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://v1xp2jakpw3a"]
 
 [ext_resource type="Script" path="res://scripts/in_game_objects/projectile.gd" id="1_rtmy0"]
-[ext_resource type="Texture2D" uid="uid://cvitq8rw6ufcf" path="res://sprites/bullets/bullet_red.png" id="2_urmf2"]
+[ext_resource type="Texture2D" uid="uid://cvitq8rw6ufcf" path="res://sprites/bullets/bullet_red.png" id="2_2sjge"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_spfh7"]
 radius = 5.65685
@@ -20,4 +20,4 @@ position = Vector2(3.57628e-07, 3.57628e-07)
 scale = Vector2(0.4, 0.4)
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("2_urmf2")
+texture = ExtResource("2_2sjge")

@@ -4,6 +4,7 @@ const SPEED : float = 200
 const STOP_FRAMES : float = 5
 const JUMP_VELOCITY : float = -400
 const COYOTE_TIME : float = 0.1
+const SHOWING_DAMAGE_TIME : float = 0.25
 
 @onready var activation_area : Area2D = $ActivationArea
 @onready var agro_area : Area2D = $AgroArea
@@ -11,9 +12,9 @@ const COYOTE_TIME : float = 0.1
 @onready var health_component : HealthComponent = $HealthComponent
 @onready var shooting_component : ShootingComponent = $ShootingComponent
 @onready var animated_sprite : AnimatedSprite2D = $AnimatedSprite2D
+@onready var damaged_timer : Timer = $DamagedTimer
 
 var gravity : float = ProjectSettings.get_setting("physics/2d/default_gravity")
-
 var look_direction : Vector2 = Vector2(1, 0)
 
 func activate_enemy(area : Area2D, activate : bool):
@@ -43,6 +44,13 @@ func _ready():
 	activation_area.area_exited.connect(func(area : Area2D): activate_enemy(area, false))
 	agro_area.area_entered.connect(agro_enemy)
 	health_component.died.connect(_die)
+	health_component.injured.connect(func(): 
+		damaged_timer.start(SHOWING_DAMAGE_TIME)
+		animated_sprite.set_modulate(Color(1, 0, 0, 1))
+	)
+	damaged_timer.timeout.connect(func():
+		animated_sprite.set_modulate(Color(1, 1, 1, 1))
+	)
 	health_component.reset(
 		1 + Global.stats["health"]
 	)
@@ -73,7 +81,7 @@ func _die():
 	velocity.x = 0
 	animated_sprite.play("death")
 	$MainCamera.zoom = Vector2(3, 3)
-	$DeathTimer.start(2.0)
+	$DeathTimer.start(3.0)
 	await $DeathTimer.timeout
 	TransitionScreen.change_scene("res://scenes/menus/upgrade_menu.tscn")
 

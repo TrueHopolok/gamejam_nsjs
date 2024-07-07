@@ -1,5 +1,6 @@
 class_name Enemy extends Node2D
 
+const SHOWING_DAMAGE_TIME : float = 0.25
 const SPEED : float = 1
 
 @export var reward_on_death : int = 1
@@ -7,6 +8,7 @@ const SPEED : float = 1
 @onready var health_component : HealthComponent = $HealthComponent
 @onready var shooting_component : ShootingComponent = $ShootingComponent
 @onready var animated_sprite : AnimatedSprite2D = $AnimatedSprite2D
+@onready var damaged_timer : Timer = $DamagedTimer
 
 var player_node : Player
 var pos_start : float
@@ -24,12 +26,19 @@ func _ready():
 	$MarkerRight.queue_free()
 	assert(pos_start < pos_finish, name + ": Marker")
 	health_component.died.connect(_die)
+	health_component.injured.connect(func(): 
+		damaged_timer.start(SHOWING_DAMAGE_TIME)
+		animated_sprite.set_modulate(Color(1, 0, 0, 1))
+	)
+	damaged_timer.timeout.connect(func():
+		animated_sprite.set_modulate(Color(1, 1, 1, 1))
+	)
 
 func _process(_delta):
 	if health_component.is_death:
-		if animated_sprite.is_playing():
-			return
-		process_mode = Node.PROCESS_MODE_DISABLED
+		if not animated_sprite.is_playing():
+			queue_free()
+		return
 	var direction : Vector2 = global_position.direction_to(player_node.global_position)
 	animated_sprite.flip_h = direction.x < 0
 	if not attacking:

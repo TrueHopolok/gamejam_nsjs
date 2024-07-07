@@ -587,7 +587,7 @@ animations = [{
 "speed": 12.0
 }]
 
-[node name="EnemyBase" instance=ExtResource("1_6ypxd")]
+[node name="EnemyRegular" instance=ExtResource("1_6ypxd")]
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." index="4"]
 position = Vector2(0, -8)

@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://dyjsv7l73o6nt" path="res://scenes/components/shooting.tscn" id="3_gyydm"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3fbvx"]
-size = Vector2(16, 32)
+size = Vector2(24, 59)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_llv2q"]
 size = Vector2(48, 64)
@@ -23,6 +23,7 @@ collision_mask = 4
 metadata/_edit_lock_ = true
 
 [node name="CollisionShape2D" parent="HealthComponent/HitboxArea2D" index="0"]
+position = Vector2(0, 2.5)
 shape = SubResource("RectangleShape2D_3fbvx")
 metadata/_edit_lock_ = true
 
@@ -46,6 +47,9 @@ metadata/_edit_lock_ = true
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ActivationArea2D"]
 shape = SubResource("RectangleShape2D_llv2q")
 metadata/_edit_lock_ = true
+
+[node name="DamagedTimer" type="Timer" parent="."]
+one_shot = true
 
 [editable path="HealthComponent"]
 [editable path="ShootingComponent"]
