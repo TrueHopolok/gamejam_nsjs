@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://c4slt7q6nlydc"]
+[gd_scene load_steps=29 format=3 uid="uid://c4slt7q6nlydc"]
 
 [ext_resource type="PackedScene" uid="uid://dus7affod732w" path="res://scenes/platforms/platform_static.tscn" id="1_741tv"]
 [ext_resource type="Texture2D" uid="uid://bh18leqmgaq43" path="res://sprites/background/BackMain.png" id="1_e7a14"]
@@ -25,6 +25,16 @@
 [ext_resource type="Script" path="res://scripts/in_game_music.gd" id="15_he0c5"]
 [ext_resource type="PackedScene" uid="uid://7cq7n6xu5og5" path="res://scenes/enemies/enemy_kevlar.tscn" id="18_2idem"]
 [ext_resource type="PackedScene" uid="uid://jpa82ct3bpek" path="res://scenes/enemies/enemy_helmet_kevlar.tscn" id="19_shdgp"]
+[ext_resource type="PackedScene" uid="uid://6bdw7mw27l2l" path="res://scenes/enemies/covid.tscn" id="26_e1ub7"]
+
+[sub_resource type="Gradient" id="Gradient_vycir"]
+offsets = PackedFloat32Array(0.292035, 1)
+colors = PackedColorArray(0, 0, 0, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_dgft4"]
+gradient = SubResource("Gradient_vycir")
+fill_from = Vector2(1, 0.525641)
+fill_to = Vector2(0, 0.452991)
 
 [node name="Main" type="Node2D"]
 
@@ -215,6 +225,10 @@ scale = Vector2(74.1423, 0.769231)
 [node name="Static15" parent="Objects/Background/Statics" instance=ExtResource("1_741tv")]
 position = Vector2(1323.85, 36.1539)
 scale = Vector2(98.8192, 0.769231)
+
+[node name="Static32" parent="Objects/Background/Statics" instance=ExtResource("1_741tv")]
+position = Vector2(1446.92, 154.615)
+scale = Vector2(1.60364, -27.9529)
 
 [node name="Static6" parent="Objects/Background/Statics" instance=ExtResource("1_741tv")]
 position = Vector2(-1259.23, 269.231)
@@ -1674,10 +1688,6 @@ scale = Vector2(0.769231, 0.769231)
 z_index = 1
 position = Vector2(183, 331)
 
-[node name="HitboxArea2D" parent="Player/HealthComponent" index="0"]
-monitoring = false
-monitorable = false
-
 [node name="MainCamera" parent="Player" instance=ExtResource("3_dervd")]
 metadata/_edit_lock_ = true
 
@@ -1694,6 +1704,26 @@ script = ExtResource("15_he0c5")
 stream = ExtResource("15_gpt0f")
 volume_db = -20.0
 bus = &"Music"
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_left = 4092.0
+offset_top = 1896.0
+offset_right = 5605.0
+offset_bottom = 2272.0
+texture = SubResource("GradientTexture2D_dgft4")
+
+[node name="Label" type="RichTextLabel" parent="."]
+offset_left = 4297.0
+offset_top = 2044.0
+offset_right = 4555.0
+offset_bottom = 2116.0
+theme_override_fonts/normal_font = ExtResource("5_cla8x")
+theme_override_fonts/bold_font = ExtResource("6_ofuhl")
+bbcode_enabled = true
+text = "Destory the [color=green][b]syringe[/b][/color]!"
+
+[node name="Covid" parent="." instance=ExtResource("26_e1ub7")]
+position = Vector2(4408, 2181)
 
 [editable path="Objects/Enemies/EnemyRegular"]
 [editable path="Objects/Enemies/EnemyRegular/HealthComponent"]
@@ -1749,6 +1779,3 @@ bus = &"Music"
 [editable path="Objects/Enemies/EnemyKevlar4"]
 [editable path="Objects/Enemies/EnemyKevlar4/HealthComponent"]
 [editable path="Objects/Enemies/EnemyKevlar4/ShootingComponent"]
-[editable path="Player"]
-[editable path="Player/HealthComponent"]
-[editable path="Player/ShootingComponent"]
