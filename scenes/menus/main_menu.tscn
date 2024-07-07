@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://dpwnfyo05j2a1"]
+[gd_scene load_steps=18 format=3 uid="uid://dpwnfyo05j2a1"]
 
 [ext_resource type="Script" path="res://scripts/main_menu/button_continue.gd" id="1_8gg12"]
 [ext_resource type="Script" path="res://scripts/main_menu/button_resetprogress.gd" id="1_g65uv"]
@@ -11,6 +11,9 @@
 [ext_resource type="Texture2D" uid="uid://hn78sq0mi6o0" path="res://sprites/buttons/button_pressed.png" id="6_doy3f"]
 [ext_resource type="Texture2D" uid="uid://b1tsruyfd4kxk" path="res://sprites/buttons/button_hovered.png" id="7_pbgf5"]
 [ext_resource type="FontFile" uid="uid://dj3378tphcjri" path="res://fonts/6809_Chargen.otf" id="9_gbo6c"]
+[ext_resource type="PackedScene" uid="uid://58qlwwe0dgtb" path="res://scenes/UI_audio.tscn" id="10_yv1c7"]
+[ext_resource type="AudioStream" uid="uid://ca2l81moimekm" path="res://music/menu_music.wav" id="13_8aef0"]
+[ext_resource type="Script" path="res://scripts/infinite_music.gd" id="14_0tbd5"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_rbgbj"]
 atlas = ExtResource("2_ybwgk")
@@ -87,6 +90,8 @@ horizontal_alignment = 1
 vertical_alignment = 1
 metadata/_edit_lock_ = true
 
+[node name="UiAudio" parent="Button_Continue" instance=ExtResource("10_yv1c7")]
+
 [node name="Button_ResetProgress" type="TextureButton" parent="."]
 offset_left = 448.0
 offset_top = 439.0
@@ -125,3 +130,11 @@ horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2
 metadata/_edit_lock_ = true
+
+[node name="UiAudio" parent="Button_ResetProgress" instance=ExtResource("10_yv1c7")]
+
+[node name="BGmusic" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("13_8aef0")
+autoplay = true
+bus = &"Music"
+script = ExtResource("14_0tbd5")

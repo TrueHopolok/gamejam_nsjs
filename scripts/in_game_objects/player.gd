@@ -46,6 +46,7 @@ func _ready():
 	health_component.died.connect(_die)
 	health_component.injured.connect(func(): 
 		damaged_timer.start(SHOWING_DAMAGE_TIME)
+		$DamagedAudio.play()
 		animated_sprite.set_modulate(Color(1, 0, 0, 1))
 	)
 	damaged_timer.timeout.connect(func():
@@ -55,6 +56,12 @@ func _ready():
 		1 + Global.stats["health"]
 	)
 	health_component.invincibility_timer.start(5.0)
+	shooting_component.empty_clip.connect(func():
+		$EmptyClipAudio.play()
+	)
+	shooting_component.reload.connect(func():
+		$ReloadAudio.play()
+	)
 	shooting_component.reset(
 		5 - 0.3 * Global.stats["reload"],
 		1 - 0.1 * Global.stats["rpm"],
@@ -78,6 +85,7 @@ func _process(_delta):
 		shooting_component.shoot(direction)
 
 func _die():
+	$DeathAudio.play()
 	velocity.x = 0
 	animated_sprite.play("death")
 	$MainCamera.zoom = Vector2(3, 3)

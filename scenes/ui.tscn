@@ -1,9 +1,9 @@
 [gd_scene load_steps=8 format=3 uid="uid://df7gvcnt8483j"]
 
-[ext_resource type="Script" path="res://scripts/HP_BAR.gd" id="1_mk2ks"]
+[ext_resource type="Script" path="res://scripts/ui/hp+bar.gd" id="1_mk2ks"]
 [ext_resource type="Texture2D" uid="uid://bdrd1tt423o5e" path="res://sprites/ui/heart.png" id="1_xikyi"]
 [ext_resource type="Texture2D" uid="uid://csrhgpnypmj3i" path="res://sprites/ui/bullets.png" id="2_p1b4h"]
-[ext_resource type="Script" path="res://scripts/AMMO_BAR.gd" id="3_f7jv4"]
+[ext_resource type="Script" path="res://scripts/ui/ammo_bar.gd" id="3_f7jv4"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xeihn"]
 bg_color = Color(0, 0, 0, 1)
