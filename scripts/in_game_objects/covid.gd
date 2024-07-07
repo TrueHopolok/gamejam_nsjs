@@ -5,9 +5,8 @@ extends Node2D
 @onready var health_component : HealthComponent = $HealthComponent
 
 func _ready():
-	process_mode = Node.PROCESS_MODE_ALWAYS
 	health_component.died.connect(func():
-		get_tree().paused
+		get_tree().paused = true
 		Global.stats["money"] += reward_on_death
 		$DeathAudio.play()
 		await $DeathAudio.finished

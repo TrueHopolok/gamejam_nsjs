@@ -29,7 +29,7 @@ size = Vector2(6.5, 26)
 size = Vector2(11, 29)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pxh5y"]
-size = Vector2(776, 500)
+size = Vector2(1148, 500)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_erlxg"]
 size = Vector2(1666, 1000)
@@ -872,6 +872,7 @@ metadata/_edit_lock_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AgroArea"]
 visible = false
+position = Vector2(1, 0)
 shape = SubResource("RectangleShape2D_pxh5y")
 debug_color = Color(1, 0, 0, 0.313726)
 metadata/_edit_lock_ = true
