@@ -1,15 +1,11 @@
-[gd_scene load_steps=11 format=3 uid="uid://c4slt7q6nlydc"]
+[gd_scene load_steps=7 format=3 uid="uid://c4slt7q6nlydc"]
 
 [ext_resource type="PackedScene" uid="uid://dus7affod732w" path="res://scenes/platforms/platform_static.tscn" id="1_741tv"]
 [ext_resource type="Texture2D" uid="uid://bh18leqmgaq43" path="res://sprites/background/BackMain.png" id="1_e7a14"]
 [ext_resource type="PackedScene" uid="uid://ij7m6pmoy6el" path="res://scenes/player.tscn" id="2_qdpul"]
 [ext_resource type="PackedScene" uid="uid://bcdtbjlbl3168" path="res://scenes/camera_limits/main_camera.tscn" id="3_dervd"]
-[ext_resource type="PackedScene" uid="uid://r5ln5caeihs4" path="res://scenes/platforms/platform_through.tscn" id="3_ge3iy"]
 [ext_resource type="PackedScene" uid="uid://swwegbxkb8g5" path="res://scenes/camera_limits/camera_searcher.tscn" id="6_5dp2s"]
 [ext_resource type="PackedScene" uid="uid://c4y7tdhxvw2ya" path="res://scenes/camera_limits/camera_limits.tscn" id="6_k7y5s"]
-[ext_resource type="PackedScene" uid="uid://dg5p7mrrejob7" path="res://scenes/enemies/enemy_regular.tscn" id="8_i356i"]
-[ext_resource type="PackedScene" uid="uid://w6b0pi78f5so" path="res://scenes/enemies/enemy_helmet.tscn" id="9_6b5vc"]
-[ext_resource type="PackedScene" uid="uid://jpa82ct3bpek" path="res://scenes/enemies/enemy_helmet_kevlar.tscn" id="10_tk6hc"]
 
 [node name="Main" type="Node2D"]
 
@@ -160,8 +156,6 @@ scale = Vector2(130.419, 0.769231)
 position = Vector2(-460, 1422.31)
 scale = Vector2(130.419, 0.769231)
 
-[node name="Throughs" type="Node2D" parent="Background"]
-
 [node name="CameraLimits" type="Node2D" parent="Background"]
 
 [node name="Player" parent="." instance=ExtResource("2_qdpul")]
@@ -170,11 +164,9 @@ position = Vector2(96, 319)
 [node name="MainCamera" parent="Player" instance=ExtResource("3_dervd")]
 visible = false
 
-[node name="Through" parent="." instance=ExtResource("3_ge3iy")]
-position = Vector2(377, 292)
-
-[node name="Through2" parent="." instance=ExtResource("3_ge3iy")]
-position = Vector2(508, 271)
+[node name="Throughs" type="Node2D" parent="."]
+position = Vector2(2690, 1891)
+scale = Vector2(1.3, 1.3)
 
 [node name="CameraLimits" parent="." instance=ExtResource("6_k7y5s")]
 visible = false
@@ -204,12 +196,3 @@ visible = false
 position = Vector2(2397, 398)
 scale = Vector2(34.44, 37.28)
 camera_limits = NodePath("../CameraLimits2")
-
-[node name="EnemyBase2" parent="." instance=ExtResource("8_i356i")]
-position = Vector2(566, 329)
-
-[node name="EnemyBase" parent="." instance=ExtResource("9_6b5vc")]
-position = Vector2(380, 258)
-
-[node name="EnemyBase3" parent="." instance=ExtResource("10_tk6hc")]
-position = Vector2(507, 237)

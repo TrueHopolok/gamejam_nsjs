@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://bleqpbyv7jq0l"]
+
+[ext_resource type="PackedScene" uid="uid://r5ln5caeihs4" path="res://scenes/platforms/platform_through.tscn" id="1_4qgfa"]
+[ext_resource type="Texture2D" uid="uid://dt2kxrhjg6t4t" path="res://sprites/platforms/scaffoldings/scaffolding1.png" id="2_x8ab4"]
+
+[node name="Through" instance=ExtResource("1_4qgfa")]
+
+[node name="Sprite2D" parent="." index="0"]
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("2_x8ab4")
+
+[node name="CollisionShape2D" parent="." index="1"]
+position = Vector2(0, -36)
+scale = Vector2(1.4, 1)
+
+[node name="Area2D" parent="." index="2"]
+position = Vector2(0, -36)
+scale = Vector2(1.4, 1)
