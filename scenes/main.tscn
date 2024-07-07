@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://c4slt7q6nlydc"]
+[gd_scene load_steps=11 format=3 uid="uid://c4slt7q6nlydc"]
 
 [ext_resource type="PackedScene" uid="uid://dus7affod732w" path="res://scenes/platforms/platform_static.tscn" id="1_741tv"]
 [ext_resource type="Texture2D" uid="uid://bh18leqmgaq43" path="res://sprites/background/BackMain.png" id="1_e7a14"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://bleqpbyv7jq0l" path="res://scenes/platforms/scaffoldings/platform_through_scaffolding_1.tscn" id="5_hbgub"]
 [ext_resource type="FontFile" uid="uid://c55xtvkxrgge6" path="res://fonts/1001fonts-karmatic-arcade-eula.ttf" id="6_ofuhl"]
 [ext_resource type="PackedScene" uid="uid://6o1gmx22iosr" path="res://scenes/enemies/enemy_afk.tscn" id="7_s2tfx"]
+[ext_resource type="PackedScene" uid="uid://df7gvcnt8483j" path="res://scenes/ui.tscn" id="10_p4lq6"]
 
 [node name="Main" type="Node2D"]
 
@@ -246,8 +247,10 @@ position = Vector2(199, 330)
 [node name="MainCamera" parent="Player" instance=ExtResource("3_dervd")]
 metadata/_edit_lock_ = true
 
-[node name="EnemyAfk" parent="." instance=ExtResource("7_s2tfx")]
-position = Vector2(582, 243)
-
 [node name="Marker2D" type="Marker2D" parent="."]
 position = Vector2(1180, 223)
+
+[node name="UI" parent="." instance=ExtResource("10_p4lq6")]
+
+[node name="EnemyAfk" parent="." instance=ExtResource("7_s2tfx")]
+position = Vector2(582, 243)
