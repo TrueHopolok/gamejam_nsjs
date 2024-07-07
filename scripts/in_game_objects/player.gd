@@ -80,11 +80,10 @@ func _die():
 func _animate(direction : Vector2):
 	if velocity.x: 
 		animated_sprite.flip_h = velocity.x < 0
+	var animation_name : String = "idle_"	
 	if not is_on_floor() and coyote_timer.is_stopped():
-		animated_sprite.play("jump")
-		return
-	var animation_name : String = "idle_"
-	if velocity.x:
+		animation_name = "jump_"
+	elif velocity.x:
 		animation_name = "run_"
 	if direction.y > 0:
 		if direction.y == 1:

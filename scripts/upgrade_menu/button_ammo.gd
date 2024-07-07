@@ -12,7 +12,7 @@ func _process(_delta):
 	if is_hovered():
 		if Global.stats["ammo"] < 9:
 			info_label.text = \
-"Upgrading this will increase your [color=green]ammo amount[/color] by [color=green]1 bullet[/color].\n
+"Upgrading this will increase your [color=green]ammo amount in clip[/color] by [color=green]1 bullet[/color].\n
 Cost for an upgrade: [color=red]" + str(Global.stats["ammo"] * 2 + 2) + "[/color]."
 		else:
 			info_label.text = "[color=green]Ammo[/color] upgrade is [color=yellow]maxed out[/color]."

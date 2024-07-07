@@ -23,6 +23,7 @@ func _ready():
 	pos_finish = $MarkerRight.global_position.x
 	$MarkerRight.queue_free()
 	assert(pos_start < pos_finish, name + ": Marker")
+	health_component.died.connect(_die)
 
 func _process(_delta):
 	if health_component.is_death:
@@ -42,15 +43,15 @@ func _animate(direction : Vector2):
 	var angle : float = direction.angle()
 	var animation_name : String = "idle_"
 	if angle > PI/3:
-		animation_name += "up"
+		animation_name += "down"
 	elif angle > PI/6:
-		animation_name += "up45"
+		animation_name += "down45"
 	elif angle > -PI/6:
 		animation_name += "side"
 	elif angle > -PI/3:
-		animation_name += "down45"
+		animation_name += "up45"
 	else:
-		animation_name += "down"
+		animation_name += "up"
 	animated_sprite.play(animation_name)
 
 func _die():

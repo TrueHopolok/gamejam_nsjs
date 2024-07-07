@@ -1,132 +1,14 @@
-[gd_scene load_steps=20 format=3 uid="uid://c46l28oaydnpi"]
+[gd_scene load_steps=6 format=3 uid="uid://c46l28oaydnpi"]
 
 [ext_resource type="Script" path="res://scripts/in_game_objects/enemy.gd" id="1_1x7ml"]
 [ext_resource type="PackedScene" uid="uid://cqm6yrv1c5lcm" path="res://scenes/components/health.tscn" id="1_kllwe"]
 [ext_resource type="PackedScene" uid="uid://dyjsv7l73o6nt" path="res://scenes/components/shooting.tscn" id="3_gyydm"]
-[ext_resource type="Texture2D" uid="uid://cmyiqy11qcv16" path="res://sprites/player/Player_idle.png" id="4_0y8ar"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3fbvx"]
 size = Vector2(16, 32)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_llv2q"]
 size = Vector2(48, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_phjkg"]
-atlas = ExtResource("4_0y8ar")
-region = Rect2(0, 0, 96, 80)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_vpva3"]
-atlas = ExtResource("4_0y8ar")
-region = Rect2(96, 0, 96, 80)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_wwnqc"]
-atlas = ExtResource("4_0y8ar")
-region = Rect2(192, 0, 96, 80)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_fo1oj"]
-atlas = ExtResource("4_0y8ar")
-region = Rect2(288, 0, 96, 80)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_oarki"]
-atlas = ExtResource("4_0y8ar")
-region = Rect2(384, 0, 96, 80)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_rht18"]
-atlas = ExtResource("4_0y8ar")
-region = Rect2(480, 0, 96, 80)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_mhdvb"]
-atlas = ExtResource("4_0y8ar")
-region = Rect2(576, 0, 96, 80)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_o0j0y"]
-atlas = ExtResource("4_0y8ar")
-region = Rect2(672, 0, 96, 80)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_r340n"]
-atlas = ExtResource("4_0y8ar")
-region = Rect2(768, 0, 96, 80)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_biqjk"]
-atlas = ExtResource("4_0y8ar")
-region = Rect2(864, 0, 96, 80)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_sraij"]
-atlas = ExtResource("4_0y8ar")
-region = Rect2(960, 0, 96, 80)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_bvlj2"]
-atlas = ExtResource("4_0y8ar")
-region = Rect2(1056, 0, 96, 80)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_vde5t"]
-animations = [{
-"frames": [],
-"loop": true,
-"name": &"death",
-"speed": 5.0
-}, {
-"frames": [],
-"loop": true,
-"name": &"idle_down",
-"speed": 5.0
-}, {
-"frames": [],
-"loop": true,
-"name": &"idle_down45",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_phjkg")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_vpva3")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_wwnqc")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_fo1oj")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_oarki")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_rht18")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_mhdvb")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_o0j0y")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_r340n")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_biqjk")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_sraij")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_bvlj2")
-}],
-"loop": true,
-"name": &"idle_side",
-"speed": 12.0
-}, {
-"frames": [],
-"loop": true,
-"name": &"idle_up",
-"speed": 5.0
-}, {
-"frames": [],
-"loop": true,
-"name": &"idle_up45",
-"speed": 5.0
-}]
 
 [node name="EnemyBase" type="Node2D"]
 process_mode = 4
@@ -164,11 +46,6 @@ metadata/_edit_lock_ = true
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ActivationArea2D"]
 shape = SubResource("RectangleShape2D_llv2q")
 metadata/_edit_lock_ = true
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(0, -8)
-sprite_frames = SubResource("SpriteFrames_vde5t")
-animation = &"idle_down45"
 
 [editable path="HealthComponent"]
 [editable path="ShootingComponent"]

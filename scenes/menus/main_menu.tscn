@@ -1,10 +1,47 @@
-[gd_scene load_steps=4 format=3 uid="uid://dpwnfyo05j2a1"]
+[gd_scene load_steps=10 format=3 uid="uid://dpwnfyo05j2a1"]
 
 [ext_resource type="Script" path="res://scripts/main_menu/button_continue.gd" id="1_8gg12"]
 [ext_resource type="Script" path="res://scripts/main_menu/button_resetprogress.gd" id="1_g65uv"]
+[ext_resource type="Texture2D" uid="uid://bvf6pc8kvptv" path="res://sprites/main_menu/Game_menu.png" id="1_ixyfj"]
 [ext_resource type="Script" path="res://scripts/main_menu/confirm_menu.gd" id="2_oh1y1"]
+[ext_resource type="Texture2D" uid="uid://daqvniqyedolm" path="res://sprites/main_menu/Menu_train.png" id="2_ybwgk"]
+[ext_resource type="Script" path="res://scripts/main_menu/menu_train.gd" id="3_yj4hg"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rbgbj"]
+atlas = ExtResource("2_ybwgk")
+region = Rect2(0, 0, 85, 37)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7vx3j"]
+atlas = ExtResource("2_ybwgk")
+region = Rect2(85, 0, 85, 37)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_t31xg"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rbgbj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7vx3j")
+}],
+"loop": true,
+"name": &"default",
+"speed": 2.0
+}]
 
 [node name="MainMenu" type="CanvasLayer"]
+
+[node name="menu_Background" type="Sprite2D" parent="."]
+position = Vector2(512, 288)
+scale = Vector2(2, 2)
+texture = ExtResource("1_ixyfj")
+
+[node name="AnimatedSpriteTrain" type="AnimatedSprite2D" parent="."]
+position = Vector2(1124, 299)
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_t31xg")
+autoplay = "default"
+script = ExtResource("3_yj4hg")
 
 [node name="title" type="Label" parent="."]
 offset_left = 256.0
@@ -17,18 +54,18 @@ vertical_alignment = 1
 
 [node name="Button_Continue" type="Button" parent="."]
 offset_left = 416.0
-offset_top = 192.0
+offset_top = 367.0
 offset_right = 608.0
-offset_bottom = 256.0
+offset_bottom = 431.0
 focus_mode = 0
-text = "Continue"
+text = "Play"
 script = ExtResource("1_8gg12")
 
 [node name="Button_ResetProgress" type="Button" parent="."]
 offset_left = 416.0
-offset_top = 320.0
+offset_top = 447.0
 offset_right = 608.0
-offset_bottom = 384.0
+offset_bottom = 511.0
 focus_mode = 0
 text = "Reset progress"
 script = ExtResource("1_g65uv")
