@@ -1,0 +1,91 @@
+[gd_scene load_steps=12 format=3 uid="uid://6w6ggw8fss6o"]
+
+[ext_resource type="Texture2D" uid="uid://bbmc0a7rsi3iy" path="res://sprites/background/upgrade_menu_bg.png" id="1_kse43"]
+[ext_resource type="Texture2D" uid="uid://dymh8mgykmgfn" path="res://sprites/buttons/button.png" id="2_6n8wk"]
+[ext_resource type="Texture2D" uid="uid://hn78sq0mi6o0" path="res://sprites/buttons/button_pressed.png" id="3_d3ec1"]
+[ext_resource type="Texture2D" uid="uid://b1tsruyfd4kxk" path="res://sprites/buttons/button_hovered.png" id="4_h3peg"]
+[ext_resource type="Script" path="res://scripts/upgrade_menu/button_mainmenu.gd" id="5_46irp"]
+[ext_resource type="FontFile" uid="uid://dj3378tphcjri" path="res://fonts/6809_Chargen.otf" id="6_xkpxf"]
+[ext_resource type="PackedScene" uid="uid://58qlwwe0dgtb" path="res://scenes/UI_audio.tscn" id="7_iht3w"]
+[ext_resource type="FontFile" uid="uid://c55xtvkxrgge6" path="res://fonts/1001fonts-karmatic-arcade-eula.ttf" id="8_ctqfb"]
+[ext_resource type="Script" path="res://scripts/ui/death_amount.gd" id="9_ysj0e"]
+[ext_resource type="AudioStream" uid="uid://ca2l81moimekm" path="res://music/menu_music.wav" id="10_orcwt"]
+[ext_resource type="Script" path="res://scripts/infinite_music.gd" id="11_i7gov"]
+
+[node name="WinnerScreen" type="CanvasLayer"]
+
+[node name="UpgradeMenuBg" type="Sprite2D" parent="."]
+position = Vector2(512.5, 288.5)
+scale = Vector2(1.99415, 1.63818)
+texture = ExtResource("1_kse43")
+metadata/_edit_lock_ = true
+
+[node name="ColorRect" type="ColorRect" parent="UpgradeMenuBg"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -257.0
+offset_top = -176.0
+offset_right = -256.0
+offset_bottom = -175.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.705882)
+
+[node name="Button_MainMenu" type="TextureButton" parent="."]
+offset_left = 416.0
+offset_top = 416.0
+offset_right = 608.0
+offset_bottom = 480.0
+focus_mode = 0
+texture_normal = ExtResource("2_6n8wk")
+texture_pressed = ExtResource("3_d3ec1")
+texture_hover = ExtResource("4_h3peg")
+stretch_mode = 0
+script = ExtResource("5_46irp")
+
+[node name="Label" type="Label" parent="Button_MainMenu"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("6_xkpxf")
+text = "Exit to main menu"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+metadata/_edit_lock_ = true
+
+[node name="UiAudio" parent="Button_MainMenu" instance=ExtResource("7_iht3w")]
+
+[node name="Label" type="Label" parent="."]
+offset_left = 1.0
+offset_top = 64.0
+offset_right = 1024.0
+offset_bottom = 319.0
+theme_override_fonts/font = ExtResource("8_ctqfb")
+theme_override_font_sizes/font_size = 51
+text = "YOU WON!
+YOU DESTROYED THE COVID!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="."]
+offset_top = 288.0
+offset_right = 1023.0
+offset_bottom = 416.0
+theme_override_fonts/font = ExtResource("6_xkpxf")
+theme_override_font_sizes/font_size = 30
+text = "In total you died:
+999999 times"
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("9_ysj0e")
+
+[node name="BGmusic" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("10_orcwt")
+autoplay = true
+script = ExtResource("11_i7gov")

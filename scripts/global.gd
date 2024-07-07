@@ -4,14 +4,24 @@ const SAVE_FILE_PATH : String = "user://covid.json"
 
 var motivational_quotes : Array[String] = \
 [
+	## Motivation:
 	"Don't give up!",
 	"You can do it!",
 	"Improve, evolve, win!",
-	"Say no to losing!",
+	"Become stronger, adapt!",
+	## Qoutes:
+	"What doesn’t kill us makes us stronger!",
+	"Winners never quit, and quitters never win.",
+	"90% precent of gamblers quit before they hit big.",
+	## Hints:
+	"Enemy with full armor:\nHas 10 health points and shoots like a regular enemy, but faster.",
+	"Kevlar enemy:\nHas 7 health points and shoots every second.",
+	"Helmet enemy:\nHas 4 health points and shoots in burst of 3 bullets.",
 ]
 
 var stats : Dictionary = \
 {
+	"death" = 0,
 	"money" = 0,
 	"health" = 0,
 	"damage" = 0,
@@ -46,6 +56,7 @@ func _ready():
 func reset_progress():
 	stats = \
 {
+	"death" = 0,
 	"money" = 0,
 	"health" = 0,
 	"damage" = 0,
