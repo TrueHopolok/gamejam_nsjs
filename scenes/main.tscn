@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://c4slt7q6nlydc"]
+[gd_scene load_steps=26 format=3 uid="uid://c4slt7q6nlydc"]
 
 [ext_resource type="PackedScene" uid="uid://dus7affod732w" path="res://scenes/platforms/platform_static.tscn" id="1_741tv"]
 [ext_resource type="Texture2D" uid="uid://bh18leqmgaq43" path="res://sprites/background/BackMain.png" id="1_e7a14"]
@@ -15,12 +15,16 @@
 [ext_resource type="PackedScene" uid="uid://df7gvcnt8483j" path="res://scenes/ui.tscn" id="10_p4lq6"]
 [ext_resource type="PackedScene" uid="uid://w6b0pi78f5so" path="res://scenes/enemies/enemy_helmet.tscn" id="11_0sq57"]
 [ext_resource type="PackedScene" uid="uid://dg5p7mrrejob7" path="res://scenes/enemies/enemy_regular.tscn" id="11_exeqb"]
+[ext_resource type="PackedScene" uid="uid://d3nfubyrubffv" path="res://scenes/platforms/tiles/platform_throught_tile_2.tscn" id="11_tism7"]
 [ext_resource type="PackedScene" uid="uid://bshk81afbpav7" path="res://scenes/platforms/scaffoldings/platform_through_scaffolding_2.tscn" id="12_gh43b"]
+[ext_resource type="PackedScene" uid="uid://q7b7qtb7efx3" path="res://scenes/platforms/tiles/platform_throught_tile_1.tscn" id="12_jlvsj"]
 [ext_resource type="PackedScene" uid="uid://br7mrbccmqhv4" path="res://scenes/platforms/scaffoldings/platform_through_scaffolding_3.tscn" id="13_yf6ty"]
 [ext_resource type="PackedScene" uid="uid://iqqamnl8ipm5" path="res://scenes/platforms/tiles/platform_throught_tile_3.tscn" id="14_7702b"]
 [ext_resource type="AudioStream" uid="uid://2ahnb6txhkrb" path="res://music/in_game_music_start.wav" id="14_qo51u"]
 [ext_resource type="AudioStream" uid="uid://dro863fj6ag8t" path="res://music/in_game_music_loop.wav" id="15_gpt0f"]
 [ext_resource type="Script" path="res://scripts/in_game_music.gd" id="15_he0c5"]
+[ext_resource type="PackedScene" uid="uid://7cq7n6xu5og5" path="res://scenes/enemies/enemy_kevlar.tscn" id="18_2idem"]
+[ext_resource type="PackedScene" uid="uid://jpa82ct3bpek" path="res://scenes/enemies/enemy_helmet_kevlar.tscn" id="19_shdgp"]
 
 [node name="Main" type="Node2D"]
 
@@ -257,6 +261,46 @@ z_index = 2
 position = Vector2(2689, 1892)
 scale = Vector2(1.3, 1.3)
 
+[node name="Through127" parent="Objects/Throughs" instance=ExtResource("12_jlvsj")]
+position = Vector2(-692.308, 412.308)
+scale = Vector2(0.769231, 0.769231)
+
+[node name="Through128" parent="Objects/Throughs" instance=ExtResource("12_jlvsj")]
+position = Vector2(-783.077, 553.077)
+scale = Vector2(0.769231, 0.769231)
+
+[node name="Through129" parent="Objects/Throughs" instance=ExtResource("12_jlvsj")]
+position = Vector2(-885.385, 684.615)
+scale = Vector2(0.769231, 0.769231)
+
+[node name="Through130" parent="Objects/Throughs" instance=ExtResource("14_7702b")]
+position = Vector2(-915.385, 313.846)
+scale = Vector2(0.769231, 0.769231)
+
+[node name="Through131" parent="Objects/Throughs" instance=ExtResource("13_yf6ty")]
+position = Vector2(-946.923, 398.462)
+scale = Vector2(0.769231, 0.769231)
+
+[node name="Through132" parent="Objects/Throughs" instance=ExtResource("10_dffgv")]
+position = Vector2(-1076.15, 1290.77)
+scale = Vector2(0.769231, 0.769231)
+
+[node name="Through133" parent="Objects/Throughs" instance=ExtResource("12_gh43b")]
+position = Vector2(-1067.69, 1252.31)
+scale = Vector2(0.769231, 0.769231)
+
+[node name="Through134" parent="Objects/Throughs" instance=ExtResource("12_gh43b")]
+position = Vector2(-1026.92, 1203.85)
+scale = Vector2(0.769231, 0.769231)
+
+[node name="Through135" parent="Objects/Throughs" instance=ExtResource("12_gh43b")]
+position = Vector2(-1026.92, 1155.38)
+scale = Vector2(0.769231, 0.769231)
+
+[node name="Through136" parent="Objects/Throughs" instance=ExtResource("13_yf6ty")]
+position = Vector2(-1026.92, 1106.92)
+scale = Vector2(0.769231, 0.769231)
+
 [node name="Through" parent="Objects/Throughs" instance=ExtResource("5_hbgub")]
 position = Vector2(-1803.85, -1207.69)
 scale = Vector2(0.769231, 0.769231)
@@ -329,6 +373,54 @@ scale = Vector2(0.769231, 0.769231)
 position = Vector2(-47.6923, -1168.46)
 scale = Vector2(0.769231, 0.769231)
 
+[node name="Through220" parent="Objects/Throughs" instance=ExtResource("4_s33ey")]
+position = Vector2(665.385, 271.539)
+scale = Vector2(0.769231, 0.769231)
+
+[node name="Through221" parent="Objects/Throughs" instance=ExtResource("4_s33ey")]
+position = Vector2(836.154, 271.539)
+scale = Vector2(0.769231, 0.769231)
+
+[node name="Through222" parent="Objects/Throughs" instance=ExtResource("14_7702b")]
+position = Vector2(973.846, 271.539)
+scale = Vector2(0.769231, 0.769231)
+
+[node name="Through223" parent="Objects/Throughs" instance=ExtResource("4_s33ey")]
+position = Vector2(665.385, 373.846)
+scale = Vector2(0.769231, 0.769231)
+
+[node name="Through224" parent="Objects/Throughs" instance=ExtResource("4_s33ey")]
+position = Vector2(836.154, 373.846)
+scale = Vector2(0.769231, 0.769231)
+
+[node name="Through225" parent="Objects/Throughs" instance=ExtResource("14_7702b")]
+position = Vector2(973.846, 373.846)
+scale = Vector2(0.769231, 0.769231)
+
+[node name="Through226" parent="Objects/Throughs" instance=ExtResource("4_s33ey")]
+position = Vector2(665.385, 483.846)
+scale = Vector2(0.769231, 0.769231)
+
+[node name="Through227" parent="Objects/Throughs" instance=ExtResource("4_s33ey")]
+position = Vector2(836.154, 483.846)
+scale = Vector2(0.769231, 0.769231)
+
+[node name="Through228" parent="Objects/Throughs" instance=ExtResource("14_7702b")]
+position = Vector2(973.846, 483.846)
+scale = Vector2(0.769231, 0.769231)
+
+[node name="Through229" parent="Objects/Throughs" instance=ExtResource("4_s33ey")]
+position = Vector2(665.385, 596.924)
+scale = Vector2(0.769231, 0.769231)
+
+[node name="Through230" parent="Objects/Throughs" instance=ExtResource("4_s33ey")]
+position = Vector2(836.154, 596.924)
+scale = Vector2(0.769231, 0.769231)
+
+[node name="Through231" parent="Objects/Throughs" instance=ExtResource("14_7702b")]
+position = Vector2(973.846, 596.924)
+scale = Vector2(0.769231, 0.769231)
+
 [node name="Through18" parent="Objects/Throughs" instance=ExtResource("5_hbgub")]
 position = Vector2(-17.6921, -1203.85)
 scale = Vector2(0.769231, 0.769231)
@@ -377,8 +469,796 @@ scale = Vector2(0.769231, 0.769231)
 position = Vector2(-180, -1203.85)
 scale = Vector2(0.769231, 0.769231)
 
+[node name="Through232" parent="Objects/Throughs" instance=ExtResource("5_hbgub")]
+position = Vector2(744.616, 810.768)
+scale = Vector2(0.769231, 0.769231)
+
+[node name="Through233" parent="Objects/Throughs" instance=ExtResource("5_hbgub")]
+position = Vector2(703.846, 810.768)
+scale = Vector2(0.769231, 0.769231)
+
+[node name="Through234" parent="Objects/Throughs" instance=ExtResource("5_hbgub")]
+position = Vector2(663.846, 810.768)
+scale = Vector2(0.769231, 0.769231)
+
+[node name="Through235" parent="Objects/Throughs" instance=ExtResource("5_hbgub")]
+position = Vector2(663.846, 762.308)
+scale = Vector2(0.769231, 0.769231)
+
+[node name="Through240" parent="Objects/Throughs" instance=ExtResource("5_hbgub")]
+position = Vector2(1001.54, 559.231)
+scale = Vector2(0.769231, 0.769231)
+
+[node name="Through241" parent="Objects/Throughs" instance=ExtResource("5_hbgub")]
+position = Vector2(606.923, 444.615)
+scale = Vector2(0.769231, 0.769231)
+
+[node name="Through242" parent="Objects/Throughs" instance=ExtResource("5_hbgub")]
+position = Vector2(1000, 334.615)
+scale = Vector2(0.769231, 0.769231)
+
+[node name="Through236" parent="Objects/Throughs" instance=ExtResource("5_hbgub")]
+position = Vector2(704.615, 762.308)
+scale = Vector2(0.769231, 0.769231)
+
+[node name="Through237" parent="Objects/Throughs" instance=ExtResource("12_gh43b")]
+position = Vector2(623.077, 810.768)
+scale = Vector2(0.769231, 0.769231)
+
+[node name="Through238" parent="Objects/Throughs" instance=ExtResource("12_gh43b")]
+position = Vector2(744.616, 762.308)
+scale = Vector2(0.769231, 0.769231)
+
+[node name="Through239" parent="Objects/Throughs" instance=ExtResource("13_yf6ty")]
+position = Vector2(582.308, 810.768)
+scale = Vector2(0.769231, 0.769231)
+
 [node name="Through30" parent="Objects/Throughs" instance=ExtResource("10_dffgv")]
 position = Vector2(-296.154, -986.923)
+scale = Vector2(0.769231, 0.769231)
+
+[node name="Through32" parent="Objects/Throughs" instance=ExtResource("12_gh43b")]
+position = Vector2(200.769, -916.923)
+scale = Vector2(0.769231, 0.769231)
+
+[node name="Through33" parent="Objects/Throughs" instance=ExtResource("13_yf6ty")]
+position = Vector2(160, -916.923)
+scale = Vector2(0.769231, 0.769231)
+
+[node name="Through34" parent="Objects/Throughs" instance=ExtResource("5_hbgub")]
+position = Vector2(255.385, -1026.15)
+scale = Vector2(0.769231, 0.769231)
+
+[node name="Through35" parent="Objects/Throughs" instance=ExtResource("12_gh43b")]
+position = Vector2(296.923, -1026.15)
+scale = Vector2(0.769231, 0.769231)
+
+[node name="Through36" parent="Objects/Throughs" instance=ExtResource("12_gh43b")]
+position = Vector2(337.692, -1026.15)
+scale = Vector2(0.769231, 0.769231)
+
+[node name="Through37" parent="Objects/Throughs" instance=ExtResource("5_hbgub")]
+position = Vector2(450, -918.462)
+scale = Vector2(0.769231, 0.769231)
+
+[node name="Through38" parent="Objects/Throughs" instance=ExtResource("10_dffgv")]
+position = Vector2(637.692, -880.769)
+scale = Vector2(0.769231, 0.769231)
+
+[node name="Through38" parent="Objects/Throughs/Through38" instance=ExtResource("10_dffgv")]
+position = Vector2(637.692, -880.769)
+scale = Vector2(0.769231, 0.769231)
+
+[node name="Through56" parent="Objects/Throughs" instance=ExtResource("10_dffgv")]
+position = Vector2(637.692, -715.385)
+scale = Vector2(0.769231, 0.769231)
+
+[node name="Through38" parent="Objects/Throughs/Through56" instance=ExtResource("10_dffgv")]
+position = Vector2(637.692, -880.769)
+scale = Vector2(0.769231, 0.769231)
+
+[node name="Through39" parent="Objects/Throughs" instance=ExtResource("5_hbgub")]
+position = Vector2(694.615, -341.538)
+scale = Vector2(0.769231, 0.769231)
+
+[node name="Through40" parent="Objects/Throughs" instance=ExtResource("5_hbgub")]
+position = Vector2(735.385, -341.538)
+scale = Vector2(0.769231, 0.769231)
+
+[node name="Through41" parent="Objects/Throughs" instance=ExtResource("5_hbgub")]
+position = Vector2(776.154, -341.538)
+scale = Vector2(0.769231, 0.769231)
+
+[node name="Through42" parent="Objects/Throughs" instance=ExtResource("5_hbgub")]
+position = Vector2(776.154, -390)
+scale = Vector2(0.769231, 0.769231)
+
+[node name="Through43" parent="Objects/Throughs" instance=ExtResource("5_hbgub")]
+position = Vector2(893.846, -340.769)
+scale = Vector2(0.769231, 0.769231)
+
+[node name="Through44" parent="Objects/Throughs" instance=ExtResource("5_hbgub")]
+position = Vector2(893.846, -389.231)
+scale = Vector2(0.769231, 0.769231)
+
+[node name="Through45" parent="Objects/Throughs" instance=ExtResource("5_hbgub")]
+position = Vector2(893.846, -436.923)
+scale = Vector2(0.769231, 0.769231)
+
+[node name="Through46" parent="Objects/Throughs" instance=ExtResource("12_gh43b")]
+position = Vector2(935.385, -340.769)
+scale = Vector2(0.769231, 0.769231)
+
+[node name="Through47" parent="Objects/Throughs" instance=ExtResource("12_gh43b")]
+position = Vector2(934.615, -340.769)
+scale = Vector2(0.769231, 0.769231)
+
+[node name="Through48" parent="Objects/Throughs" instance=ExtResource("12_gh43b")]
+position = Vector2(735.385, -390)
+scale = Vector2(0.769231, 0.769231)
+
+[node name="Through59" parent="Objects/Throughs" instance=ExtResource("5_hbgub")]
+position = Vector2(232.308, -343.077)
+scale = Vector2(0.769231, 0.769231)
+
+[node name="Through60" parent="Objects/Throughs" instance=ExtResource("5_hbgub")]
+position = Vector2(273.077, -343.077)
+scale = Vector2(0.769231, 0.769231)
+
+[node name="Through61" parent="Objects/Throughs" instance=ExtResource("5_hbgub")]
+position = Vector2(313.846, -343.077)
+scale = Vector2(0.769231, 0.769231)
+
+[node name="Through62" parent="Objects/Throughs" instance=ExtResource("5_hbgub")]
+position = Vector2(313.846, -391.538)
+scale = Vector2(0.769231, 0.769231)
+
+[node name="Through63" parent="Objects/Throughs" instance=ExtResource("12_gh43b")]
+position = Vector2(273.077, -391.538)
+scale = Vector2(0.769231, 0.769231)
+
+[node name="Through64" parent="Objects/Throughs" instance=ExtResource("5_hbgub")]
+position = Vector2(-174.615, -342.307)
+scale = Vector2(0.769231, 0.769231)
+
+[node name="Through65" parent="Objects/Throughs" instance=ExtResource("5_hbgub")]
+position = Vector2(-133.846, -342.307)
+scale = Vector2(0.769231, 0.769231)
+
+[node name="Through66" parent="Objects/Throughs" instance=ExtResource("5_hbgub")]
+position = Vector2(-93.0768, -342.307)
+scale = Vector2(0.769231, 0.769231)
+
+[node name="Through67" parent="Objects/Throughs" instance=ExtResource("5_hbgub")]
+position = Vector2(-174.615, -390.769)
+scale = Vector2(0.769231, 0.769231)
+
+[node name="Through68" parent="Objects/Throughs" instance=ExtResource("12_gh43b")]
+position = Vector2(-133.846, -390.769)
+scale = Vector2(0.769231, 0.769231)
+
+[node name="Through49" parent="Objects/Throughs" instance=ExtResource("12_gh43b")]
+position = Vector2(735.385, -438.462)
+scale = Vector2(0.769231, 0.769231)
+
+[node name="Through50" parent="Objects/Throughs" instance=ExtResource("4_s33ey")]
+position = Vector2(941.539, -716.154)
+scale = Vector2(0.769231, 0.769231)
+
+[node name="Through51" parent="Objects/Throughs" instance=ExtResource("13_yf6ty")]
+position = Vector2(735.385, -486.923)
+scale = Vector2(0.769231, 0.769231)
+
+[node name="Through52" parent="Objects/Throughs" instance=ExtResource("13_yf6ty")]
+position = Vector2(735.385, -535.385)
+scale = Vector2(0.769231, 0.769231)
+
+[node name="Through72" parent="Objects/Throughs" instance=ExtResource("5_hbgub")]
+position = Vector2(-1380.77, 42.3077)
+scale = Vector2(0.769231, 0.769231)
+
+[node name="Through73" parent="Objects/Throughs" instance=ExtResource("5_hbgub")]
+position = Vector2(-1340, 42.3077)
+scale = Vector2(0.769231, 0.769231)
+
+[node name="Through74" parent="Objects/Throughs" instance=ExtResource("5_hbgub")]
+position = Vector2(-1299.23, 42.3077)
+scale = Vector2(0.769231, 0.769231)
+
+[node name="Through75" parent="Objects/Throughs" instance=ExtResource("5_hbgub")]
+position = Vector2(-1299.23, -6.15381)
+scale = Vector2(0.769231, 0.769231)
+
+[node name="Through76" parent="Objects/Throughs" instance=ExtResource("12_gh43b")]
+position = Vector2(-1340, -6.15381)
+scale = Vector2(0.769231, 0.769231)
+
+[node name="Through80" parent="Objects/Throughs" instance=ExtResource("12_gh43b")]
+position = Vector2(-1258.46, 42.3077)
+scale = Vector2(0.769231, 0.769231)
+
+[node name="Through77" parent="Objects/Throughs" instance=ExtResource("12_gh43b")]
+position = Vector2(-1340, -54.6154)
+scale = Vector2(0.769231, 0.769231)
+
+[node name="Through78" parent="Objects/Throughs" instance=ExtResource("13_yf6ty")]
+position = Vector2(-1340, -103.077)
+scale = Vector2(0.769231, 0.769231)
+
+[node name="Through79" parent="Objects/Throughs" instance=ExtResource("13_yf6ty")]
+position = Vector2(-1340, -151.539)
+scale = Vector2(0.769231, 0.769231)
+
+[node name="Through103" parent="Objects/Throughs" instance=ExtResource("5_hbgub")]
+position = Vector2(-635.385, 810)
+scale = Vector2(0.769231, 0.769231)
+
+[node name="Through104" parent="Objects/Throughs" instance=ExtResource("5_hbgub")]
+position = Vector2(-594.615, 810)
+scale = Vector2(0.769231, 0.769231)
+
+[node name="Through105" parent="Objects/Throughs" instance=ExtResource("5_hbgub")]
+position = Vector2(-553.846, 810)
+scale = Vector2(0.769231, 0.769231)
+
+[node name="Through112" parent="Objects/Throughs" instance=ExtResource("5_hbgub")]
+position = Vector2(-757.692, 810)
+scale = Vector2(0.769231, 0.769231)
+
+[node name="Through114" parent="Objects/Throughs" instance=ExtResource("5_hbgub")]
+position = Vector2(-676.154, 810)
+scale = Vector2(0.769231, 0.769231)
+
+[node name="Through106" parent="Objects/Throughs" instance=ExtResource("5_hbgub")]
+position = Vector2(-553.846, 761.539)
+scale = Vector2(0.769231, 0.769231)
+
+[node name="Through118" parent="Objects/Throughs" instance=ExtResource("5_hbgub")]
+position = Vector2(-513.077, 761.538)
+scale = Vector2(0.769231, 0.769231)
+
+[node name="Through116" parent="Objects/Throughs" instance=ExtResource("5_hbgub")]
+position = Vector2(-636.154, 761.538)
+scale = Vector2(0.769231, 0.769231)
+
+[node name="Through121" parent="Objects/Throughs" instance=ExtResource("5_hbgub")]
+position = Vector2(-553.846, 664.615)
+scale = Vector2(0.769231, 0.769231)
+
+[node name="Through126" parent="Objects/Throughs" instance=ExtResource("5_hbgub")]
+position = Vector2(-1026.92, 1252.31)
+scale = Vector2(0.769231, 0.769231)
+
+[node name="Through213" parent="Objects/Throughs" instance=ExtResource("10_dffgv")]
+position = Vector2(127.692, 1053.85)
+scale = Vector2(0.769231, 0.769231)
+
+[node name="Through214" parent="Objects/Throughs" instance=ExtResource("12_gh43b")]
+position = Vector2(136.154, 1015.38)
+scale = Vector2(0.769231, 0.769231)
+
+[node name="Through215" parent="Objects/Throughs" instance=ExtResource("12_gh43b")]
+position = Vector2(95.384, 966.923)
+scale = Vector2(0.769231, 0.769231)
+
+[node name="Through216" parent="Objects/Throughs" instance=ExtResource("12_gh43b")]
+position = Vector2(95.384, 918.462)
+scale = Vector2(0.769231, 0.769231)
+
+[node name="Through217" parent="Objects/Throughs" instance=ExtResource("13_yf6ty")]
+position = Vector2(95.384, 870)
+scale = Vector2(0.769231, 0.769231)
+
+[node name="Through218" parent="Objects/Throughs" instance=ExtResource("5_hbgub")]
+position = Vector2(95.3839, 1015.38)
+scale = Vector2(0.769231, 0.769231)
+
+[node name="Through219" parent="Objects/Throughs" instance=ExtResource("5_hbgub")]
+position = Vector2(472.308, 970)
+scale = Vector2(0.769231, 0.769231)
+
+[node name="Through107" parent="Objects/Throughs" instance=ExtResource("12_gh43b")]
+position = Vector2(-594.615, 761.539)
+scale = Vector2(0.769231, 0.769231)
+
+[node name="Through113" parent="Objects/Throughs" instance=ExtResource("12_gh43b")]
+position = Vector2(-676.923, 761.538)
+scale = Vector2(0.769231, 0.769231)
+
+[node name="Through108" parent="Objects/Throughs" instance=ExtResource("12_gh43b")]
+position = Vector2(-513.077, 810)
+scale = Vector2(0.769231, 0.769231)
+
+[node name="Through115" parent="Objects/Throughs" instance=ExtResource("12_gh43b")]
+position = Vector2(-717.692, 810)
+scale = Vector2(0.769231, 0.769231)
+
+[node name="Through109" parent="Objects/Throughs" instance=ExtResource("12_gh43b")]
+position = Vector2(-594.615, 713.077)
+scale = Vector2(0.769231, 0.769231)
+
+[node name="Through119" parent="Objects/Throughs" instance=ExtResource("12_gh43b")]
+position = Vector2(-553.846, 713.077)
+scale = Vector2(0.769231, 0.769231)
+
+[node name="Through120" parent="Objects/Throughs" instance=ExtResource("12_gh43b")]
+position = Vector2(-636.154, 713.077)
+scale = Vector2(0.769231, 0.769231)
+
+[node name="Through110" parent="Objects/Throughs" instance=ExtResource("13_yf6ty")]
+position = Vector2(-594.615, 664.615)
+scale = Vector2(0.769231, 0.769231)
+
+[node name="Through111" parent="Objects/Throughs" instance=ExtResource("13_yf6ty")]
+position = Vector2(-594.615, 616.154)
+scale = Vector2(0.769231, 0.769231)
+
+[node name="Through117" parent="Objects/Throughs" instance=ExtResource("13_yf6ty")]
+position = Vector2(-716.923, 761.539)
+scale = Vector2(0.769231, 0.769231)
+
+[node name="Through194" parent="Objects/Throughs" instance=ExtResource("5_hbgub")]
+position = Vector2(386.924, 1386.15)
+scale = Vector2(0.769231, 0.769231)
+
+[node name="Through195" parent="Objects/Throughs" instance=ExtResource("5_hbgub")]
+position = Vector2(427.693, 1386.15)
+scale = Vector2(0.769231, 0.769231)
+
+[node name="Through196" parent="Objects/Throughs" instance=ExtResource("5_hbgub")]
+position = Vector2(468.462, 1386.15)
+scale = Vector2(0.769231, 0.769231)
+
+[node name="Through197" parent="Objects/Throughs" instance=ExtResource("5_hbgub")]
+position = Vector2(264.616, 1386.15)
+scale = Vector2(0.769231, 0.769231)
+
+[node name="Through198" parent="Objects/Throughs" instance=ExtResource("5_hbgub")]
+position = Vector2(346.155, 1386.15)
+scale = Vector2(0.769231, 0.769231)
+
+[node name="Through199" parent="Objects/Throughs" instance=ExtResource("5_hbgub")]
+position = Vector2(468.462, 1337.69)
+scale = Vector2(0.769231, 0.769231)
+
+[node name="Through200" parent="Objects/Throughs" instance=ExtResource("5_hbgub")]
+position = Vector2(509.231, 1337.69)
+scale = Vector2(0.769231, 0.769231)
+
+[node name="Through201" parent="Objects/Throughs" instance=ExtResource("5_hbgub")]
+position = Vector2(386.154, 1337.69)
+scale = Vector2(0.769231, 0.769231)
+
+[node name="Through202" parent="Objects/Throughs" instance=ExtResource("5_hbgub")]
+position = Vector2(468.462, 1240.77)
+scale = Vector2(0.769231, 0.769231)
+
+[node name="Through203" parent="Objects/Throughs" instance=ExtResource("12_gh43b")]
+position = Vector2(427.693, 1337.69)
+scale = Vector2(0.769231, 0.769231)
+
+[node name="Through204" parent="Objects/Throughs" instance=ExtResource("12_gh43b")]
+position = Vector2(345.385, 1337.69)
+scale = Vector2(0.769231, 0.769231)
+
+[node name="Through205" parent="Objects/Throughs" instance=ExtResource("12_gh43b")]
+position = Vector2(509.231, 1386.15)
+scale = Vector2(0.769231, 0.769231)
+
+[node name="Through206" parent="Objects/Throughs" instance=ExtResource("12_gh43b")]
+position = Vector2(304.616, 1386.15)
+scale = Vector2(0.769231, 0.769231)
+
+[node name="Through207" parent="Objects/Throughs" instance=ExtResource("12_gh43b")]
+position = Vector2(427.693, 1289.23)
+scale = Vector2(0.769231, 0.769231)
+
+[node name="Through208" parent="Objects/Throughs" instance=ExtResource("12_gh43b")]
+position = Vector2(468.462, 1289.23)
+scale = Vector2(0.769231, 0.769231)
+
+[node name="Through209" parent="Objects/Throughs" instance=ExtResource("12_gh43b")]
+position = Vector2(386.154, 1289.23)
+scale = Vector2(0.769231, 0.769231)
+
+[node name="Through210" parent="Objects/Throughs" instance=ExtResource("13_yf6ty")]
+position = Vector2(427.693, 1240.77)
+scale = Vector2(0.769231, 0.769231)
+
+[node name="Through211" parent="Objects/Throughs" instance=ExtResource("13_yf6ty")]
+position = Vector2(427.693, 1192.31)
+scale = Vector2(0.769231, 0.769231)
+
+[node name="Through212" parent="Objects/Throughs" instance=ExtResource("13_yf6ty")]
+position = Vector2(305.385, 1337.69)
+scale = Vector2(0.769231, 0.769231)
+
+[node name="Through53" parent="Objects/Throughs" instance=ExtResource("4_s33ey")]
+position = Vector2(162.308, -988.462)
+scale = Vector2(0.769231, 0.769231)
+
+[node name="Through54" parent="Objects/Throughs" instance=ExtResource("4_s33ey")]
+position = Vector2(333.846, -988.462)
+scale = Vector2(0.769231, 0.769231)
+
+[node name="Through55" parent="Objects/Throughs" instance=ExtResource("4_s33ey")]
+position = Vector2(505.385, -988.462)
+scale = Vector2(0.769231, 0.769231)
+
+[node name="Through57" parent="Objects/Throughs" instance=ExtResource("5_hbgub")]
+position = Vector2(608.462, -753.846)
+scale = Vector2(0.769231, 0.769231)
+
+[node name="Through58" parent="Objects/Throughs" instance=ExtResource("12_gh43b")]
+position = Vector2(608.462, -802.308)
+scale = Vector2(0.769231, 0.769231)
+
+[node name="Through69" parent="Objects/Throughs" instance=ExtResource("13_yf6ty")]
+position = Vector2(-134.615, -440)
+scale = Vector2(0.769231, 0.769231)
+
+[node name="Through81" parent="Objects/Throughs" instance=ExtResource("5_hbgub")]
+position = Vector2(-1138.46, 233.077)
+scale = Vector2(0.769231, 0.769231)
+
+[node name="Through82" parent="Objects/Throughs" instance=ExtResource("5_hbgub")]
+position = Vector2(-1097.69, 233.077)
+scale = Vector2(0.769231, 0.769231)
+
+[node name="Through83" parent="Objects/Throughs" instance=ExtResource("5_hbgub")]
+position = Vector2(-1056.92, 233.077)
+scale = Vector2(0.769231, 0.769231)
+
+[node name="Through84" parent="Objects/Throughs" instance=ExtResource("5_hbgub")]
+position = Vector2(-1138.46, 184.615)
+scale = Vector2(0.769231, 0.769231)
+
+[node name="Through85" parent="Objects/Throughs" instance=ExtResource("12_gh43b")]
+position = Vector2(-1097.69, 184.616)
+scale = Vector2(0.769231, 0.769231)
+
+[node name="Through86" parent="Objects/Throughs" instance=ExtResource("13_yf6ty")]
+position = Vector2(-1098.46, 135.385)
+scale = Vector2(0.769231, 0.769231)
+
+[node name="Through137" parent="Objects/Throughs" instance=ExtResource("5_hbgub")]
+position = Vector2(-1460, 1385.39)
+scale = Vector2(0.769231, 0.769231)
+
+[node name="Through138" parent="Objects/Throughs" instance=ExtResource("5_hbgub")]
+position = Vector2(-1419.23, 1385.39)
+scale = Vector2(0.769231, 0.769231)
+
+[node name="Through139" parent="Objects/Throughs" instance=ExtResource("5_hbgub")]
+position = Vector2(-1378.46, 1385.39)
+scale = Vector2(0.769231, 0.769231)
+
+[node name="Through140" parent="Objects/Throughs" instance=ExtResource("5_hbgub")]
+position = Vector2(-1460, 1336.92)
+scale = Vector2(0.769231, 0.769231)
+
+[node name="Through141" parent="Objects/Throughs" instance=ExtResource("12_gh43b")]
+position = Vector2(-1419.23, 1336.92)
+scale = Vector2(0.769231, 0.769231)
+
+[node name="Through142" parent="Objects/Throughs" instance=ExtResource("13_yf6ty")]
+position = Vector2(-1420, 1287.69)
+scale = Vector2(0.769231, 0.769231)
+
+[node name="Through70" parent="Objects/Throughs" instance=ExtResource("4_s33ey")]
+position = Vector2(69.231, -363.077)
+scale = Vector2(0.769231, 0.769231)
+
+[node name="Through71" parent="Objects/Throughs" instance=ExtResource("11_tism7")]
+position = Vector2(118.462, -413.077)
+scale = Vector2(0.769231, 0.769231)
+
+[node name="Through87" parent="Objects/Throughs" instance=ExtResource("4_s33ey")]
+position = Vector2(-468.462, -357.692)
+scale = Vector2(0.769231, 0.769231)
+
+[node name="Through88" parent="Objects/Throughs" instance=ExtResource("10_dffgv")]
+position = Vector2(-629.231, -406.923)
+scale = Vector2(0.769231, 0.769231)
+
+[node name="Through89" parent="Objects/Throughs" instance=ExtResource("14_7702b")]
+position = Vector2(-768.462, -454.615)
+scale = Vector2(0.769231, 0.769231)
+
+[node name="Through90" parent="Objects/Throughs" instance=ExtResource("4_s33ey")]
+position = Vector2(-1320.77, 81.5385)
+scale = Vector2(0.769231, 0.769231)
+
+[node name="Through91" parent="Objects/Throughs" instance=ExtResource("4_s33ey")]
+position = Vector2(-1090.77, -303.846)
+scale = Vector2(0.769231, 0.769231)
+
+[node name="Through92" parent="Objects/Throughs" instance=ExtResource("4_s33ey")]
+position = Vector2(-1090.77, -138.462)
+scale = Vector2(0.769231, 0.769231)
+
+[node name="Through93" parent="Objects/Throughs" instance=ExtResource("4_s33ey")]
+position = Vector2(-1090, 33.0769)
+scale = Vector2(0.769231, 0.769231)
+
+[node name="Through94" parent="Objects/Throughs" instance=ExtResource("13_yf6ty")]
+position = Vector2(-1026.92, -174.615)
+scale = Vector2(0.769231, 0.769231)
+
+[node name="Through95" parent="Objects/Throughs" instance=ExtResource("13_yf6ty")]
+position = Vector2(-1026.92, -222.308)
+scale = Vector2(0.769231, 0.769231)
+
+[node name="Through96" parent="Objects/Throughs" instance=ExtResource("13_yf6ty")]
+position = Vector2(-1026.15, -3.84619)
+scale = Vector2(0.769231, 0.769231)
+
+[node name="Through97" parent="Objects/Throughs" instance=ExtResource("13_yf6ty")]
+position = Vector2(-1026.15, -51.5385)
+scale = Vector2(0.769231, 0.769231)
+
+[node name="Through98" parent="Objects/Throughs" instance=ExtResource("11_tism7")]
+position = Vector2(-1372.31, 186.154)
+scale = Vector2(0.769231, 0.769231)
+
+[node name="Through99" parent="Objects/Throughs" instance=ExtResource("12_jlvsj")]
+position = Vector2(-1262.31, 217.692)
+scale = Vector2(0.769231, 0.769231)
+
+[node name="Through100" parent="Objects/Throughs" instance=ExtResource("4_s33ey")]
+position = Vector2(-881.538, 439.231)
+scale = Vector2(0.769231, 0.769231)
+
+[node name="Through101" parent="Objects/Throughs" instance=ExtResource("11_tism7")]
+position = Vector2(-564.615, 166.923)
+scale = Vector2(0.769231, 0.769231)
+
+[node name="Through102" parent="Objects/Throughs" instance=ExtResource("5_hbgub")]
+position = Vector2(-564.615, 129.231)
+scale = Vector2(0.769231, 0.769231)
+
+[node name="Through122" parent="Objects/Throughs" instance=ExtResource("11_tism7")]
+position = Vector2(-564.615, 280.769)
+scale = Vector2(0.769231, 0.769231)
+
+[node name="Through123" parent="Objects/Throughs" instance=ExtResource("5_hbgub")]
+position = Vector2(-564.615, 243.077)
+scale = Vector2(0.769231, 0.769231)
+
+[node name="Through124" parent="Objects/Throughs" instance=ExtResource("11_tism7")]
+position = Vector2(-564.615, 392.308)
+scale = Vector2(0.769231, 0.769231)
+
+[node name="Through125" parent="Objects/Throughs" instance=ExtResource("5_hbgub")]
+position = Vector2(-564.615, 354.615)
+scale = Vector2(0.769231, 0.769231)
+
+[node name="Through143" parent="Objects/Throughs" instance=ExtResource("12_jlvsj")]
+position = Vector2(-1090.77, 886.923)
+scale = Vector2(0.769231, 0.769231)
+
+[node name="Through144" parent="Objects/Throughs" instance=ExtResource("12_jlvsj")]
+position = Vector2(-1196.92, 948.462)
+scale = Vector2(0.769231, 0.769231)
+
+[node name="Through145" parent="Objects/Throughs" instance=ExtResource("12_jlvsj")]
+position = Vector2(-1326.92, 1016.15)
+scale = Vector2(0.769231, 0.769231)
+
+[node name="Through146" parent="Objects/Throughs" instance=ExtResource("12_jlvsj")]
+position = Vector2(-1329.23, 1117.69)
+scale = Vector2(0.769231, 0.769231)
+
+[node name="Through147" parent="Objects/Throughs" instance=ExtResource("12_jlvsj")]
+position = Vector2(-1221.54, 1203.08)
+scale = Vector2(0.769231, 0.769231)
+
+[node name="Through148" parent="Objects/Throughs" instance=ExtResource("12_jlvsj")]
+position = Vector2(-1220.77, 1352.31)
+scale = Vector2(0.769231, 0.769231)
+
+[node name="Through149" parent="Objects/Throughs" instance=ExtResource("10_dffgv")]
+position = Vector2(-1383.08, 798.462)
+scale = Vector2(0.769231, 0.769231)
+
+[node name="Through150" parent="Objects/Throughs" instance=ExtResource("12_gh43b")]
+position = Vector2(-1415.38, 757.692)
+scale = Vector2(0.769231, 0.769231)
+
+[node name="Through151" parent="Objects/Throughs" instance=ExtResource("13_yf6ty")]
+position = Vector2(-1415.38, 709.231)
+scale = Vector2(0.769231, 0.769231)
+
+[node name="Through152" parent="Objects/Throughs" instance=ExtResource("13_yf6ty")]
+position = Vector2(-1416.92, 840.769)
+scale = Vector2(0.769231, 0.769231)
+
+[node name="Through153" parent="Objects/Throughs" instance=ExtResource("13_yf6ty")]
+position = Vector2(-1376.15, 840.769)
+scale = Vector2(0.769231, 0.769231)
+
+[node name="Through154" parent="Objects/Throughs" instance=ExtResource("5_hbgub")]
+position = Vector2(-1373.85, 757.692)
+scale = Vector2(0.769231, 0.769231)
+
+[node name="Through155" parent="Objects/Throughs" instance=ExtResource("14_7702b")]
+position = Vector2(-1400, 880.769)
+scale = Vector2(0.769231, 0.769231)
+
+[node name="Through156" parent="Objects/Throughs" instance=ExtResource("13_yf6ty")]
+position = Vector2(-767.692, 1385.38)
+scale = Vector2(0.769231, 0.769231)
+
+[node name="Through157" parent="Objects/Throughs" instance=ExtResource("13_yf6ty")]
+position = Vector2(-808.462, 1385.38)
+scale = Vector2(0.769231, 0.769231)
+
+[node name="Through158" parent="Objects/Throughs" instance=ExtResource("13_yf6ty")]
+position = Vector2(-726.923, 1385.38)
+scale = Vector2(0.769231, 0.769231)
+
+[node name="Through159" parent="Objects/Throughs" instance=ExtResource("13_yf6ty")]
+position = Vector2(-686.154, 1385.38)
+scale = Vector2(0.769231, 0.769231)
+
+[node name="Through160" parent="Objects/Throughs" instance=ExtResource("13_yf6ty")]
+position = Vector2(-645.385, 1385.38)
+scale = Vector2(0.769231, 0.769231)
+
+[node name="Through161" parent="Objects/Throughs" instance=ExtResource("13_yf6ty")]
+position = Vector2(-604.615, 1385.38)
+scale = Vector2(0.769231, 0.769231)
+
+[node name="Through162" parent="Objects/Throughs" instance=ExtResource("13_yf6ty")]
+position = Vector2(-563.846, 1385.38)
+scale = Vector2(0.769231, 0.769231)
+
+[node name="Through163" parent="Objects/Throughs" instance=ExtResource("13_yf6ty")]
+position = Vector2(-523.846, 1385.38)
+scale = Vector2(0.769231, 0.769231)
+
+[node name="Through164" parent="Objects/Throughs" instance=ExtResource("13_yf6ty")]
+position = Vector2(-483.077, 1385.38)
+scale = Vector2(0.769231, 0.769231)
+
+[node name="Through165" parent="Objects/Throughs" instance=ExtResource("13_yf6ty")]
+position = Vector2(-442.308, 1385.38)
+scale = Vector2(0.769231, 0.769231)
+
+[node name="Through166" parent="Objects/Throughs" instance=ExtResource("13_yf6ty")]
+position = Vector2(-401.538, 1385.38)
+scale = Vector2(0.769231, 0.769231)
+
+[node name="Through167" parent="Objects/Throughs" instance=ExtResource("13_yf6ty")]
+position = Vector2(-360.769, 1385.38)
+scale = Vector2(0.769231, 0.769231)
+
+[node name="Through168" parent="Objects/Throughs" instance=ExtResource("13_yf6ty")]
+position = Vector2(-320, 1385.38)
+scale = Vector2(0.769231, 0.769231)
+
+[node name="Through169" parent="Objects/Throughs" instance=ExtResource("13_yf6ty")]
+position = Vector2(-767.692, 1338.46)
+scale = Vector2(0.769231, 0.769231)
+
+[node name="Through170" parent="Objects/Throughs" instance=ExtResource("13_yf6ty")]
+position = Vector2(-726.923, 1338.46)
+scale = Vector2(0.769231, 0.769231)
+
+[node name="Through171" parent="Objects/Throughs" instance=ExtResource("13_yf6ty")]
+position = Vector2(-686.154, 1338.46)
+scale = Vector2(0.769231, 0.769231)
+
+[node name="Through172" parent="Objects/Throughs" instance=ExtResource("13_yf6ty")]
+position = Vector2(-645.385, 1338.46)
+scale = Vector2(0.769231, 0.769231)
+
+[node name="Through173" parent="Objects/Throughs" instance=ExtResource("13_yf6ty")]
+position = Vector2(-604.615, 1338.46)
+scale = Vector2(0.769231, 0.769231)
+
+[node name="Through174" parent="Objects/Throughs" instance=ExtResource("13_yf6ty")]
+position = Vector2(-563.846, 1338.46)
+scale = Vector2(0.769231, 0.769231)
+
+[node name="Through175" parent="Objects/Throughs" instance=ExtResource("13_yf6ty")]
+position = Vector2(-523.846, 1338.46)
+scale = Vector2(0.769231, 0.769231)
+
+[node name="Through176" parent="Objects/Throughs" instance=ExtResource("13_yf6ty")]
+position = Vector2(-483.077, 1338.46)
+scale = Vector2(0.769231, 0.769231)
+
+[node name="Through177" parent="Objects/Throughs" instance=ExtResource("13_yf6ty")]
+position = Vector2(-442.308, 1338.46)
+scale = Vector2(0.769231, 0.769231)
+
+[node name="Through178" parent="Objects/Throughs" instance=ExtResource("13_yf6ty")]
+position = Vector2(-401.538, 1338.46)
+scale = Vector2(0.769231, 0.769231)
+
+[node name="Through179" parent="Objects/Throughs" instance=ExtResource("13_yf6ty")]
+position = Vector2(-360.769, 1338.46)
+scale = Vector2(0.769231, 0.769231)
+
+[node name="Through180" parent="Objects/Throughs" instance=ExtResource("13_yf6ty")]
+position = Vector2(-320, 1338.46)
+scale = Vector2(0.769231, 0.769231)
+
+[node name="Through181" parent="Objects/Throughs" instance=ExtResource("13_yf6ty")]
+position = Vector2(-767.692, 1290)
+scale = Vector2(0.769231, 0.769231)
+
+[node name="Through182" parent="Objects/Throughs" instance=ExtResource("13_yf6ty")]
+position = Vector2(-726.923, 1290)
+scale = Vector2(0.769231, 0.769231)
+
+[node name="Through183" parent="Objects/Throughs" instance=ExtResource("13_yf6ty")]
+position = Vector2(-686.154, 1290)
+scale = Vector2(0.769231, 0.769231)
+
+[node name="Through184" parent="Objects/Throughs" instance=ExtResource("13_yf6ty")]
+position = Vector2(-645.385, 1290)
+scale = Vector2(0.769231, 0.769231)
+
+[node name="Through185" parent="Objects/Throughs" instance=ExtResource("13_yf6ty")]
+position = Vector2(-604.615, 1290)
+scale = Vector2(0.769231, 0.769231)
+
+[node name="Through186" parent="Objects/Throughs" instance=ExtResource("13_yf6ty")]
+position = Vector2(-563.846, 1290)
+scale = Vector2(0.769231, 0.769231)
+
+[node name="Through187" parent="Objects/Throughs" instance=ExtResource("13_yf6ty")]
+position = Vector2(-523.846, 1290)
+scale = Vector2(0.769231, 0.769231)
+
+[node name="Through188" parent="Objects/Throughs" instance=ExtResource("13_yf6ty")]
+position = Vector2(-483.077, 1290)
+scale = Vector2(0.769231, 0.769231)
+
+[node name="Through189" parent="Objects/Throughs" instance=ExtResource("13_yf6ty")]
+position = Vector2(-442.308, 1290)
+scale = Vector2(0.769231, 0.769231)
+
+[node name="Through190" parent="Objects/Throughs" instance=ExtResource("13_yf6ty")]
+position = Vector2(-401.538, 1290)
+scale = Vector2(0.769231, 0.769231)
+
+[node name="Through191" parent="Objects/Throughs" instance=ExtResource("13_yf6ty")]
+position = Vector2(-360.769, 1290)
+scale = Vector2(0.769231, 0.769231)
+
+[node name="Through192" parent="Objects/Throughs" instance=ExtResource("13_yf6ty")]
+position = Vector2(-320, 1290)
+scale = Vector2(0.769231, 0.769231)
+
+[node name="Through193" parent="Objects/Throughs" instance=ExtResource("4_s33ey")]
+position = Vector2(-48.4614, 1366.15)
+scale = Vector2(0.769231, 0.769231)
+
+[node name="Through243" parent="Objects/Throughs" instance=ExtResource("4_s33ey")]
+position = Vector2(277.692, 1114.62)
+scale = Vector2(0.769231, 0.769231)
+
+[node name="Through244" parent="Objects/Throughs" instance=ExtResource("11_tism7")]
+position = Vector2(240.769, 849.231)
+scale = Vector2(0.769231, 0.769231)
+
+[node name="Through245" parent="Objects/Throughs" instance=ExtResource("11_tism7")]
+position = Vector2(405.385, 849.231)
+scale = Vector2(0.769231, 0.769231)
+
+[node name="Through246" parent="Objects/Throughs" instance=ExtResource("12_jlvsj")]
+position = Vector2(472.308, 1007.69)
+scale = Vector2(0.769231, 0.769231)
+
+[node name="Through247" parent="Objects/Throughs" instance=ExtResource("13_yf6ty")]
+position = Vector2(704.615, 713.077)
+scale = Vector2(0.769231, 0.769231)
+
+[node name="Through248" parent="Objects/Throughs" instance=ExtResource("13_yf6ty")]
+position = Vector2(704.615, 664.615)
 scale = Vector2(0.769231, 0.769231)
 
 [node name="CameraLimits" type="Node2D" parent="Objects"]
@@ -394,10 +1274,159 @@ limit_right = 2000
 limit_bottom = 410
 
 [node name="Searcher" parent="Objects/CameraLimits" node_paths=PackedStringArray("camera_limits") instance=ExtResource("6_5dp2s")]
-visible = false
 position = Vector2(-1313.85, -1285.38)
 scale = Vector2(80.714, 14.284)
 camera_limits = NodePath("../Limits")
+
+[node name="Searcher5" parent="Objects/CameraLimits" node_paths=PackedStringArray("camera_limits") instance=ExtResource("6_5dp2s")]
+visible = false
+position = Vector2(-216.154, -413.846)
+scale = Vector2(74.254, 14.284)
+camera_limits = NodePath("../Limits5")
+
+[node name="Searcher9" parent="Objects/CameraLimits" node_paths=PackedStringArray("camera_limits") instance=ExtResource("6_5dp2s")]
+position = Vector2(-491.539, 1323.85)
+scale = Vector2(49.4232, 14.284)
+camera_limits = NodePath("../Limits9")
+
+[node name="Searcher12" parent="Objects/CameraLimits" node_paths=PackedStringArray("camera_limits") instance=ExtResource("6_5dp2s")]
+position = Vector2(1567.69, 145.385)
+scale = Vector2(49.4232, 14.284)
+camera_limits = NodePath("../Limits12")
+
+[node name="Limits2" parent="Objects/CameraLimits" instance=ExtResource("6_k7y5s")]
+position = Vector2(-202.308, -1133.08)
+scale = Vector2(0.769231, 0.769231)
+limit_left = 2000
+limit_top = 15
+limit_right = 2750
+limit_bottom = 795
+
+[node name="Searcher2" parent="Objects/CameraLimits" node_paths=PackedStringArray("camera_limits") instance=ExtResource("6_5dp2s")]
+visible = false
+position = Vector2(-235.385, -1136.92)
+scale = Vector2(26.3462, 29.8077)
+camera_limits = NodePath("../Limits2")
+
+[node name="Searcher4" parent="Objects/CameraLimits" node_paths=PackedStringArray("camera_limits") instance=ExtResource("6_5dp2s")]
+visible = false
+position = Vector2(810.769, -742.308)
+scale = Vector2(26.346, 46.038)
+camera_limits = NodePath("../Limits4")
+
+[node name="Searcher6" parent="Objects/CameraLimits" node_paths=PackedStringArray("camera_limits") instance=ExtResource("6_5dp2s")]
+visible = false
+position = Vector2(-1263.85, -129.231)
+scale = Vector2(26.346, 46.038)
+camera_limits = NodePath("../Limits6")
+
+[node name="Searcher7" parent="Objects/CameraLimits" node_paths=PackedStringArray("camera_limits") instance=ExtResource("6_5dp2s")]
+visible = false
+position = Vector2(-730, 446.154)
+scale = Vector2(26.346, 46.038)
+camera_limits = NodePath("../Limits7")
+
+[node name="Searcher8" parent="Objects/CameraLimits" node_paths=PackedStringArray("camera_limits") instance=ExtResource("6_5dp2s")]
+position = Vector2(-1259.23, 1031.54)
+scale = Vector2(26.346, 46.038)
+camera_limits = NodePath("../Limits8")
+
+[node name="Searcher10" parent="Objects/CameraLimits" node_paths=PackedStringArray("camera_limits") instance=ExtResource("6_5dp2s")]
+position = Vector2(272.308, 1018.46)
+scale = Vector2(26.346, 46.038)
+camera_limits = NodePath("../Limits10")
+
+[node name="Searcher11" parent="Objects/CameraLimits" node_paths=PackedStringArray("camera_limits") instance=ExtResource("6_5dp2s")]
+position = Vector2(805.385, 401.538)
+scale = Vector2(26.346, 46.038)
+camera_limits = NodePath("../Limits11")
+
+[node name="Searcher3" parent="Objects/CameraLimits" node_paths=PackedStringArray("camera_limits") instance=ExtResource("6_5dp2s")]
+visible = false
+position = Vector2(292.308, -988.462)
+scale = Vector2(24.4346, 14.5192)
+camera_limits = NodePath("../Limits3")
+
+[node name="Limits3" parent="Objects/CameraLimits" instance=ExtResource("6_k7y5s")]
+visible = false
+position = Vector2(316.154, -991.539)
+scale = Vector2(0.769231, 0.769231)
+limit_left = 2735
+limit_top = 405
+limit_right = 3400
+limit_bottom = 795
+
+[node name="Limits4" parent="Objects/CameraLimits" instance=ExtResource("6_k7y5s")]
+position = Vector2(823.077, -698.462)
+scale = Vector2(0.769231, 0.769231)
+limit_left = 3385
+limit_top = 390
+limit_right = 4100
+limit_bottom = 1535
+
+[node name="Limits5" parent="Objects/CameraLimits" instance=ExtResource("6_k7y5s")]
+position = Vector2(823.077, -698.462)
+scale = Vector2(0.769231, 0.769231)
+limit_left = 1330
+limit_top = 1130
+limit_right = 3430
+limit_bottom = 1540
+
+[node name="Limits6" parent="Objects/CameraLimits" instance=ExtResource("6_k7y5s")]
+position = Vector2(823.077, -698.462)
+scale = Vector2(0.769231, 0.769231)
+limit_left = 710
+limit_top = 1140
+limit_right = 1430
+limit_bottom = 2290
+
+[node name="Limits7" parent="Objects/CameraLimits" instance=ExtResource("6_k7y5s")]
+position = Vector2(823.077, -698.462)
+scale = Vector2(0.769231, 0.769231)
+limit_left = 1375
+limit_top = 1885
+limit_right = 2110
+limit_bottom = 3055
+
+[node name="Limits8" parent="Objects/CameraLimits" instance=ExtResource("6_k7y5s")]
+position = Vector2(823.077, -698.462)
+scale = Vector2(0.769231, 0.769231)
+limit_left = 690
+limit_top = 2640
+limit_right = 1430
+limit_bottom = 3800
+
+[node name="Limits9" parent="Objects/CameraLimits" instance=ExtResource("6_k7y5s")]
+position = Vector2(823.077, -698.462)
+scale = Vector2(0.769231, 0.769231)
+limit_left = 1380
+limit_top = 3385
+limit_right = 2875
+limit_bottom = 3800
+
+[node name="Limits10" parent="Objects/CameraLimits" instance=ExtResource("6_k7y5s")]
+position = Vector2(823.077, -698.462)
+scale = Vector2(0.769231, 0.769231)
+limit_left = 2690
+limit_top = 2635
+limit_right = 3455
+limit_bottom = 3815
+
+[node name="Limits11" parent="Objects/CameraLimits" instance=ExtResource("6_k7y5s")]
+position = Vector2(823.077, -698.462)
+scale = Vector2(0.769231, 0.769231)
+limit_left = 3355
+limit_top = 1875
+limit_right = 4100
+limit_bottom = 3050
+
+[node name="Limits12" parent="Objects/CameraLimits" instance=ExtResource("6_k7y5s")]
+position = Vector2(823.077, -698.462)
+scale = Vector2(0.769231, 0.769231)
+limit_left = 4030
+limit_top = 1870
+limit_right = 5600
+limit_bottom = 2305
 
 [node name="Enemies" type="Node2D" parent="Objects"]
 position = Vector2(2690, 1891)
@@ -456,109 +1485,203 @@ scale = Vector2(0.769231, 0.769231)
 [node name="MarkerRight" parent="Objects/Enemies/EnemyRegular6" index="2"]
 position = Vector2(185, 0)
 
+[node name="EnemyRegular8" parent="Objects/Enemies" instance=ExtResource("11_exeqb")]
+position = Vector2(116.154, -1018.46)
+scale = Vector2(0.769231, 0.769231)
+
+[node name="EnemyRegular9" parent="Objects/Enemies" instance=ExtResource("11_exeqb")]
+position = Vector2(312.308, -910)
+scale = Vector2(0.769231, 0.769231)
+
+[node name="EnemyHelmet" parent="Objects/Enemies" instance=ExtResource("11_0sq57")]
+position = Vector2(483.077, -1019.23)
+scale = Vector2(0.769231, 0.769231)
+
+[node name="EnemyHelmet2" parent="Objects/Enemies" instance=ExtResource("11_0sq57")]
+position = Vector2(733.846, -587.692)
+scale = Vector2(0.769231, 0.769231)
+
+[node name="MarkerRight" parent="Objects/Enemies/EnemyHelmet2" index="2"]
+position = Vector2(9, 0)
+
+[node name="EnemyRegular10" parent="Objects/Enemies" instance=ExtResource("11_exeqb")]
+position = Vector2(880, -749.231)
+scale = Vector2(0.769231, 0.769231)
+
+[node name="EnemyRegular11" parent="Objects/Enemies" instance=ExtResource("11_exeqb")]
+position = Vector2(890.769, -490.769)
+scale = Vector2(0.769231, 0.769231)
+
+[node name="MarkerRight" parent="Objects/Enemies/EnemyRegular11" index="2"]
+position = Vector2(8, 0)
+
+[node name="EnemyRegular12" parent="Objects/Enemies" instance=ExtResource("11_exeqb")]
+position = Vector2(975.385, -748.462)
+scale = Vector2(0.769231, 0.769231)
+
+[node name="EnemyHelmet3" parent="Objects/Enemies" instance=ExtResource("11_0sq57")]
+position = Vector2(272.308, -444.615)
+scale = Vector2(0.769231, 0.769231)
+
+[node name="EnemyHelmet4" parent="Objects/Enemies" instance=ExtResource("11_0sq57")]
+position = Vector2(-136.154, -493.077)
+scale = Vector2(0.769231, 0.769231)
+
+[node name="MarkerRight" parent="Objects/Enemies/EnemyHelmet4" index="2"]
+position = Vector2(15, -2)
+
+[node name="EnemyRegular13" parent="Objects/Enemies" instance=ExtResource("11_exeqb")]
+position = Vector2(20.7693, -394.615)
+scale = Vector2(0.769231, 0.769231)
+
+[node name="EnemyHelmet5" parent="Objects/Enemies" instance=ExtResource("11_0sq57")]
+position = Vector2(-788.462, -484.615)
+scale = Vector2(0.769231, 0.769231)
+
+[node name="EnemyRegular14" parent="Objects/Enemies" instance=ExtResource("11_exeqb")]
+position = Vector2(-531.538, -387.692)
+scale = Vector2(0.769231, 0.769231)
+
+[node name="EnemyRegular15" parent="Objects/Enemies" instance=ExtResource("11_exeqb")]
+position = Vector2(-926.923, -336.154)
+scale = Vector2(0.769231, 0.769231)
+
+[node name="EnemyKevlar" parent="Objects/Enemies" instance=ExtResource("18_2idem")]
+position = Vector2(-1340.77, -204.615)
+scale = Vector2(0.769231, 0.769231)
+
+[node name="MarkerRight" parent="Objects/Enemies/EnemyKevlar" index="2"]
+position = Vector2(10, 0)
+
+[node name="EnemyHelmet6" parent="Objects/Enemies" instance=ExtResource("11_0sq57")]
+position = Vector2(-1389.23, 152.308)
+scale = Vector2(0.769231, 0.769231)
+
+[node name="EnemyRegular16" parent="Objects/Enemies" instance=ExtResource("11_exeqb")]
+position = Vector2(-1058.46, 175.385)
+scale = Vector2(0.769231, 0.769231)
+
+[node name="MarkerRight" parent="Objects/Enemies/EnemyRegular16" index="2"]
+position = Vector2(12, 0)
+
+[node name="EnemyRegular17" parent="Objects/Enemies" instance=ExtResource("11_exeqb")]
+position = Vector2(-1383.08, -10.7692)
+scale = Vector2(0.769231, 0.769231)
+
+[node name="MarkerRight" parent="Objects/Enemies/EnemyRegular17" index="2"]
+position = Vector2(10, 0)
+
+[node name="EnemyRegular18" parent="Objects/Enemies" instance=ExtResource("11_exeqb")]
+position = Vector2(-566.154, 132.308)
+scale = Vector2(0.769231, 0.769231)
+
+[node name="MarkerRight" parent="Objects/Enemies/EnemyRegular18" index="2"]
+position = Vector2(10, 0)
+
+[node name="EnemyRegular19" parent="Objects/Enemies" instance=ExtResource("11_exeqb")]
+position = Vector2(-566.154, 360)
+scale = Vector2(0.769231, 0.769231)
+
+[node name="MarkerRight" parent="Objects/Enemies/EnemyRegular19" index="2"]
+position = Vector2(10, 0)
+
+[node name="EnemyKevlar2" parent="Objects/Enemies" instance=ExtResource("18_2idem")]
+position = Vector2(-565.385, 246.154)
+scale = Vector2(0.769231, 0.769231)
+
+[node name="MarkerRight" parent="Objects/Enemies/EnemyKevlar2" index="2"]
+position = Vector2(8, 0)
+
+[node name="EnemyHelmet7" parent="Objects/Enemies" instance=ExtResource("11_0sq57")]
+position = Vector2(-760, 756.923)
+scale = Vector2(0.769231, 0.769231)
+
+[node name="EnemyHelmet8" parent="Objects/Enemies" instance=ExtResource("11_0sq57")]
+position = Vector2(-637.692, 660)
+scale = Vector2(0.769231, 0.769231)
+
+[node name="EnemyDouble" parent="Objects/Enemies" instance=ExtResource("19_shdgp")]
+position = Vector2(-1028.46, 1054.62)
+scale = Vector2(0.769231, 0.769231)
+
+[node name="MarkerRight" parent="Objects/Enemies/EnemyDouble" index="2"]
+position = Vector2(11, 0)
+
+[node name="EnemyDouble2" parent="Objects/Enemies" instance=ExtResource("19_shdgp")]
+position = Vector2(-572.308, 1237.69)
+scale = Vector2(0.769231, 0.769231)
+
+[node name="EnemyHelmet9" parent="Objects/Enemies" instance=ExtResource("11_0sq57")]
+position = Vector2(-687.692, 1333.08)
+scale = Vector2(0.769231, 0.769231)
+
+[node name="EnemyRegular20" parent="Objects/Enemies" instance=ExtResource("11_exeqb")]
+position = Vector2(-443.077, 1391.54)
+scale = Vector2(0.769231, 0.769231)
+
+[node name="EnemyKevlar3" parent="Objects/Enemies" instance=ExtResource("18_2idem")]
+position = Vector2(8.46167, 1333.08)
+scale = Vector2(0.769231, 0.769231)
+
+[node name="EnemyRegular21" parent="Objects/Enemies" instance=ExtResource("11_exeqb")]
+position = Vector2(-361.538, 1286.15)
+scale = Vector2(0.769231, 0.769231)
+
+[node name="EnemyRegular22" parent="Objects/Enemies" instance=ExtResource("11_exeqb")]
+position = Vector2(-1119.23, 1258.46)
+scale = Vector2(0.769231, 0.769231)
+
+[node name="EnemyRegular23" parent="Objects/Enemies" instance=ExtResource("11_exeqb")]
+position = Vector2(-1416.92, 764.615)
+scale = Vector2(0.769231, 0.769231)
+
+[node name="EnemyKevlar4" parent="Objects/Enemies" instance=ExtResource("18_2idem")]
+position = Vector2(470.769, 976.154)
+scale = Vector2(0.769231, 0.769231)
+
+[node name="MarkerRight" parent="Objects/Enemies/EnemyKevlar4" index="2"]
+position = Vector2(10, 0)
+
+[node name="EnemyRegular24" parent="Objects/Enemies" instance=ExtResource("11_exeqb")]
+position = Vector2(384.615, 1284.62)
+scale = Vector2(0.769231, 0.769231)
+
+[node name="EnemyRegular25" parent="Objects/Enemies" instance=ExtResource("11_exeqb")]
+position = Vector2(248.462, 1083.08)
+scale = Vector2(0.769231, 0.769231)
+
+[node name="EnemyRegular26" parent="Objects/Enemies" instance=ExtResource("11_exeqb")]
+position = Vector2(224.615, 817.692)
+scale = Vector2(0.769231, 0.769231)
+
+[node name="EnemyDouble3" parent="Objects/Enemies" instance=ExtResource("19_shdgp")]
+position = Vector2(903.846, 816.154)
+scale = Vector2(0.769231, 0.769231)
+
+[node name="EnemyKevlar5" parent="Objects/Enemies" instance=ExtResource("18_2idem")]
+position = Vector2(609.231, 564.615)
+scale = Vector2(0.769231, 0.769231)
+
+[node name="EnemyHelmet10" parent="Objects/Enemies" instance=ExtResource("11_0sq57")]
+position = Vector2(970.769, 451.539)
+scale = Vector2(0.769231, 0.769231)
+
+[node name="EnemyRegular27" parent="Objects/Enemies" instance=ExtResource("11_exeqb")]
+position = Vector2(613.077, 341.539)
+scale = Vector2(0.769231, 0.769231)
+
 [node name="Player" parent="." instance=ExtResource("2_qdpul")]
 z_index = 1
-position = Vector2(199, 330)
+position = Vector2(183, 331)
+
+[node name="HitboxArea2D" parent="Player/HealthComponent" index="0"]
+monitoring = false
+monitorable = false
 
 [node name="MainCamera" parent="Player" instance=ExtResource("3_dervd")]
 metadata/_edit_lock_ = true
 
 [node name="UI" parent="." instance=ExtResource("10_p4lq6")]
-
-[node name="Searcher" parent="." node_paths=PackedStringArray("camera_limits") instance=ExtResource("6_5dp2s")]
-visible = false
-position = Vector2(2384, 413)
-scale = Vector2(34.25, 38.75)
-camera_limits = NodePath("../Limits")
-
-[node name="Limits" parent="." instance=ExtResource("6_k7y5s")]
-position = Vector2(2427, 418)
-zoom = Vector2(1.4, 1.4)
-limit_left = 2000
-limit_top = 15
-limit_right = 2780
-limit_bottom = 795
-
-[node name="Through" parent="." instance=ExtResource("4_s33ey")]
-position = Vector2(2900, 607)
-
-[node name="Through2" parent="." instance=ExtResource("4_s33ey")]
-position = Vector2(3123, 607)
-
-[node name="Through3" parent="." instance=ExtResource("4_s33ey")]
-position = Vector2(3346, 607)
-
-[node name="EnemyRegular" parent="." instance=ExtResource("11_exeqb")]
-position = Vector2(2841, 567)
-
-[node name="EnemyRegular2" parent="." instance=ExtResource("11_exeqb")]
-position = Vector2(3096, 708)
-
-[node name="EnemyHelmet" parent="." instance=ExtResource("11_0sq57")]
-position = Vector2(3318, 566)
-
-[node name="Through4" parent="." instance=ExtResource("12_gh43b")]
-position = Vector2(2950, 700)
-
-[node name="Through5" parent="." instance=ExtResource("13_yf6ty")]
-position = Vector2(2897, 700)
-
-[node name="Through6" parent="." instance=ExtResource("5_hbgub")]
-position = Vector2(3021, 558)
-
-[node name="Through7" parent="." instance=ExtResource("12_gh43b")]
-position = Vector2(3075, 558)
-
-[node name="Through8" parent="." instance=ExtResource("12_gh43b")]
-position = Vector2(3128, 558)
-
-[node name="Through9" parent="." instance=ExtResource("5_hbgub")]
-position = Vector2(3274, 698)
-
-[node name="Through10" parent="." instance=ExtResource("10_dffgv")]
-position = Vector2(3518, 747)
-
-[node name="Through11" parent="." instance=ExtResource("5_hbgub")]
-position = Vector2(3592, 1448)
-
-[node name="Through12" parent="." instance=ExtResource("5_hbgub")]
-position = Vector2(3645, 1448)
-
-[node name="Through19" parent="." instance=ExtResource("5_hbgub")]
-position = Vector2(3698, 1448)
-
-[node name="Through20" parent="." instance=ExtResource("5_hbgub")]
-position = Vector2(3698, 1385)
-
-[node name="Through13" parent="." instance=ExtResource("5_hbgub")]
-position = Vector2(3851, 1449)
-
-[node name="Through14" parent="." instance=ExtResource("5_hbgub")]
-position = Vector2(3851, 1386)
-
-[node name="Through15" parent="." instance=ExtResource("5_hbgub")]
-position = Vector2(3851, 1324)
-
-[node name="Through16" parent="." instance=ExtResource("12_gh43b")]
-position = Vector2(3905, 1449)
-
-[node name="Through17" parent="." instance=ExtResource("12_gh43b")]
-position = Vector2(3904, 1449)
-
-[node name="Through21" parent="." instance=ExtResource("12_gh43b")]
-position = Vector2(3645, 1385)
-
-[node name="Through22" parent="." instance=ExtResource("12_gh43b")]
-position = Vector2(3645, 1322)
-
-[node name="Through18" parent="." instance=ExtResource("4_s33ey")]
-position = Vector2(3913, 961)
-
-[node name="Through23" parent="." instance=ExtResource("13_yf6ty")]
-position = Vector2(3645, 1259)
-
-[node name="Through24" parent="." instance=ExtResource("13_yf6ty")]
-position = Vector2(3645, 1196)
 
 [node name="BGmusic" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("14_qo51u")
@@ -593,3 +1716,39 @@ bus = &"Music"
 [editable path="Objects/Enemies/EnemyRegular6"]
 [editable path="Objects/Enemies/EnemyRegular6/HealthComponent"]
 [editable path="Objects/Enemies/EnemyRegular6/ShootingComponent"]
+[editable path="Objects/Enemies/EnemyHelmet2"]
+[editable path="Objects/Enemies/EnemyHelmet2/HealthComponent"]
+[editable path="Objects/Enemies/EnemyHelmet2/ShootingComponent"]
+[editable path="Objects/Enemies/EnemyRegular11"]
+[editable path="Objects/Enemies/EnemyRegular11/HealthComponent"]
+[editable path="Objects/Enemies/EnemyRegular11/ShootingComponent"]
+[editable path="Objects/Enemies/EnemyHelmet4"]
+[editable path="Objects/Enemies/EnemyHelmet4/HealthComponent"]
+[editable path="Objects/Enemies/EnemyHelmet4/ShootingComponent"]
+[editable path="Objects/Enemies/EnemyKevlar"]
+[editable path="Objects/Enemies/EnemyKevlar/HealthComponent"]
+[editable path="Objects/Enemies/EnemyKevlar/ShootingComponent"]
+[editable path="Objects/Enemies/EnemyRegular16"]
+[editable path="Objects/Enemies/EnemyRegular16/HealthComponent"]
+[editable path="Objects/Enemies/EnemyRegular16/ShootingComponent"]
+[editable path="Objects/Enemies/EnemyRegular17"]
+[editable path="Objects/Enemies/EnemyRegular17/HealthComponent"]
+[editable path="Objects/Enemies/EnemyRegular17/ShootingComponent"]
+[editable path="Objects/Enemies/EnemyRegular18"]
+[editable path="Objects/Enemies/EnemyRegular18/HealthComponent"]
+[editable path="Objects/Enemies/EnemyRegular18/ShootingComponent"]
+[editable path="Objects/Enemies/EnemyRegular19"]
+[editable path="Objects/Enemies/EnemyRegular19/HealthComponent"]
+[editable path="Objects/Enemies/EnemyRegular19/ShootingComponent"]
+[editable path="Objects/Enemies/EnemyKevlar2"]
+[editable path="Objects/Enemies/EnemyKevlar2/HealthComponent"]
+[editable path="Objects/Enemies/EnemyKevlar2/ShootingComponent"]
+[editable path="Objects/Enemies/EnemyDouble"]
+[editable path="Objects/Enemies/EnemyDouble/HealthComponent"]
+[editable path="Objects/Enemies/EnemyDouble/ShootingComponent"]
+[editable path="Objects/Enemies/EnemyKevlar4"]
+[editable path="Objects/Enemies/EnemyKevlar4/HealthComponent"]
+[editable path="Objects/Enemies/EnemyKevlar4/ShootingComponent"]
+[editable path="Player"]
+[editable path="Player/HealthComponent"]
+[editable path="Player/ShootingComponent"]

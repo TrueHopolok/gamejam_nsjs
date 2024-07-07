@@ -25,6 +25,7 @@ offset_bottom = 128.0
 color = Color(0, 0, 0, 0.403922)
 
 [node name="HP_BAR" type="ProgressBar" parent="ColorRect"]
+layout_mode = 0
 offset_left = 50.0
 offset_top = 23.0
 offset_right = 296.0
@@ -41,6 +42,7 @@ scale = Vector2(4.7, 4.88889)
 texture = ExtResource("1_xikyi")
 
 [node name="AMMO_BAR" type="ProgressBar" parent="ColorRect"]
+layout_mode = 0
 offset_left = 50.0
 offset_top = 80.0
 offset_right = 296.0
